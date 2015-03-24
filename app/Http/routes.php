@@ -18,6 +18,8 @@ Route::get('home', 'HomeController@index');
 Route::get('create', 'ProductsController@create');
 
 Route::get('products', 'ProductsController@index');
+Route::get('products/{id}', 'ProductsController@show');
+
 
 
 Route::controllers([
