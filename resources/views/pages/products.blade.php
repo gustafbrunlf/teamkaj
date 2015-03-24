@@ -6,7 +6,10 @@
 	
 	@foreach($products as $product)
 
-		<li>{{$product}}</li>
+		<h3>{{$product->name}}</h3>
+		<p>{{$product->description}}</p>
+		<p>stock: {{$product->stock}}</p>
+		<p>price: {{$product->price}}</p>
 	
 	@endforeach
 	
