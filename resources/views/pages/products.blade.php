@@ -9,22 +9,24 @@
 </div>
 
 <div class="row">	
-	<ul>
+
 	@foreach($products as $product)
 
 	<div class="col-xs-3">
 
 		<h3>{{$product->name}}</h3>
-		@if({{$product->image}})
-			<img src="{{$product->imgae}}">
+		@if($product->image)
+			<img src="{{$product->image}}">
 		@endif
 		<p>stock: {{$product->stock}}</p>
 		<p>price: {{$product->price}}</p>
 	
 	</div>
 
-	@endforeach	
-	</ul>	
+	@endforeach
+
 </div>
+
+<a href=" {{ action('ProductsController@create') }} ">Add product</a>
 
 @endif
