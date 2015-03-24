@@ -9,7 +9,7 @@
 </div>
 
 <div class="row">	
-	<ul>
+
 	@foreach($products as $product)
 
 	<div class="col-xs-3">
@@ -23,8 +23,10 @@
 	
 	</div>
 
-	@endforeach	
-	</ul>	
+	@endforeach
+
 </div>
+
+<a href=" {{ action('ProductsController@create') }} ">Add product</a>
 
 @endif
