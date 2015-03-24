@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use App\Product
+use App\Product;
 
 class ProductsController extends Controller {
 
@@ -17,7 +17,7 @@ class ProductsController extends Controller {
 	{
 		$products = Product::all();
 
-		return view('pages.product',compact('products'))
+		return view('pages.products',compact('products'));
 	}
 
 	/**
