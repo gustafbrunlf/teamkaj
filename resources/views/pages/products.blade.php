@@ -17,9 +17,9 @@
         <div class="col-xs-3">
 
             <h3>{{$product->name}}</h3>
-            @if($product->image)
-                <img src="{{$product->image}}">
-            @endif
+        
+                <img src="{{$product->picture}}" height="auto" width="100">
+            
             <p>stock: {{$product->stock}}</p>
             <p>price: {{$product->price}}</p>
 
@@ -29,8 +29,8 @@
 
     </div>
 
-    <a href=" {{ action('ProductsController@create') }} ">Add product</a>
+    
 
     @endif
-
+<a href=" {{ action('ProductsController@create') }} ">Add product</a>
 @endsection

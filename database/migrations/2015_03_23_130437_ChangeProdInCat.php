@@ -22,7 +22,7 @@ class ChangeProdInCat extends Migration {
 	 */
 	public function down()
 	{
-        Schema::rename('prod_in_cat', 'products_in_category');
+        Schema::rename('products_in_category', 'prod_in_cat');
 	}
 
 }
