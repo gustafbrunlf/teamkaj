@@ -1,32 +1,36 @@
 @extends('master')
 
-@if(count($products))
+@section('body')
 
-<div class="row">
-	<div class="col-xs-12">
-		<h2>All of our fucking Products</h2>
-	</div>
-</div>
+    @if(count($products))
 
-<div class="row">	
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>All of our fucking Products</h2>
+        </div>
+    </div>
 
-	@foreach($products as $product)
+    <div class="row">
 
-	<div class="col-xs-3">
+        @foreach($products as $product)
 
-		<h3>{{$product->name}}</h3>
-		@if($product->image)
-			<img src="{{$product->image}}">
-		@endif
-		<p>stock: {{$product->stock}}</p>
-		<p>price: {{$product->price}}</p>
-	
-	</div>
+        <div class="col-xs-3">
 
-	@endforeach
+            <h3>{{$product->name}}</h3>
+            @if($product->image)
+                <img src="{{$product->image}}">
+            @endif
+            <p>stock: {{$product->stock}}</p>
+            <p>price: {{$product->price}}</p>
 
-</div>
+        </div>
 
-<a href=" {{ action('ProductsController@create') }} ">Add product</a>
+        @endforeach
 
-@endif
+    </div>
+
+    <a href=" {{ action('ProductsController@create') }} ">Add product</a>
+
+    @endif
+
+@endsection
