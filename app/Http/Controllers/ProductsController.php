@@ -35,9 +35,11 @@ class ProductsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		Product::create($request->all());
+
+		return redirect('products');
 	}
 
 	/**

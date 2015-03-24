@@ -17,6 +17,8 @@ Route::get('home', 'HomeController@index');
 
 Route::get('create', 'ProductsController@create');
 
+Route::post('pages', 'ProductsController@store');
+
 Route::get('products', 'ProductsController@index');
 
 

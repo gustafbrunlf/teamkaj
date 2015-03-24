@@ -8,17 +8,19 @@
 
 <div class="form-group">
 
-{!! Form::label('name', 'Name;') !!}
+{!! Form::label('name', 'Name:') !!}
 {!! Form::text('name', null, ['class' => 'form-control']) !!}
 
-{!! Form::label('price', 'Price;') !!}
+{!! Form::label('price', 'Price:') !!}
 {!! Form::text('price', null, ['class' => 'form-control']) !!}
 
-{!! Form::label('stock', 'Stock;') !!}
+{!! Form::label('stock', 'Stock:') !!}
 {!! Form::text('stock', null, ['class' => 'form-control']) !!}
 
-{!! Form::label('description', 'Description;') !!}
+{!! Form::label('description', 'Description:') !!}
 {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
+
+
 
 </div>
 
