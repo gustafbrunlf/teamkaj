@@ -4,7 +4,7 @@
 
 <h1>Create product</h1>
 
-{!! Form::open(['url' => 'products']) !!}
+{!! Form::open(['url' => 'pages']) !!}
 
 <div class="form-group">
 
