@@ -4,7 +4,7 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <h2>{{$product->title}}</h2>
+            <h2>{{$product->name}}</h2>
         </div>
     </div>
 
@@ -21,6 +21,8 @@
     </div>
 
 @endsection
+
+
 
 
 
