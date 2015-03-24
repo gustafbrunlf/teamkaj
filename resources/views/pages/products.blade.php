@@ -2,13 +2,13 @@
 
 @section('body')
 
-    @if(count($products))
-
     <div class="row">
         <div class="col-xs-12">
             <h2>All of our fucking Products</h2>
         </div>
     </div>
+
+    @if(count($products))
 
     <div class="row">
 
