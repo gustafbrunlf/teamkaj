@@ -15,7 +15,7 @@
 
         <div class="col-xs-6">
             <p>Description: {{$product->description}}</p>
-            <p>Price: {{$product->price}};-</p>
+            <p>Price: {{$product->price}} SEK</p>
             <p>Stock: {{$product->stock}}</p>
         </div>
     </div>
