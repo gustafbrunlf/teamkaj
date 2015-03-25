@@ -29,15 +29,16 @@
                 <h3><a href="{{action('ProductsController@show', [$product->id])}}">{{str_limit($product->name, $limit = 30, $end = '...')}}</a></h3>
             </div>
 
-            <p>Stock: {{$product->stock}} <br>
-                Price: {{$product->price}};-</p>
+            <p>Stock: {{$product->stock}} pcs</p>
+            <p>Price: {{$product->price}} SEK</p>
+
 
         </div>
         @if($x === 5 || $x===$items)
             </div>
-            <?php $x =1;?>
+            <?php $x = 1; ?>
         @else
-            <?php $x++?> 
+            <?php $x++; ?>
         @endif
 
         @endforeach
