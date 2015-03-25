@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
 use App\Product;
 
@@ -35,7 +36,7 @@ class ProductsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(ProductRequest $request)
 	{
 		Product::create($request->all());
 
