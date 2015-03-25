@@ -30,9 +30,9 @@
         </div>
         @if($x === 6 || $x===$items)
             </div>
-            <?php $x =1;?>
+            <?php $x = 1; ?>
         @else
-            <?php $x++?> 
+            <?php $x++; ?>
         @endif
 
         @endforeach
