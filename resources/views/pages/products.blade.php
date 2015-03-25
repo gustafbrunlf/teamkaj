@@ -23,7 +23,7 @@
         <div class="col-xs-2 product-container">
             
             <div class="product-img">
-                <img src="{{$product->picture}}">
+                <img src="../{{$product->picture}}">
             </div>
             
             <div class="product-name">
