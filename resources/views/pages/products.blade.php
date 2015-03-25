@@ -24,8 +24,8 @@
         
                 <img src="{{$product->picture}}" height="auto" width="100">
             
-            <p>stock: {{$product->stock}}</p>
-            <p>price: {{$product->price}};-</p>
+            <p>Stock: {{$product->stock}}</p>
+            <p>Price: {{$product->price}} SEK</p>
 
         </div>
         @if($x === 6 || $x===$items)
