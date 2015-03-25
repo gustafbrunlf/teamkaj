@@ -2,42 +2,50 @@
 
 @section('body')
 
-<h1>Create product</h1>
+<div class="row">
 
-{!! Form::open(['url' => 'pages']) !!}
+    <div class="col-md-8">
 
-<div class="form-group">
+        <h1>Create product</h1>
 
-{!! Form::label('name', 'Name:') !!}
-{!! Form::text('name', null, ['class' => 'form-control']) !!}
+        {!! Form::open(['url' => 'pages']) !!}
 
-{!! Form::label('price', 'Price:') !!}
-{!! Form::input('number', 'price', null, ['class' => 'form-control']) !!}
+        <div class="form-group">
 
-{!! Form::label('stock', 'Stock:') !!}
-{!! Form::input('number', 'stock', null, ['class' => 'form-control']) !!}
+        {!! Form::label('name', 'Name:') !!}
+        {!! Form::text('name', null, ['class' => 'form-control']) !!}
 
-{!! Form::label('description', 'Description:') !!}
-{!! Form::textarea('description', null, ['class' => 'form-control']) !!}
+		{!! Form::label('price', 'Price:') !!}
+		{!! Form::input('number', 'price', null, ['class' => 'form-control']) !!}
 
+		{!! Form::label('stock', 'Stock:') !!}
+		{!! Form::input('number', 'stock', null, ['class' => 'form-control']) !!}
 
+        {!! Form::label('description', 'Description:') !!}
+        {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
+
+        </div>
+
+        {!! Form::submit('Add product', ['class' => 'btn btn-primary form-control']) !!}
+
+        {!! Form::close() !!}
+        <br>
+        <a href=" {{ action('ProductsController@index') }} ">Back</a>
+
+        @if ($errors->any())
+
+            <ul class="alert alert-danger">
+
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+
+            </ul>
+
+        @endif
+
+    </div>
 
 </div>
-
-{!! Form::submit('Add product') !!}
-
-{!! Form::close() !!}
-
-@if ($errors->any())
-
-	<ul class="alert alert-danger">
-
-		@foreach($errors->all() as $error)
-			<li>{{ $error }}</li>
-		@endforeach
-
-	</ul>
-
-@endif
 
 @endsection

@@ -2,13 +2,13 @@
 
 @section('body')
 
-    @if(count($products))
-
     <div class="row">
         <div class="col-xs-12">
             <h2>All of our fucking Products</h2>
         </div>
     </div>
+
+    @if(count($products))
 
     <div class="row">
 
@@ -16,12 +16,12 @@
 
         <div class="col-xs-3">
 
-            <h3>{{$product->name}}</h3>
-            @if($product->image)
-                <img src="{{$product->image}}">
-            @endif
+            <h3><a href="{{action('ProductsController@show', [$product->id])}}">{{$product->name}}</a></h3>
+        
+                <img src="{{$product->picture}}" height="auto" width="100">
+            
             <p>stock: {{$product->stock}}</p>
-            <p>price: {{$product->price}}</p>
+            <p>price: {{$product->price}};-</p>
 
         </div>
 
@@ -29,8 +29,8 @@
 
     </div>
 
-    <a href=" {{ action('ProductsController@create') }} ">Add product</a>
+    
 
     @endif
-
+<a href=" {{ action('ProductsController@create') }} ">Add product</a>
 @endsection
