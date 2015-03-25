@@ -20,8 +20,9 @@ Route::get('create', 'ProductsController@create');
 Route::post('pages', 'ProductsController@store');
 
 Route::get('products', 'ProductsController@index');
-Route::get('products/{id}', 'ProductsController@show');
+Route::get('products/pages/{id}','ProductsController@showpages');
 
+Route::get('products/{id}', 'ProductsController@show');
 
 
 Route::controllers([

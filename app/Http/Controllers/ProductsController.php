@@ -16,12 +16,12 @@ class ProductsController extends Controller {
 	 */
 	public function index()
 	{
-		$pages = Product::paginate(10)->lastPage();
+		$products = Product::paginate(10);
 
-		$products = Product::all()->take(10);
+		// $products = Product::all()->take(10);
 
 
-		return view('pages.products',compact('products','pages'));
+		return view('pages.products',compact('products'));
 	}
 
 	/**
@@ -57,6 +57,7 @@ class ProductsController extends Controller {
 		$product = Product::findOrFail($id);
 		return view('pages.show', compact('product'));
 	}
+
 
 	/**
 	 * Show the form for editing the specified resource.
