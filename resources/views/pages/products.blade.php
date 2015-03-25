@@ -12,24 +12,28 @@
     <?php $x = 1 ;
         $items = count($products);
     ?>
-    <div class="row">
+    <div class="row" id="all-products">
 
 @foreach($products as $product)
      @if($x === 1)
     <div class="row">
     @endif
 
-        <div class="col-xs-2">
-
-            <h3><a href="{{action('ProductsController@show', [$product->id])}}">{{$product->name}}</a></h3>
-        
-                <img src="{{$product->picture}}" height="auto" width="100">
+        <div class="col-xs-2 product-container">
             
-            <p>stock: {{$product->stock}}</p>
-            <p>price: {{$product->price}};-</p>
+            <div class="product-img">
+                <img src="{{$product->picture}}">
+            </div>
+            
+            <div class="product-name">
+                <h3><a href="{{action('ProductsController@show', [$product->id])}}">{{str_limit($product->name, $limit = 30, $end = '...')}}</a></h3>
+            </div>
+
+            <p>Stock: {{$product->stock}} <br>
+                Price: {{$product->price}};-</p>
 
         </div>
-        @if($x === 6 || $x===$items)
+        @if($x === 5 || $x===$items)
             </div>
             <?php $x =1;?>
         @else

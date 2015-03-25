@@ -17,6 +17,7 @@ h2 {
 h3 {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
+	font-size: 18px;
 }
 
 p {
@@ -32,12 +33,46 @@ a:hover {
 	text-decoration: none
 }
 
+.bold {
+	font-weight: bold;
+}
+
+#all-products {
+	/*margin-left: 100px;*/
+}
 
 .product-container {
 	background: #fff;
-	margin: 10px;
+	height: 100%;
+	margin: 15px 0px 15px 30px;
 	-o-box-shadow: 3px 3px 5px #888;
 	-moz-box-shadow: 10px 10px 5px #888;
 	-webkit-box-shadow: 10px 10px 5px #888;
 	box-shadow: 1px 1px 5px #888;
+}
+
+	.product-name {
+		height: 50px;
+	}
+
+	.product-img {
+		text-align: center;
+		margin: 10px auto;
+	}
+
+	.product-img img {
+		width: 100px;
+	}
+
+.single {
+	margin: 0px;
+}
+
+.info {
+	margin: 30px;
+}
+
+.single-img {
+	text-align: center;
+	margin: 20px auto;
 }
