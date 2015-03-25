@@ -97,6 +97,9 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 	text-align: center;
 	margin: 20px auto;
 }
+	.single-img img {
+	max-width: 500px;
+}	
 
 
 /* CREATE */
