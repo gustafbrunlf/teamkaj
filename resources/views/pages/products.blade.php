@@ -14,7 +14,7 @@
 
         @foreach($products as $product)
 
-        <div class="col-xs-3">
+        <div class="col-xs-2">
 
             <h3><a href="{{action('ProductsController@show', [$product->id])}}">{{$product->name}}</a></h3>
         

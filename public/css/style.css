@@ -1,0 +1,43 @@
+body {
+	background-color: #CFDBDF;
+	font-family: 'Crimson Text', serif;
+	font-size: 18px;
+}
+
+h1 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+}
+
+h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+}
+
+h3 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+}
+
+p {
+	font-family: 'Crimson Text', serif;
+	font-size: 18px;
+}
+
+a {
+	color: #000;
+}
+
+a:hover {
+	text-decoration: none
+}
+
+
+.product-container {
+	background: #fff;
+	margin: 10px;
+	-o-box-shadow: 3px 3px 5px #888;
+	-moz-box-shadow: 10px 10px 5px #888;
+	-webkit-box-shadow: 10px 10px 5px #888;
+	box-shadow: 1px 1px 5px #888;
+}
