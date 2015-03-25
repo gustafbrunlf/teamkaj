@@ -27,7 +27,6 @@ p {
 
 a {
 	color: #000;
-
 }
 
 a:hover {
@@ -53,9 +52,9 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 	background: #fff;
 	height: 100%;
 	margin: 15px 0px 15px 30px;
-	-o-box-shadow: 3px 3px 5px #888;
-	-moz-box-shadow: 10px 10px 5px #888;
-	-webkit-box-shadow: 10px 10px 5px #888;
+	-o-box-shadow: 1px 1px 5px #888;
+	-moz-box-shadow: 1px 1px 5px #888;
+	-webkit-box-shadow: 1px 1px 5px #888;
 	box-shadow: 1px 1px 5px #888;
 }
 
@@ -72,10 +71,9 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 	text-align: center;
 	margin: 10px auto;
 }
-
-.product-img img {
-	height: 100px;
-}
+	.product-img img {
+		height: 100px;
+	}
 
 
 
@@ -99,7 +97,7 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 }
 	.single-img img {
 	max-width: 500px;
-}	
+	}	
 
 
 /* CREATE */
