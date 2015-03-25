@@ -7,14 +7,18 @@
             <h2>All of our fucking Products</h2>
         </div>
     </div>
-
+    
     @if(count($products))
-
+    <?php $x = 1 ;
+        $items = count($products);
+    ?>
     <div class="row">
 
-        @foreach($products as $product)
-
-        <div class="col-xs-3">
+ @foreach($products as $product)
+     @if($x === 1)
+    <div class="row">
+    @endif
+        <div class="col-xs-2">
 
             <h3><a href="{{action('ProductsController@show', [$product->id])}}">{{$product->name}}</a></h3>
         
@@ -24,6 +28,12 @@
             <p>price: {{$product->price}};-</p>
 
         </div>
+        @if($x === 6 || $x===$items)
+            </div>
+            <?php $x =1;?>
+        @else
+            <?php $x++?> 
+        @endif
 
         @endforeach
 
