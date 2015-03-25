@@ -20,6 +20,11 @@
         </div>
     </div>
 
+    <div class="row">
+        <br><br>
+        <a href=" {{action('ProductsController@index')}} ">Back</a>
+    </div>
+
 @endsection
 
 

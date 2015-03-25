@@ -16,7 +16,7 @@
 
         <div class="col-xs-3">
 
-            <h3>{{$product->name}}</h3>
+            <h3><a href="{{action('ProductsController@show', [$product->id])}}">{{$product->name}}</a></h3>
         
                 <img src="{{$product->picture}}" height="auto" width="100">
             
