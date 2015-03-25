@@ -9,7 +9,7 @@ class ProductsTableSeeder extends Seeder {
         // Kommentera denna för att inte radera all data i tabellen
         DB::table('products')->delete();
 
-        $movies = array(
+        $products = array(
             [
                 'id' => 1,
                 'name' => 'Microwave-oven',
@@ -102,6 +102,6 @@ class ProductsTableSeeder extends Seeder {
             ],
         );
 
-        DB::table('products')->insert($movies);
+        DB::table('products')->insert($products);
     }
 }
