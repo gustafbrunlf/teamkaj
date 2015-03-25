@@ -21,7 +21,7 @@
                 <img src="{{$product->picture}}" height="auto" width="100">
             
             <p>stock: {{$product->stock}}</p>
-            <p>price: {{$product->price}}</p>
+            <p>price: {{$product->price}};-</p>
 
         </div>
 

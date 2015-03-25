@@ -10,12 +10,12 @@
 
     <div class="row">
         <div class="col-xs-6">
-            <img src="{{$product->image}}">
+            <img src="../{{$product->picture}}">
         </div>
 
         <div class="col-xs-6">
-            <p>{{$product->description}}</p>
-            <p>{{$product->price}}</p>
+            <p>Description: {{$product->description}}</p>
+            <p>Price: {{$product->price}};-</p>
             <p>Stock: {{$product->stock}}</p>
         </div>
     </div>
