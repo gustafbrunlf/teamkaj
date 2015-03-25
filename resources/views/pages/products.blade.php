@@ -29,8 +29,8 @@
                 <h3><a href="{{action('ProductsController@show', [$product->id])}}">{{str_limit($product->name, $limit = 30, $end = '...')}}</a></h3>
             </div>
 
-            <p>Stock: {{$product->stock}} pcs</p>
-            <p>Price: {{$product->price}} SEK</p>
+            <p>Stock: {{$product->stock}} pcs <br>
+            Price: {{$product->price}} SEK</p>
 
 
         </div>
