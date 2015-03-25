@@ -12,13 +12,14 @@
     <?php $x = 1 ;
         $items = count($products);
     ?>
-    <div class="row" id="all-products">
+    <div class="row">
 
 @foreach($products as $product)
      @if($x === 1)
     <div class="row">
     @endif
 
+        <a href="{{action('ProductsController@show', [$product->id])}}">
         <div class="col-xs-2 product-container">
             
             <div class="product-img">
@@ -26,7 +27,7 @@
             </div>
             
             <div class="product-name">
-                <h3><a href="{{action('ProductsController@show', [$product->id])}}">{{str_limit($product->name, $limit = 30, $end = '...')}}</a></h3>
+                <h3>{{str_limit($product->name, $limit = 30, $end = '...')}}</h3>
             </div>
 
             <p>Stock: {{$product->stock}} pcs <br>
@@ -34,6 +35,7 @@
 
 
         </div>
+        </a>
         @if($x === 5 || $x===$items)
             </div>
             <?php $x = 1; ?>

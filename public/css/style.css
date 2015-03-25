@@ -27,6 +27,7 @@ p {
 
 a {
 	color: #000;
+
 }
 
 a:hover {
@@ -37,9 +38,16 @@ a:hover {
 	font-weight: bold;
 }
 
-#all-products {
-	/*margin-left: 100px;*/
+a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
+	-webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -ms-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
+
+
+/* PRODUCTS */
 
 .product-container {
 	background: #fff;
@@ -51,21 +59,34 @@ a:hover {
 	box-shadow: 1px 1px 5px #888;
 }
 
-	.product-name {
-		height: 50px;
-	}
+.product-container:hover {
+	color: #000;
+	background: #EAEAEA;
+}
 
-	.product-img {
-		text-align: center;
-		margin: 10px auto;
-	}
+.product-name {
+	height: 50px;
+}
 
-	.product-img img {
-		width: 100px;
-	}
+.product-img {
+	text-align: center;
+	margin: 10px auto;
+}
+
+.product-img img {
+	height: 100px;
+}
+
+
+
+/* SHOW */
 
 .single {
-	margin: 0px;
+	margin: 15px 0px;
+}
+
+.single:hover {
+	background: #fff;
 }
 
 .info {
@@ -75,4 +96,15 @@ a:hover {
 .single-img {
 	text-align: center;
 	margin: 20px auto;
+}
+
+
+/* CREATE */
+
+.form {
+	margin: 15px auto;
+}
+
+.btn {
+	font-family: 'Open Sans', sans-serif;
 }
