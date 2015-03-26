@@ -52,7 +52,7 @@
      <?php echo $products->render();?>
 
     @endif
-<a href=" {{ action('ProductsController@create') }} ">Add product</a>
+{{--<a href=" {{ action('ProductsController@create') }} ">Add product</a>--}}
 
 
 @endsection
