@@ -24,6 +24,8 @@ Route::get('products/{id}', 'ProductsController@show');
 
 
 
+
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
