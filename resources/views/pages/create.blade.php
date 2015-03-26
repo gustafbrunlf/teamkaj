@@ -14,7 +14,7 @@
 
             {!! Form::open(['url' => 'products']) !!}
 
-            @include('pages.partials.form', ['submitButtonText' => 'Add product'])
+            @include('pages._form', ['submitButtonText' => 'Add product'])
 
             {!! Form::close() !!}
 
