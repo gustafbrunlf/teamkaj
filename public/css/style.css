@@ -1,28 +1,29 @@
 body {
-	background-color: #CFDBDF;
-	font-family: 'Crimson Text', serif;
-	font-size: 18px;
+	background-color: #EAEAEA;
+font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
 }
 
 h1 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Neuton', serif;
 	font-weight: bold;
 }
 
 h2 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Neuton', serif;
 	font-weight: bold;
+	font-size: 30px;
 }
 
 h3 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Neuton', serif;
 	font-weight: bold;
-	font-size: 18px;
+	font-size: 20px;
 }
 
 p {
-	font-family: 'Crimson Text', serif;
-	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
 }
 
 a {
@@ -51,6 +52,7 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 .product-container {
 	background: #fff;
 	height: 100%;
+	min-width: 150px;
 	margin: 15px 0px 15px 30px;
 	-o-box-shadow: 1px 1px 5px #888;
 	-moz-box-shadow: 1px 1px 5px #888;
