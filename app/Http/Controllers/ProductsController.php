@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
 use App\Product;
+use Intervention\Image\Facades\Image;
 
 class ProductsController extends Controller {
 
@@ -38,6 +39,25 @@ class ProductsController extends Controller {
 	 */
 	public function store(ProductRequest $request)
 	{
+		if($request->file('image')){
+			$destinationPath = 'uploads/'; // upload path
+			$extension = $request->file('image')->getClientOriginalExtension(); // getting image extension
+      		$fileName = rand(11111,99999).'.'.$extension;
+      		$newfile = Image::make($request->file('image'))->fit(300,null, function ($constraint) {
+   			 $constraint->aspectRatio();
+			})->save($destinationPath.$fileName);
+			Product::create([
+
+				'name'=>$request->name,
+				'price'=>$request->price,
+				'stock'=>$request->stock,
+				'description'=>$request->description,
+				'picture'=>$destinationPath.$fileName,
+
+				]);
+			return redirect('products');
+		}
+
 		Product::create($request->all());
 
 		return redirect('products');

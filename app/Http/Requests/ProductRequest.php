@@ -25,6 +25,7 @@ class ProductRequest extends Request {
             'name' => 'required|unique:products|min:3',
             'price' => 'required|integer',
             'stock' => 'required|integer',
+            'image' => 'image|between:2,2000|mimes:jpg,jpeg,png,bmp,gif',
 		];
 	}
 
