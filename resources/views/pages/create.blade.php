@@ -12,9 +12,9 @@
 
         <div class="col-md-8 form">
 
-            {!! Form::open(['url' => 'pages']) !!}
+            {!! Form::open(['url' => 'products', 'files' => 'true']) !!}
 
-            @include('pages.partials.form', ['submitButtonText' => 'Add product'])
+            @include('pages._form', ['submitButtonText' => 'Add product'])
 
             {!! Form::close() !!}
 

@@ -22,9 +22,10 @@ class ProductRequest extends Request {
 	public function rules()
 	{
 		return [
-            'name' => 'required|min:3',
+            'name' => 'required|unique:products|min:3',
             'price' => 'required|integer',
             'stock' => 'required|integer',
+            'image' => 'image|between:2,2000|mimes:jpg,jpeg,png,bmp,gif',
 		];
 	}
 

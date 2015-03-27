@@ -26,6 +26,16 @@
 
 </div>
 
+<div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
+
+
+		{!! Form::label('image','Image:')!!}
+		{!! Form::file('image',['class' => 'form-control'])!!}
+
+		
+		
+</div>
+
 <div class="form-group">
 
     {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary form-control']) !!}
