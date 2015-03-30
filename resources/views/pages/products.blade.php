@@ -19,24 +19,24 @@
     <div class="row">
     @endif
 
-        <a href="{{action('ProductsController@show', [$product->id])}}">
-        <div class="col-xs-2 product-container">
-            
-            <div class="product-img">
-                <img src="../{{$product->picture}}">
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <a href="{{action('ProductsController@show', [$product->id])}}">
+            <div class="product-container">            
+                <div class="product-img">
+                    <img src="../{{$product->picture}}">
+                </div>
+                
+                <div class="product-name">
+                    <h3>{{str_limit($product->name, $limit = 30, $end = '...')}}</h3>
+                </div>
+
+                <p>Stock: {{$product->stock}} pcs <br>
+                Price: {{$product->price}} SEK</p>
             </div>
-            
-            <div class="product-name">
-                <h3>{{str_limit($product->name, $limit = 30, $end = '...')}}</h3>
-            </div>
-
-            <p>Stock: {{$product->stock}} pcs <br>
-            Price: {{$product->price}} SEK</p>
-
-
+            </a>
         </div>
-        </a>
-        @if($x === 5 || $x===$items)
+      
+        @if($x === 4 || $x===$items)
             </div>
             <?php $x = 1; ?>
         @else
