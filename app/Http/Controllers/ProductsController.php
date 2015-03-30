@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
 use App\Product;
+use App\Category;
 use Intervention\Image\Facades\Image;
 
 class ProductsController extends Controller {
@@ -29,7 +30,8 @@ class ProductsController extends Controller {
 	 */
 	public function create()
 	{
-		return view('pages.create');
+		$categories = Category::lists('name', 'id');
+		return view('pages.create', ['categories' => $categories]);
 	}
 
 	/**
@@ -46,7 +48,7 @@ class ProductsController extends Controller {
       		$newfile = Image::make($request->file('image'))->fit(300,null, function ($constraint) {
    			 $constraint->aspectRatio();
 			})->save($destinationPath.$fileName);
-			Product::create([
+			$products = Product::create([
 
 				'name'=>$request->name,
 				'price'=>$request->price,
@@ -55,10 +57,17 @@ class ProductsController extends Controller {
 				'picture'=>$destinationPath.$fileName,
 
 				]);
+			$catIds = $request->input('category_list');
+
+			$products->categories()->attach($catIds);
+
 			return redirect('products');
 		}
 
-		Product::create($request->all());
+		$products = Product::create($request->all());
+		$catIds = $request->input('category_list');
+
+		$products->categories()->attach($catIds);
 
 		return redirect('products');
 	}
@@ -84,7 +93,10 @@ class ProductsController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$product = Product::where('id', '=', $id)->firstOrFail();
+		$categories = Category::lists('name', 'id');
+
+		return view('pages.edit', ['product' => $product, 'categories' => $categories]);
 	}
 
 	/**
@@ -95,7 +107,11 @@ class ProductsController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+		$product = Product::where('id', '=', $id)->firstOrFail();
+		$product->update($request->all());
+		$product->categories()->sync($request->input('category_list'));
+
+		return redirect('pages.products');
 	}
 
 	/**
