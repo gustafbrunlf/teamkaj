@@ -105,13 +105,13 @@ class ProductsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, ProductRequest $request)
 	{
 		$product = Product::where('id', '=', $id)->firstOrFail();
 		$product->update($request->all());
 		$product->categories()->sync($request->input('category_list'));
 
-		return redirect('pages.products');
+		return redirect('products');
 	}
 
 	/**
