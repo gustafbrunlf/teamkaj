@@ -47,19 +47,18 @@ class ProductsController extends Controller {
 	{
 		$artNo = $this->articleNumber();
 
-		// DET FUNKAR JU INTÄÄÄÄÄÄÄ
-		
 		if($request->file('picture'))
 		{
 			$newFileName = $this->getNewFileName($request->file('picture'));			
 			$this->saveImage($request->file('picture'),$newFileName);
 
-			$products = Product::create($request->all(), ['artNo' => $artNo]);					
-			$products->update(['picture' => $newFileName]);
+			$products = Product::create($request->all());					
+			$products->update(['picture' => $newFileName], ['artNo' => $artNo]);
 		}
 		else
 		{
 			$products = Product::create($request->all());
+			$products->update(['artNo' => $artNo]);
 		}
 
 
@@ -78,7 +77,7 @@ class ProductsController extends Controller {
 	 */
 	public function show($artNo)
 	{
-		$product = Product::findOrFail($artNo);
+		$product = Product::where(['artNo' => $artNo])->first();
 		return view('pages.show', compact('product'));
 	}
 
