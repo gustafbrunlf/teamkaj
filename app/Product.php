@@ -19,7 +19,7 @@ class Product extends Model {
 		return $this->belongsToMany('App\Category');
 	}
 
-	public function getGenreListAttribute()
+	public function getCategoryListAttribute()
 	{
 	    return $this->categories->lists('id'); // ?
 	}
