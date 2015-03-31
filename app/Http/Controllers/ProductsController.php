@@ -53,7 +53,7 @@ class ProductsController extends Controller {
 			$this->saveImage($request->file('picture'),$newFileName);
 
 			$products = Product::create($request->all());					
-			$products->update(['picture' => $newFileName], ['artNo' => $artNo]);
+			$products->update(['picture' => $newFileName, 'artNo' => $artNo]);
 		}
 		else
 		{
