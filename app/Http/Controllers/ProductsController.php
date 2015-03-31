@@ -123,7 +123,18 @@ class ProductsController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$product = Product::where('id', '=', $id)->firstOrFail();
+	    $product->delete();
+
+	    return redirect('products');
 	}
+
+	public function category($name)
+	{
+		$category = Category::where('name', '=', $name)->firstOrFail();
+
+		return view('pages.categories', ['category' => $category]);
+	}
+
 
 }
