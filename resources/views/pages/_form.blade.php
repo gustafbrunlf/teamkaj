@@ -35,12 +35,9 @@
 
 <div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
 
-
-		{!! Form::label('image','Image:')!!}
-		{!! Form::file('image',['class' => 'form-control'])!!}
-
-		
-		
+		{!! Form::label('imageupload','Image:') !!}
+		{!! Form::file('image',['style' => 'display:none;', 'id' => 'hiddenUploadImage']) !!}
+		<div id="UploadImage" name="imageupload" class="btn btn-primary form-control">Upload Image</div>
 </div>
 
 <div class="form-group">
