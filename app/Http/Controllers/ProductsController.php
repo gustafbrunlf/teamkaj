@@ -150,8 +150,6 @@ class ProductsController extends Controller {
 		
 		}
 
-		
->>>>>>> e8f5211859bfc0789f2a9ff8e9b68fe2b0b2bcb7
 		$product->categories()->sync($request->input('category_list'));
 
 		return redirect('products');
