@@ -30,5 +30,4 @@ class AddArtNoToProducts extends Migration {
 			$table->dropColumn('artNo');
 		});
 	}
-
 }

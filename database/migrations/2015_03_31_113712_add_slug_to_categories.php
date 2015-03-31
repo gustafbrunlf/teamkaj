@@ -14,7 +14,7 @@ class AddSlugToCategories extends Migration {
 	{
 		Schema::table('categories', function(Blueprint $table)
 		{
-			$table->string('slug', 255)->unique();
+			$table->string('slug', 20);
 		});
 	}
 
