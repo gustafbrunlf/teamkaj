@@ -1,28 +1,32 @@
 body {
-	background-color: #CFDBDF;
-	font-family: 'Crimson Text', serif;
-	font-size: 18px;
+	background-color: #EAEAEA;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	/*box-sizing: border-box;*/
+
 }
 
 h1 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Neuton', serif;
 	font-weight: bold;
 }
 
 h2 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Georgia', serif;
 	font-weight: bold;
+	font-size: 30px;
 }
 
 h3 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Neuton', serif;
 	font-weight: bold;
+	text-transform: uppercase;
 	font-size: 18px;
 }
 
 p {
-	font-family: 'Crimson Text', serif;
-	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
 }
 
 a {
@@ -51,7 +55,9 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 .product-container {
 	background: #fff;
 	height: 100%;
-	margin: 15px 0px 15px 30px;
+	/*min-width: 150px;*/
+	margin: 16px 0px;
+	padding: 20px;
 	-o-box-shadow: 1px 1px 5px #888;
 	-moz-box-shadow: 1px 1px 5px #888;
 	-webkit-box-shadow: 1px 1px 5px #888;
@@ -60,7 +66,8 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 
 .product-container:hover {
 	color: #000;
-	background: #EAEAEA;
+	background: #F8F8F8;
+	box-shadow: 1px 1px 1px #888;
 }
 
 .product-name {
@@ -72,7 +79,7 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 	margin: 10px auto;
 }
 	.product-img img {
-		height: 100px;
+		width: 60%;
 	}
 
 
