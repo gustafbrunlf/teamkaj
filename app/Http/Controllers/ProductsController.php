@@ -179,12 +179,5 @@ class ProductsController extends Controller {
 	}
 
 
-	public function articleNumber()
-	{
-		$last = Product::orderBy('artNo', 'desc')->first();
-		$last = $last->artNo;
-		$newArtNo = $last;
-		return $newArtNo; // INTE KLAR
-	}
 
 }
