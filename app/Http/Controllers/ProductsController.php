@@ -136,5 +136,10 @@ class ProductsController extends Controller {
 		return view('pages.categories', ['category' => $category]);
 	}
 
-
+	public function articleNumber()
+	{
+		$last = Product::orderBy('artNo', 'desc')->first();
+		$newArtNo = ($last->artNo)+1;
+		return $newArtNo;
+	}
 }

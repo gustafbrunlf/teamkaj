@@ -31,7 +31,7 @@
                 </div>
 
                 <p>
-                Art.No : {{$product->artNo}} <br>
+                Art.No: {{$product->artNo}} <br>
                 Stock: {{$product->stock}} pcs <br>
                 Price: {{$product->price}} SEK</p>
 
