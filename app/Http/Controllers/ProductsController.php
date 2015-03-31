@@ -43,29 +43,30 @@ class ProductsController extends Controller {
 	 */
 	public function store(ProductRequest $request)
 	{
-		if($request->file('picture')){
+		$artNo = articleNumber();
 
-			$newFileName = $this->getNewFileName($request->file('picture'));
-			
+		if($request->file('picture'))
+		{
+			$newFileName = $this->getNewFileName($request->file('picture'));			
 			$this->saveImage($request->file('picture'),$newFileName);
 					
-					$products = Product::create($request->all());
-					
-					$products->update(['picture' => $newFileName]);
+			$products = Product::create($request->all());			
+			$products->update(['picture' => $newFileName, 'artNo' => $artNo]);
 
-		}else{
-
-			$products = Product::create($request->all());
-		
 		}
-
-
+		else
+		{
+			$products = Product::create($request->all());					
+			$products->update(['artNo' => $artNo]);
+		}
+		
 		$catIds = $request->input('category_list');
 
 		$products->categories()->attach($catIds);
 
 		return redirect('products');
 	}
+
 
 	/**
 	 * Display the specified resource.
@@ -122,32 +123,31 @@ class ProductsController extends Controller {
 
 		return $newFileName;
 	}
+
+
 	public function update($artNo, ProductRequest $request)
 	{
-
-
 		$product = Product::where('artNo', '=', $artNo)->firstOrFail();
 		
-			if($request->file('picture')){
+			if($request->file('picture'))
+			{
 
-				if($product->picture != $this->baseImage){
-			
+				if($product->picture != $this->baseImage)
+				{			
 					unlink(public_path()."/".$product->picture);
 				}	
 
-					$newFileName = $this->getNewFileName($request->file('picture'));
+				$newFileName = $this->getNewFileName($request->file('picture'));
 
-					$this->saveImage($request->file('picture'),$newFileName);
+				$this->saveImage($request->file('picture'),$newFileName);
 
-					$product->update($request->all());
-					
-					$product->update(['picture' => $newFileName]);
-
-
-		}else{
-
+				$product->update($request->all());
+				
+				$product->update(['picture' => $newFileName]);
+		}
+		else
+		{
 			$product->update($request->all());
-		
 		}
 
 		
@@ -155,8 +155,8 @@ class ProductsController extends Controller {
 
 		return redirect('products');
 
-
 	}
+
 
 	/**
 	 * Remove the specified resource from storage.
@@ -172,11 +172,22 @@ class ProductsController extends Controller {
 	    return redirect('products');
 	}
 
+
+
 	public function category($name)
 	{
 		$category = Category::where('name', '=', $name)->firstOrFail();
 
 		return view('pages.categories', ['category' => $category]);
+	}
+
+
+	public function articleNumber()
+	{
+		$last = Product::orderBy('created_at', 'desc')->first();
+		$newArtNo = ($last->artNo)+1;
+
+		return $newArtNo;
 	}
 
 
