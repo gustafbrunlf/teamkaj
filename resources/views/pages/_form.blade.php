@@ -33,6 +33,7 @@
 
 </div>
 
+
 <div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
 
 		{!! Form::label('imageupload','Image:') !!}

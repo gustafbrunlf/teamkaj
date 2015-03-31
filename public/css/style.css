@@ -116,3 +116,10 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 .btn {
 	font-family: 'Open Sans', sans-serif;
 }
+
+
+/* EDIT */
+
+.thumb {
+	width: 100px;
+}
