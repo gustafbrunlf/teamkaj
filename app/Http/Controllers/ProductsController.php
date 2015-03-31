@@ -11,6 +11,8 @@ use Intervention\Image\Facades\Image;
 
 class ProductsController extends Controller {
 
+	protected $baseImage = 'includes/baseProduct.png';
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -41,30 +43,23 @@ class ProductsController extends Controller {
 	 */
 	public function store(ProductRequest $request)
 	{
-		if($request->file('image')){
-			$destinationPath = 'uploads/'; // upload path
-			$extension = $request->file('image')->getClientOriginalExtension(); // getting image extension
-      		$fileName = rand(11111,99999).'.'.$extension;
-      		$newfile = Image::make($request->file('image'))->fit(300,null, function ($constraint) {
-   			 $constraint->aspectRatio();
-			})->save($destinationPath.$fileName);
-			$products = Product::create([
+		if($request->file('picture')){
 
-				'name'=>$request->name,
-				'price'=>$request->price,
-				'stock'=>$request->stock,
-				'description'=>$request->description,
-				'picture'=>$destinationPath.$fileName,
+			$newFileName = $this->getNewFileName($request->file('picture'));
+			
+			$this->saveImage($request->file('picture'),$newFileName);
+					
+					$products = Product::create($request->all());
+					
+					$products->update(['picture' => $newFileName]);
 
-				]);
-			$catIds = $request->input('category_list');
+		}else{
 
-			$products->categories()->attach($catIds);
-
-			return redirect('products');
+			$products = Product::create($request->all());
+		
 		}
 
-		$products = Product::create($request->all());
+
 		$catIds = $request->input('category_list');
 
 		$products->categories()->attach($catIds);
@@ -106,13 +101,60 @@ class ProductsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
+
+	public function saveImage($file,$destination){
+
+      		$newfile = Image::make($file)->fit(300,null, function ($constraint) {
+   			 $constraint->aspectRatio();
+			})->save($destination);
+
+			return;
+
+	}
+
+	public function getNewFileName($fileObject){
+
+		$newExtension = $fileObject->getClientOriginalExtension(); // getting image extension
+		      		
+		$newFileName = "uploads/".rand(11111,99999).'.'.$newExtension;
+
+
+		return $newFileName;
+	}
 	public function update($id, ProductRequest $request)
 	{
+
+
 		$product = Product::where('id', '=', $id)->firstOrFail();
-		$product->update($request->all());
+		
+			if($request->file('picture')){
+
+				if($product->picture != $this->baseImage){
+			
+					unlink(public_path()."/".$product->picture);
+				}	
+
+					$newFileName = $this->getNewFileName($request->file('picture'));
+
+					$this->saveImage($request->file('picture'),$newFileName);
+
+					$product->update($request->all());
+					
+					$product->update(['picture' => $newFileName]);
+
+
+		}else{
+
+			$product->update($request->all());
+		
+		}
+
+		
 		$product->categories()->sync($request->input('category_list'));
 
 		return redirect('products');
+
+
 	}
 
 	/**
