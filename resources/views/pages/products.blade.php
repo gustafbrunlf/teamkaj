@@ -32,6 +32,17 @@
 
                 <p>Stock: {{$product->stock}} pcs <br>
                 Price: {{$product->price}} SEK</p>
+
+                @if($product->categories->isEmpty())
+                    <p>Uncategoriezed</p>
+                @else
+                    <p>Under: 
+                    @foreach($product->categories as $categories)
+                        {{$categories->name}}
+                    @endforeach
+                    </p>
+                @endif
+                
             </div>
             </a>
         </div>
