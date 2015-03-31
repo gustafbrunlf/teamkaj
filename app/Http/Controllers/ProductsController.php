@@ -73,9 +73,9 @@ class ProductsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($artNo)
 	{
-		$product = Product::findOrFail($id);
+		$product = Product::findOrFail($artNo);
 		return view('pages.show', compact('product'));
 	}
 
@@ -86,9 +86,9 @@ class ProductsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($artNo)
 	{
-		$product = Product::where('id', '=', $id)->firstOrFail();
+		$product = Product::where('artNo', '=', $artNo)->firstOrFail();
 		$categories = Category::lists('name', 'id');
 
 		// dd($product, $categories);
@@ -101,6 +101,7 @@ class ProductsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
+
 
 	public function saveImage($file,$destination){
 
@@ -121,11 +122,11 @@ class ProductsController extends Controller {
 
 		return $newFileName;
 	}
-	public function update($id, ProductRequest $request)
+	public function update($artNo, ProductRequest $request)
 	{
 
 
-		$product = Product::where('id', '=', $id)->firstOrFail();
+		$product = Product::where('artNo', '=', $artNo)->firstOrFail();
 		
 			if($request->file('picture')){
 
@@ -163,9 +164,9 @@ class ProductsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($artNo)
 	{
-		$product = Product::where('id', '=', $id)->firstOrFail();
+		$product = Product::where('artNo', '=', $artNo)->firstOrFail();
 	    $product->delete();
 
 	    return redirect('products');
@@ -178,5 +179,13 @@ class ProductsController extends Controller {
 		return view('pages.categories', ['category' => $category]);
 	}
 
+
+	public function articleNumber()
+	{
+		$last = Product::orderBy('artNo', 'desc')->first();
+		$last = $last->artNo;
+		$newArtNo = $last;
+		return $newArtNo; // INTE KLAR
+	}
 
 }
