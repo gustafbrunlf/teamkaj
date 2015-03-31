@@ -96,6 +96,7 @@ class ProductsController extends Controller {
 		$product = Product::where('id', '=', $id)->firstOrFail();
 		$categories = Category::lists('name', 'id');
 
+		// dd($product, $categories);
 		return view('pages.edit', ['product' => $product, 'categories' => $categories]);
 	}
 
