@@ -43,9 +43,12 @@ class ProductsController extends Controller {
 			$destinationPath = 'uploads/'; // upload path
 			$extension = $request->file('image')->getClientOriginalExtension(); // getting image extension
       		$fileName = rand(11111,99999).'.'.$extension;
-      		$newfile = Image::make($request->file('image'))->fit(300,null, function ($constraint) {
-   			 $constraint->aspectRatio();
-			})->save($destinationPath.$fileName);
+      		$newfile = Image::make($request->file('image'))->resize(400, null, function ($constraint) {
+    $constraint->aspectRatio();
+
+    $constraint->upsize(); //no idea but it works
+
+})->save($destinationPath.$fileName);
 			Product::create([
 
 				'name'=>$request->name,
