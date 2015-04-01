@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests\AdminRequest;
+use App\Http\Requests\EditAdminRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
@@ -23,7 +24,7 @@ class AdminController extends Controller {
 	public function index()
 	{
 
-		$admins = User::where('admin',"=","1")->firstOrFail();
+		$admins = User::where('admin',"=","1")->get();
 		return view('pages.superadmin',compact('admins'));
 	}
 
@@ -52,7 +53,7 @@ class AdminController extends Controller {
             'password'=>$password,
             'admin'=> 1,
         ]);
-        return redirect('products');
+        return redirect('superadmin');
 	}
 
 	/**
@@ -74,7 +75,8 @@ class AdminController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$user = User::where("id", "=" , $id)->firstOrFail();
+		return view('pages.editSuperUser',compact('user'));
 	}
 
 	/**
@@ -83,9 +85,11 @@ class AdminController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id ,EditAdminRequest $request)
 	{
-		//
+		$admin = User::where("id", "=" , $id)->firstOrFail();
+		$admin->update($request->all());
+		return redirect('superadmin');
 	}
 
 	/**
@@ -96,7 +100,11 @@ class AdminController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$admin = User::where("id", "=" , $id)->firstOrFail();
+
+		$admin->delete();
+
+		return redirect('superadmin');
 	}
 
 }
