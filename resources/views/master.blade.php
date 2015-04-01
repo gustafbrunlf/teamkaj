@@ -56,7 +56,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 @if(Auth::user()->admin === 0)
-                                    <li><a href="{{ action('AdminController@create') }}">Create admin</a></li>
+                                    <li><a href="{{ action('AdminController@index') }}">Manage admin</a></li>
                                 @endif
                                 <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
                             </ul>

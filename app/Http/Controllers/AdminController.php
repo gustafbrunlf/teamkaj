@@ -22,7 +22,9 @@ class AdminController extends Controller {
 	 */
 	public function index()
 	{
-		//
+
+		$admins = User::where('admin',"=","1")->firstOrFail();
+		return view('pages.superadmin',compact('admins'));
 	}
 
 	/**
