@@ -16,8 +16,13 @@ Route::get('/', 'WelcomeController@index');
 Route::get('home', 'HomeController@index');
 
 Route::get('products/createadmin', 'AdminController@create');
+Route::delete('superadmin/{id}', 'AdminController@destroy');
+Route::patch('superadmin/{id}', 'AdminController@update');
+Route::get('superadmin/{id}/edit', 'AdminController@edit');
 Route::get('superadmin','AdminController@index');
+
 Route::post('admin', 'AdminController@store');
+
 
 Route::get('products', 'ProductsController@index');
 
