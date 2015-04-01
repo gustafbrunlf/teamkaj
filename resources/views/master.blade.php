@@ -72,11 +72,11 @@
     <div class="container-fluid" id="content">
 
         <div id="side-menu" class="hidden-xs col-sm-2">
-                <ul><li><a href="hwgrj">hsfwukfwkj</a></li></ul>
+            <a href="hwgrj">hsfwukfwkj</a>
         </div>
 
         <div class="row">
-            <div class="col-sm-offset-2 col-xs-12 col-sm-9">
+            <div class="col-sm-offset-3 col-xs-12 col-sm-8">
                 @yield('body')
             </div>
         </div>
