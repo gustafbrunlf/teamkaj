@@ -11,7 +11,15 @@ use Intervention\Image\Facades\Image;
 
 class ProductsController extends Controller {
 
+
 	protected $baseImage = 'includes/baseProduct.png';
+    /**
+     *
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['show', 'index']]);
+    }
 
 	/**
 	 * Display a listing of the resource.

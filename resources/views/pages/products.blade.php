@@ -15,6 +15,7 @@
     <div class="row">
 
 @foreach($products as $product)
+
      @if($x === 1)
     <div class="row">
     @endif
@@ -57,16 +58,16 @@
             <?php $x++; ?>
         @endif
 
-        @endforeach
+@endforeach
 
+    @if(Auth::check())
+        <a href=" {{ action('ProductsController@create') }} ">Add product</a><br>
+    @endif
 
-
-    </div>
-
-     {!! $products->render() !!}
+    <div> {!! $products->render() !!} </div>
 
     @endif
-{{--<a href=" {{ action('ProductsController@create') }} ">Add product</a>--}}
 
+    </div>
 
 @endsection
