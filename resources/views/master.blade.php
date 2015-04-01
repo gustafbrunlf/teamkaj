@@ -29,8 +29,9 @@
     <![endif]-->
 </head>
 <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
+
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle Navigation</span>
@@ -49,7 +50,7 @@
                     </ul>
                 @endunless
 
-                <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())
                         <li><a href="{{ url('/auth/login') }}">Login</a></li>
                         <li><a href="{{ url('/auth/register') }}">Register</a></li>
@@ -64,14 +65,22 @@
                 </ul>
             </div>
         </div>
+
+
     </nav>
 
-    <div class="container">
+    <div class="container-fluid" id="content">
+
+        <div id="side-menu" class="hidden-xs col-sm-2">
+                <ul><li><a href="hwgrj">hsfwukfwkj</a></li></ul>
+        </div>
+
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-sm-offset-2 col-xs-12 col-sm-9">
                 @yield('body')
             </div>
         </div>
+
     </div>
 
     <!-- Scripts -->

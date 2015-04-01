@@ -57,6 +57,10 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 	border: none;
 	border-radius: 0px;
 	color: #EAEAEA;
+	-o-box-shadow: 0px 1px 2px #bbb;
+	-moz-box-shadow: 0px 1px 2px #bbb;
+	-webkit-box-shadow: 0px 1px 2px #bbb;
+	box-shadow: 0px 1px 2px #bbb;
 }
 
 	.navbar-default .navbar-nav li a{
@@ -83,6 +87,23 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 .dropdown-menu {
 	background: #000;
 }
+
+#content {
+	margin-top: 50px;
+	padding: 0px;
+}
+
+#side-menu {
+	position: fixed;
+	height: 100%;
+	width: 175px;
+	background: #DDD;
+	-o-box-shadow: 1px 0px 2px #bbb;
+	-moz-box-shadow: 1px 0px 2px #bbb;
+	-webkit-box-shadow: 1px 0px 2px #bbb;
+	box-shadow: 1px 0px 2px #bbb;
+} 
+
 
 
 /* PRODUCTS */
