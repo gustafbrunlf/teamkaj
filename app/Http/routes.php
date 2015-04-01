@@ -15,17 +15,23 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-//Route::get('products', 'ProductsController@index');
-//
-//Route::get('products/create', 'ProductsController@create');
-//
-//Route::post('products', 'ProductsController@store');
-//
-//Route::get('products/pages/{id}','ProductsController@showpages');
-//
-//Route::get('products/{id}', 'ProductsController@show');
+Route::get('products/createadmin', 'AdminController@create');
 
-Route::resource('products', 'ProductsController');
+Route::post('admin', 'AdminController@store');
+
+Route::get('products', 'ProductsController@index');
+
+Route::get('products/create', 'ProductsController@create');
+
+Route::post('products', 'ProductsController@store');
+
+Route::get('products/pages/{id}','ProductsController@showpages');
+
+Route::get('products/{id}', 'ProductsController@show');
+
+
+
+//Route::resource('products', 'ProductsController');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

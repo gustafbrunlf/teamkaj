@@ -15,26 +15,26 @@
     <div class="row">
 
 @foreach($products as $product)
+
      @if($x === 1)
     <div class="row">
     @endif
 
         <a href="{{action('ProductsController@show', [$product->id])}}">
-        <div class="col-xs-2 product-container">
-            
-            <div class="product-img">
-                <img src="../{{$product->picture}}">
+            <div class="col-xs-2 product-container">
+
+                <div class="product-img">
+                    <img src="../{{$product->picture}}">
+                </div>
+
+                <div class="product-name">
+                    <h3>{{str_limit($product->name, $limit = 30, $end = '...')}}</h3>
+                </div>
+
+                <p>Stock: {{$product->stock}} pcs <br>
+                Price: {{$product->price}} SEK</p>
+
             </div>
-            
-            <div class="product-name">
-                <h3>{{str_limit($product->name, $limit = 30, $end = '...')}}</h3>
-            </div>
-
-            <p>Stock: {{$product->stock}} pcs <br>
-            Price: {{$product->price}} SEK</p>
-
-
-        </div>
         </a>
         @if($x === 5 || $x===$items)
             </div>
@@ -43,16 +43,16 @@
             <?php $x++; ?>
         @endif
 
-        @endforeach
+@endforeach
 
+    @if(Auth::check())
+        <a href=" {{ action('ProductsController@create') }} ">Add product</a><br>
+    @endif
 
-
-    </div>
-
-     {!! $products->render() !!}
+    <div> {!! $products->render() !!} </div>
 
     @endif
-{{--<a href=" {{ action('ProductsController@create') }} ">Add product</a>--}}
 
+    </div>
 
 @endsection
