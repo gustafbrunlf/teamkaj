@@ -43,18 +43,31 @@
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                @unless(Auth::guest())
-                    <ul class="nav navbar-nav">
-                        <li><a href="{{ url('products/') }}">Home</a></li>
-                        <li><a href="{{ url('products/create') }}">Create new Product</a></li>
-                    </ul>
-                @endunless
 
-                    <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('products/') }}">Home</a></li>
+                    
+                        @section('dropdown')
+            
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categories<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                           
+                            <li><a href=""></a></li>
+                            
+                        </ul>
+                    </li>
+
+                </ul>       
+
+
+                <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())
                         <li><a href="{{ url('/auth/login') }}">Login</a></li>
                         <li><a href="{{ url('/auth/register') }}">Register</a></li>
                     @else
+                        <li><a href="{{ url('products/create') }}">Create new Product</a></li>
+
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -69,14 +82,10 @@
 
     </nav>
 
-    <div class="container-fluid" id="content">
-
-        <div id="side-menu" class="hidden-xs col-sm-2">
-            <a href="hwgrj">hsfwukfwkj</a>
-        </div>
+    <div class="container" id="content">
 
         <div class="row">
-            <div class="col-sm-offset-3 col-xs-12 col-sm-8">
+            <div class="col-xs-12">
                 @yield('body')
             </div>
         </div>
