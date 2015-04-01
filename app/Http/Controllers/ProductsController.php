@@ -43,7 +43,7 @@ class ProductsController extends Controller {
 	 */
 	public function store(ProductRequest $request)
 	{
-		$artNo = articleNumber();
+		$artNo = $this->articleNumber();
 
 		if($request->file('picture'))
 		{
@@ -76,7 +76,7 @@ class ProductsController extends Controller {
 	 */
 	public function show($artNo)
 	{
-		$product = Product::findOrFail($artNo);
+		$product = Product::where('artNo', '=', $artNo)->firstOrFail();
 		return view('pages.show', compact('product'));
 	}
 
