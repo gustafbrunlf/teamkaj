@@ -36,6 +36,8 @@ class ProductsController extends Controller {
 		return view('pages.create', ['categories' => $categories]);
 	}
 
+
+
 	/**
 	 * Store a newly created resource in storage.
 	 *
@@ -49,10 +51,9 @@ class ProductsController extends Controller {
 		{
 			$newFileName = $this->getNewFileName($request->file('picture'));			
 			$this->saveImage($request->file('picture'),$newFileName);
-					
+		
 			$products = Product::create($request->all());			
 			$products->update(['picture' => $newFileName, 'artNo' => $artNo]);
-
 		}
 		else
 		{
@@ -76,6 +77,7 @@ class ProductsController extends Controller {
 	 */
 	public function show($artNo)
 	{
+
 		$product = Product::where('artNo', '=', $artNo)->firstOrFail();
 		return view('pages.show', compact('product'));
 	}
@@ -129,21 +131,21 @@ class ProductsController extends Controller {
 	{
 		$product = Product::where('artNo', '=', $artNo)->firstOrFail();
 		
-			if($request->file('picture'))
-			{
+		if($request->file('picture'))
+		{
 
-				if($product->picture != $this->baseImage)
-				{			
-					unlink(public_path()."/".$product->picture);
-				}	
+			if($product->picture != $this->baseImage)
+			{			
+				unlink(public_path()."/".$product->picture);
+			}	
 
-				$newFileName = $this->getNewFileName($request->file('picture'));
+			$newFileName = $this->getNewFileName($request->file('picture'));
 
-				$this->saveImage($request->file('picture'),$newFileName);
+			$this->saveImage($request->file('picture'),$newFileName);
 
-				$product->update($request->all());
-				
-				$product->update(['picture' => $newFileName]);
+			$product->update($request->all());
+			
+			$product->update(['picture' => $newFileName]);
 		}
 		else
 		{
@@ -151,6 +153,7 @@ class ProductsController extends Controller {
 		}
 
 		
+
 		$product->categories()->sync($request->input('category_list'));
 
 		return redirect('products');
@@ -173,7 +176,6 @@ class ProductsController extends Controller {
 	}
 
 
-
 	public function category($name)
 	{
 		$category = Category::where('name', '=', $name)->firstOrFail();
@@ -184,12 +186,10 @@ class ProductsController extends Controller {
 
 	public function articleNumber()
 	{
-		$last = Product::orderBy('created_at', 'desc')->first();
+		$last = Product::orderBy('artNo', 'desc')->first();
 		$newArtNo = ($last->artNo)+1;
-
 		return $newArtNo;
 	}
-
 
 
 }
