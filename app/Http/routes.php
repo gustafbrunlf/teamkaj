@@ -25,6 +25,7 @@ Route::get('home', 'HomeController@index');
 //
 //Route::get('products/{id}', 'ProductsController@show');
 
+
 Route::resource('products', 'ProductsController');
 
 

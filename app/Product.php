@@ -10,8 +10,19 @@ class Product extends Model {
 		'price',
 		'stock',
 		'description',
-		'picture'
+		'picture',
+		'artNo'
 
 	];
+
+	public function categories()
+	{
+		return $this->belongsToMany('App\Category');
+	}
+
+	public function getCategoryListAttribute()
+	{
+	    return $this->categories->lists('id'); // ?
+	}
 
 }

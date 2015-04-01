@@ -20,7 +20,7 @@
     @endif
 
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <a href="{{action('ProductsController@show', [$product->id])}}">
+            <a href="{{action('ProductsController@show', [$product->artNo])}}">
             <div class="product-container">            
                 <div class="product-img">
                     <img src="../{{$product->picture}}">
@@ -30,8 +30,22 @@
                     <h3>{{str_limit($product->name, $limit = 30, $end = '...')}}</h3>
                 </div>
 
-                <p>Stock: {{$product->stock}} pcs <br>
+                <p>
+
+                ArtNo: {{$product->artNo}} <br>
+                Stock: {{$product->stock}} pcs <br>
                 Price: {{$product->price}} SEK</p>
+
+                @if($product->categories->isEmpty())
+                    <p>Uncategoriezed</p>
+                @else
+                    <p>Under: 
+                    @foreach($product->categories as $categories)
+                        {{$categories->name}}
+                    @endforeach
+                    </p>
+                @endif
+                
             </div>
             </a>
         </div>

@@ -26,10 +26,18 @@
 
 </div>
 
+<div class="form-group">
+
+    {!! Form::label('category_list', 'Category:')  !!}
+    {!! Form::select('category_list[]', $categories, null, ['class' => 'form-control', 'multiple']) !!}
+
+</div>
+
+
 <div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
 
 		{!! Form::label('imageupload','Image:') !!}
-		{!! Form::file('image',['style' => 'display:none;', 'id' => 'hiddenUploadImage']) !!}
+		{!! Form::file('picture',['style' => 'display:none;', 'id' => 'hiddenUploadImage']) !!}
 		<div id="UploadImage" name="imageupload" class="btn btn-primary form-control">Upload Image</div>
 </div>
 
