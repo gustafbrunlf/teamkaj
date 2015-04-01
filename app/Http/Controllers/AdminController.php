@@ -13,7 +13,7 @@ class AdminController extends Controller {
 
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['show', 'index']]);
+        $this->middleware('auth', ['except' => [ 'index']]);
     }
 
 	/**
@@ -44,14 +44,17 @@ class AdminController extends Controller {
 	 * @return Response
 	 */
 	public function store(AdminRequest $request)
-	{   $password = Hash::make($request->password);
+	{
+        $password = Hash::make($request->password);
 
         $user = User::create([
             'name'=>$request->name,
             'email'=>$request->email,
-            'password'=>$password,
-            'admin'=> 1,
+            'password'=>$password
         ]);
+
+        $user->admin = 1;
+        $user->save();
 
         return redirect('superadmin');
 	}
