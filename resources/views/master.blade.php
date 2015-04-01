@@ -42,9 +42,12 @@
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url('products/') }}">Home</a></li>
-                </ul>
+                @unless(Auth::guest())
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ url('products/') }}">Home</a></li>
+                        <li><a href="{{ url('products/create') }}">Create new Product</a></li>
+                    </ul>
+                @endunless
 
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())

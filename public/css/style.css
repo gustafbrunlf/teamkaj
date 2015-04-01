@@ -50,6 +50,41 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 }
 
 
+/* MASTER */
+
+.navbar-default {
+	background: #000;
+	border: none;
+	border-radius: 0px;
+	color: #EAEAEA;
+}
+
+	.navbar-default .navbar-nav li a{
+		color: #EAEAEA;
+		background: none;
+	}
+	.navbar-default .navbar-nav li a:focus, 
+	.navbar-default .navbar-nav li a:active, 
+	.navbar-default .navbar-nav li a:hover {
+		color: #999;
+	}
+	
+	.navbar-default .navbar-brand {
+		color: #5CE0E5;
+	}
+
+	.navbar-default .navbar-nav>.open>a,
+	 .navbar-default .navbar-nav>.open>a:focus,
+	  .navbar-default .navbar-nav>.open>a:hover {
+		background-color: #000;
+		color: #EAEAEA;
+	}
+
+.dropdown-menu {
+	background: #000;
+}
+
+
 /* PRODUCTS */
 
 .product-container {
