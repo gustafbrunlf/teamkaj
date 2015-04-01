@@ -23,8 +23,8 @@ class AdminController extends Controller {
 	 */
 	public function index()
 	{
+		$admins = User::where('admin', '=', '1')->get();
 
-		$admins = User::where('admin',"=","1")->get();
 		return view('pages.superadmin',compact('admins'));
 	}
 
@@ -44,15 +44,15 @@ class AdminController extends Controller {
 	 * @return Response
 	 */
 	public function store(AdminRequest $request)
-	{
-        $password = Hash::make($request->password);
+	{   $password = Hash::make($request->password);
 
-       $user = User::create([
+        $user = User::create([
             'name'=>$request->name,
             'email'=>$request->email,
             'password'=>$password,
             'admin'=> 1,
         ]);
+
         return redirect('superadmin');
 	}
 
@@ -76,6 +76,7 @@ class AdminController extends Controller {
 	public function edit($id)
 	{
 		$user = User::where("id", "=" , $id)->firstOrFail();
+
 		return view('pages.editSuperUser',compact('user'));
 	}
 
@@ -88,7 +89,9 @@ class AdminController extends Controller {
 	public function update($id ,EditAdminRequest $request)
 	{
 		$admin = User::where("id", "=" , $id)->firstOrFail();
+
 		$admin->update($request->all());
+
 		return redirect('superadmin');
 	}
 
