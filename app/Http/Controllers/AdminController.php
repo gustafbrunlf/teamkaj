@@ -45,7 +45,7 @@ class AdminController extends Controller {
 	public function store(AdminRequest $request)
 	{
         $password = Hash::make($request->password);
-        
+
        $user = User::create([
             'name'=>$request->name,
             'email'=>$request->email,
