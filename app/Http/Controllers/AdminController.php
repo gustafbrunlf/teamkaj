@@ -48,9 +48,8 @@ class AdminController extends Controller {
             'name'=>$request->name,
             'email'=>$request->email,
             'password'=>$password,
-            'admin'=>1,
+            'admin'=> 1,
         ]);
-
         return redirect('products');
 	}
 

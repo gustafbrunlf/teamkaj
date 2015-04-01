@@ -32,7 +32,7 @@
 
                 {!! Form::label('password', 'Password:') !!}
                 {!! Form::input('password', 'password', null, ['class' => 'form-control']) !!}
-
+            
             </div>
 
             <div class="form-group">
