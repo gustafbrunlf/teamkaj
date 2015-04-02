@@ -29,6 +29,7 @@
 
     @include('pages.productlist')
 
+
     <div> {!! $products->render() !!} </div>
 
     @endif
