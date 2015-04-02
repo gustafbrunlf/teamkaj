@@ -66,7 +66,26 @@
                     
                 </div>
                 </a>
+                {!! Form::open(['method' => 'DELETE', 'action' => ['ProductsController@destroy', $product->artNo]]) !!}
+
+                @if(Auth::check())
+
+                    <div class="btn-group">
+
+                        <a href={{ action('ProductsController@edit', $product->artNo) }} class="btn btn-success">Edit Product</a>
+
+                        @if(Auth::user()->user_type === 0)
+
+                            {!! Form::submit('Delete Product', ['class' => 'btn btn-danger']) !!}
+
+                        @endif
+
+                    </div>
+
+                @endif
             </div>
+
+            {!! Form::close() !!}
           
             @if($x === 4 || $x===$items)
                 </div>
@@ -76,10 +95,6 @@
             @endif
 
 @endforeach
-
-    @if(Auth::check())
-        <a href=" {{ action('ProductsController@create') }} ">Add product</a><br>
-    @endif
 
     <div> {!! $products->render() !!} </div>
 
