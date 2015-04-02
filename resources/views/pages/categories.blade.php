@@ -32,7 +32,7 @@
     <div class="row">
 
   
-        @foreach($products as $product)
+    @foreach($category->products as $product)
   
 
          @if($x === 1)
@@ -83,7 +83,7 @@
 
     </div>
 
-     {!! $products->render() !!}
+  
 
     @endif
 {{--<a href=" {{ action('ProductsController@create') }} ">Add product</a>--}}

@@ -15,20 +15,21 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-//Route::get('products', 'ProductsController@index');
-//
-//Route::get('products/create', 'ProductsController@create');
-//
-//Route::post('products', 'ProductsController@store');
-//
-//Route::get('products/pages/{id}','ProductsController@showpages');
-//
-//Route::get('products/{id}', 'ProductsController@show');
+// Route::get('products', 'ProductsController@index');
 
+// Route::get('products/create', 'ProductsController@create');
 
+// Route::post('products', 'ProductsController@store');
+
+// Route::get('products/pages/{id}','ProductsController@showpages');
+
+// Route::get('products/{artNo', 'ProductsController@show');
+
+// Route::get('products/{artNo}/edit', 'ProductsController@edit');
+// Route::patch('products/{artNo}', 'MoviesController@update');
+
+Route::get('category/{slug}', 'ProductsController@category');
 Route::resource('products', 'ProductsController');
-
-
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
