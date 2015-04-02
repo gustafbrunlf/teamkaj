@@ -39,8 +39,6 @@ Route::get('products/{id}', 'ProductsController@show');
 
 //Route::resource('products', 'ProductsController');
 
-
-
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

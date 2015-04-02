@@ -13,7 +13,7 @@ class AdminController extends Controller {
 
     public function __construct()
     {
-        $this->middleware('auth', ['except' => [ 'index']]);
+        $this->middleware('auth', ['only' => [ 'show']]);
         $this->middleware('admin', ['only' => ['index', 'create', 'store', 'edit','destroy', 'update']]);
     }
 
