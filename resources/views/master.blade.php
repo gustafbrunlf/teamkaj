@@ -29,8 +29,9 @@
     <![endif]-->
 </head>
 <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
+
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle Navigation</span>
@@ -42,15 +43,22 @@
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('products/') }}">Home</a></li>
-                </ul>
+                    
+                        @section('dropdown')
+                        @show
+                </ul>       
+
 
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())
                         <li><a href="{{ url('/auth/login') }}">Login</a></li>
-                       <li><a href="{{ url('/auth/register') }}">Register</a></li>
+
                     @else
+                        <li><a href="{{ url('products/create') }}">Create new Product</a></li>
+
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -64,14 +72,18 @@
                 </ul>
             </div>
         </div>
+
+
     </nav>
 
-    <div class="container">
+    <div class="container" id="content">
+
         <div class="row">
             <div class="col-xs-12">
                 @yield('body')
             </div>
         </div>
+
     </div>
 
     <!-- Scripts -->

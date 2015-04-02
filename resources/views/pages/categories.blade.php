@@ -31,11 +31,13 @@
     ?>
     <div class="row">
 
-        @foreach($products as $product)
+  
+    @foreach($category->products as $product)
+  
 
-            @if($x === 1)
-            <div class="row">
-            @endif
+         @if($x === 1)
+        <div class="row">
+        @endif
 
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                 <a href="{{action('ProductsController@show', [$product->artNo])}}">
@@ -75,16 +77,16 @@
                 <?php $x++; ?>
             @endif
 
-@endforeach
+        @endforeach
 
-    @if(Auth::check())
-        <a href=" {{ action('ProductsController@create') }} ">Add product</a><br>
-    @endif
 
-    <div> {!! $products->render() !!} </div>
-
-    @endif
 
     </div>
+
+  
+
+    @endif
+{{--<a href=" {{ action('ProductsController@create') }} ">Add product</a>--}}
+
 
 @endsection

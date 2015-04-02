@@ -15,6 +15,7 @@ Route::get('/', 'ProductsController@index');
 
 Route::get('home', 'HomeController@index');
 
+
 Route::get('superadmin/createadmin', 'AdminController@create');
 
 Route::delete('superadmin/{id}', 'AdminController@destroy');
@@ -27,17 +28,21 @@ Route::get('superadmin','AdminController@index');
 
 Route::post('admin', 'AdminController@store');
 
-Route::get('products', 'ProductsController@index');
 
-Route::get('products/create', 'ProductsController@create');
+// Route::get('products', 'ProductsController@index');
 
-Route::post('products', 'ProductsController@store');
+// Route::get('products/create', 'ProductsController@create');
 
-Route::get('products/pages/{id}','ProductsController@showpages');
+// Route::post('products', 'ProductsController@store');
 
-Route::get('products/{id}', 'ProductsController@show');
+// Route::get('products/pages/{id}','ProductsController@showpages');
 
-//Route::resource('products', 'ProductsController');
+// Route::get('products/{id}', 'ProductsController@show');
+
+
+Route::get('category/{slug}', 'ProductsController@category');
+Route::resource('products', 'ProductsController');
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

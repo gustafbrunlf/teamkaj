@@ -29,8 +29,9 @@ class ProductsController extends Controller {
 	public function index()
 	{
     	$products = Product::paginate(12);
+    	$categories = Category::all();
 
-		return view('pages.products',compact('products'));
+		return view('pages.products', compact('products', 'categories'));
 	}
 
 	/**
@@ -169,6 +170,24 @@ class ProductsController extends Controller {
 	}
 
 
+	public function category($slug)
+	{
+		$category = Category::where('slug', '=', $slug)->firstOrFail();
+		$categories = Category::all();
+		$products = $category->products;
+
+		return view('pages.categories', compact('category', 'categories', 'products'));
+	}
+
+
+	public function articleNumber()
+	{
+		$last = Product::orderBy('artNo', 'desc')->first();
+		$newArtNo = ($last->artNo)+1;
+		return $newArtNo;
+	}
+
+
 	/**
 	 * Remove the specified resource from storage.
 	 *
@@ -184,20 +203,6 @@ class ProductsController extends Controller {
 	}
 
 
-	public function category($name)
-	{
-		$category = Category::where('name', '=', $name)->firstOrFail();
-
-		return view('pages.categories', ['category' => $category]);
-	}
-
-
-	public function articleNumber()
-	{
-		$last = Product::orderBy('artNo', 'desc')->first();
-		$newArtNo = ($last->artNo)+1;
-		return $newArtNo;
-	}
 
 
 }

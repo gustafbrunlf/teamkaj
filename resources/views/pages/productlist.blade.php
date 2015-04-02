@@ -1,41 +1,14 @@
-@extends('master')
-
-
-@section('dropdown')
-
- <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categories<span class="caret"></span></a>
-    <ul class="dropdown-menu" role="menu">
-       
-    @foreach($categories as $categories)
-       <li><a href="{{action('ProductsController@category', $categories->slug)}}">{{$categories->name}}</a></li>
-    @endforeach
-
-    </ul>
-</li>
-
-@endsection
-
-
-@section('body')
-
-    <div class="row">
-        <div class="col-xs-12">
-            <h2>All of our fucking Products</h2>
-        </div>
-    </div>
-    
     @if(count($products))
     <?php $x = 1 ;
         $items = count($products);
     ?>
     <div class="row">
-
-        @foreach($products as $product)
-
-            @if($x === 1)
-            <div class="row">
-            @endif
+  
+        @foreach($array as $product)
+        
+        @if($x === 1)
+        <div class="row">
+        @endif
 
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                 <a href="{{action('ProductsController@show', [$product->artNo])}}">
@@ -75,16 +48,10 @@
                 <?php $x++; ?>
             @endif
 
-@endforeach
-
-    @if(Auth::check())
-        <a href=" {{ action('ProductsController@create') }} ">Add product</a><br>
-    @endif
-
-    <div> {!! $products->render() !!} </div>
-
-    @endif
+        @endforeach
 
     </div>
 
-@endsection
+     {!! $products->render() !!}
+
+    @endif
