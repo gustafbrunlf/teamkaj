@@ -1,14 +1,8 @@
-    @if(count($products))
-    <?php $x = 1 ;
-        $items = count($products);
-    ?>
-    <div class="row">
-  
-        @foreach($array as $product)
-        
-        @if($x === 1)
-        <div class="row">
-        @endif
+@foreach(array_chunk($products->all(), 4) as $row)
+
+    <div class='row'>   
+
+        @foreach($row as $product) 
 
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                 <a href="{{action('ProductsController@show', [$product->artNo])}}">
@@ -28,7 +22,7 @@
                     Price: {{$product->price}} SEK</p>
 
                     @if($product->categories->isEmpty())
-                        <p>Uncategoriezed</p>
+                        <p>Uncategorized</p>
                     @else
                         <p>Under: 
                         @foreach($product->categories as $categories)
@@ -39,19 +33,12 @@
                     
                 </div>
                 </a>
+
             </div>
-          
-            @if($x === 4 || $x===$items)
-                </div>
-                <?php $x = 1; ?>
-            @else
-                <?php $x++; ?>
-            @endif
 
         @endforeach
 
+
     </div>
 
-     {!! $products->render() !!}
-
-    @endif
+        @endforeach
