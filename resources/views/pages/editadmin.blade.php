@@ -14,25 +14,7 @@
 
             {!! Form::model($user, ['method' => 'PATCH', 'action' => ['AdminController@update', $user->id]]) !!}
 
-            <div class="form-group">
-
-            {!! Form::label('name', 'Name:') !!}
-            {!! Form::text('name', null, ['class' => 'form-control']) !!}
-
-            </div>
-
-            <div class="form-group">
-
-                {!! Form::label('email', 'E-mail:') !!}
-                {!! Form::text('email', null, ['class' => 'form-control']) !!}
-
-            </div>
-
-            <div class="form-group">
-
-                {!! Form::submit('Update Admin', ['class' => 'btn btn-primary form-control']) !!}
-
-            </div>
+            @include('pages._adminform', ['submitButtonText' => 'Add admin'])
 
             {!! Form::close() !!}
 

@@ -36,7 +36,7 @@ class AdminController extends Controller {
 	 */
 	public function create()
 	{
-        return view('pages/createadmin');
+        return view('pages.createadmin');
 	}
 
 	/**
