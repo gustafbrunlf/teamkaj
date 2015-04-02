@@ -32,7 +32,7 @@
 
                 {!! Form::label('password', 'Password:') !!}
                 {!! Form::input('password', 'password', null, ['class' => 'form-control']) !!}
-            
+
             </div>
 
             <div class="form-group">
@@ -45,7 +45,7 @@
 
             <br>
 
-            <a href=" {{ action('ProductsController@index') }} ">Back</a>
+            <a href=" {{ action('AdminController@index') }} ">Back</a>
 
             @include('errors.list')
 

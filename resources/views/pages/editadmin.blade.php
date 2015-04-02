@@ -14,7 +14,7 @@
 
             {!! Form::model($user, ['method' => 'PATCH', 'action' => ['AdminController@update', $user->id]]) !!}
 
-            @include('pages._adminform', ['submitButtonText' => 'Add admin'])
+            @include('pages._adminform', ['submitButtonText' => 'Update admin'])
 
             {!! Form::close() !!}
 

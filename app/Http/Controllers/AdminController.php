@@ -24,7 +24,7 @@ class AdminController extends Controller {
 	 */
 	public function index()
 	{
-		$admins = User::where('admin', '=', '1')->get();
+		$admins = User::where('user_type', '=', '1')->get();
 
 		return view('pages.superadmin',compact('admins'));
 	}
@@ -54,7 +54,7 @@ class AdminController extends Controller {
             'password'=>$password
         ]);
 
-        $user->admin = 1;
+        $user->user_type = 1;
         $user->save();
 
         return redirect('superadmin');

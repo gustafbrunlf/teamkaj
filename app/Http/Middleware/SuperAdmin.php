@@ -14,7 +14,7 @@ class SuperAdmin {
 	public function handle($request, Closure $next)
 	{
 
-        if(\Auth::guest() || \Auth::user()->admin != 0)
+        if(\Auth::guest() || \Auth::user()->user_type != 0)
         {
             return redirect('products');
         }
