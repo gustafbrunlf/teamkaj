@@ -78,11 +78,9 @@
 
     <div class="container" id="content">
 
-        <div class="row">
-            <div class="col-xs-12">
+        
                 @yield('body')
-            </div>
-        </div>
+            
 
     </div>
 
