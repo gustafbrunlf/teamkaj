@@ -21,7 +21,7 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <h2>All of our fucking Products</h2>
+            <h2>All of our fucking {{$category->name}} Products</h2>
         </div>
     </div>
     
