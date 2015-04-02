@@ -19,7 +19,8 @@ class CreateProductsTable extends Migration {
             $table->double('price', 15, 8);
             $table->integer('stock');
             $table->string('description', 500);
-            $table->string('picture', 255);
+            $table->string('artNo', 100);
+            $table->string('picture', 255)->default('includes/baseProduct.png');
 			$table->timestamps();
 		});
 	}
