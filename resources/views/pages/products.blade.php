@@ -27,7 +27,7 @@
     
     @if(count($products))     
 
-    @include('pages.productlist')
+    @include('pages._productlist')
 
 
     <div> {!! $products->render() !!} </div>
