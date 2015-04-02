@@ -81,7 +81,7 @@ class AdminController extends Controller {
 	{
 		$user = User::where("id", "=" , $id)->firstOrFail();
 
-		return view('pages.editSuperUser',compact('user'));
+		return view('pages.editadmin',compact('user'));
 	}
 
 	/**
