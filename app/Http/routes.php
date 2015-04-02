@@ -15,7 +15,7 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-Route::get('products/createadmin', 'AdminController@create');
+Route::get('superadmin/createadmin', 'AdminController@create');
 
 Route::delete('superadmin/{id}', 'AdminController@destroy');
 
