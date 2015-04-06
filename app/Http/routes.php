@@ -1,5 +1,6 @@
 <?php
-
+use View;
+use App\Category;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -10,6 +11,10 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+View::composer('*', function($view)
+{
+    $view->with('categoriesmenu', Category::all());
+});
 
 Route::get('/', 'ProductsController@index');
 
@@ -40,7 +45,7 @@ Route::post('admin', 'AdminController@store');
 // Route::get('products/{id}', 'ProductsController@show');
 
 
-Route::get('category/{slug}', 'ProductsController@category');
+Route::get('category/{slug}', 'CategoriesController@show');
 Route::resource('products', 'ProductsController');
 
 
