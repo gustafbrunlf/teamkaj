@@ -1,5 +1,9 @@
 @extends('master')
 
+@section('title')
+Team Kaj - {{$product->name}}
+@endsection
+
 @section('body')
 
     <div class="row">

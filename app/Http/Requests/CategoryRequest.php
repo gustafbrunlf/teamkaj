@@ -22,9 +22,9 @@ class CategoryRequest extends Request {
 	public function rules()
 	{
 
-				$rules = [
-            'name' => 'required|unique:categories|min:2',
-            'slug' => 'required|unique:categories|min:2'
+		$rules = [
+	            'name' => 'required|unique:categories|min:2',
+	            'slug' => 'required|unique:categories|min:2'
 		];
 
 		return $rules;

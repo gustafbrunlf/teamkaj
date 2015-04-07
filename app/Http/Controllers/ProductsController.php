@@ -171,16 +171,7 @@ class ProductsController extends Controller {
 	}
 
 
-	public function category($slug)
-	{
-		$category = Category::where('slug', '=', $slug)->firstOrFail();
-		$categories = Category::all();
-		$products = $category->products;
-
-		return view('pages.categories', compact('category', 'categories', 'products'));
-	}
-
-
+	/* Genererar ett nytt artikelnummer som skickas med i store-funktionen */
 	public function articleNumber()
 	{
 		$last = Product::orderBy('artNo', 'desc')->first();

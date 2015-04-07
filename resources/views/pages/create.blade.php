@@ -18,11 +18,12 @@
 
             {!! Form::close() !!}
 
+            @include('errors.list')
+
             <br>
 
             <a href=" {{ action('ProductsController@index') }} ">Back</a>
 
-            @include('errors.list')
 
         </div>
 
