@@ -31,7 +31,7 @@
                     <li><a href="{{ url('/auth/login') }}">Login</a></li>
                 @else
                     <li><a href="{{ url('products/create') }}">Create new Product</a></li>
-                    <li><a href="{{ url('categories/create') }}">Create new Category</a></li>
+                    <li><a href="{{ url('categories/create') }}">Edit Categories</a></li>
 
 
                     <li class="dropdown">
