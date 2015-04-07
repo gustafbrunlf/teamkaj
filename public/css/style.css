@@ -93,21 +93,6 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 	padding-left: 0px;
 }
 
-/*#side-menu {
-	position: fixed;
-	height: 100%;
-	max-width: 200px;
-	min-width: 165px;
-	padding-top: 40px;
-	background: #DDD;
-	-o-box-shadow: 1px 0px 2px #bbb;
-	-moz-box-shadow: 1px 0px 2px #bbb;
-	-webkit-box-shadow: 1px 0px 2px #bbb;
-	box-shadow: 1px 0px 2px #bbb;
-	text-align: center;
-} 
-*/
-
 
 /* PRODUCTS */
 
@@ -141,7 +126,10 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 		width: 60%;
 	}
 
-
+.del_edit {
+	text-align: center;
+	margin-bottom: 10px;
+}
 
 /* SHOW */
 
