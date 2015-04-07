@@ -22,7 +22,6 @@
                     @foreach($categoriesmenu as $categories)
                        <li><a href="{{action('CategoriesController@show', $categories->slug)}}">{{$categories->name}}</a></li>
                     @endforeach
-
                     </ul>
                 </li>
             </ul>       
