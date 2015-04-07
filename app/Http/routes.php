@@ -45,7 +45,11 @@ Route::post('admin', 'AdminController@store');
 // Route::get('products/{id}', 'ProductsController@show');
 
 
-Route::get('category/{slug}', 'CategoriesController@show');
+// Route::get('category/{slug}', 'CategoriesController@show');
+
+
+Route::resource('categories', 'CategoriesController');
+
 Route::resource('products', 'ProductsController');
 
 

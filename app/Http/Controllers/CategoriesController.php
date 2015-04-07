@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers;
 use App\Category;
+use App\Product;
 use App\Http\Requests;
+use App\Http\Requests\CategoryRequest;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
@@ -14,7 +16,10 @@ class CategoriesController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$products = Product::paginate(12);
+    	$categories = Category::all();
+
+		return view('pages.products', compact('products', 'categories'));
 	}
 
 	/**
@@ -24,7 +29,7 @@ class CategoriesController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return view('pages.createCategory');
 	}
 
 	/**
@@ -32,9 +37,11 @@ class CategoriesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(CategoryRequest $request)
 	{
-		//
+		$categories = Category::create($request->all());
+
+		return redirect('products');
 	}
 
 	/**
