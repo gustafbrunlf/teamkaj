@@ -1,4 +1,5 @@
 <?php namespace App\Providers;
+use App\Category;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -11,7 +12,10 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		//
+		view()->composer('master', function($view)
+		{
+		    $view->with('categoriesmenu', Category::all());
+		});
 	}
 
 	/**

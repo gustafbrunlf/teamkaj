@@ -11,10 +11,7 @@ use App\Category;
 | and give it the controller to call when that URI is requested.
 |
 */
-View::composer('*', function($view)
-{
-    $view->with('categoriesmenu', Category::all());
-});
+
 
 Route::get('/', 'ProductsController@index');
 
