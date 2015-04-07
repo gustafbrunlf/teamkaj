@@ -4,12 +4,11 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <h2>Edit product</h2>
+            <h2>Edit category</h2>
         </div>
     </div>
 
     <div class="row">
-
         <div class="col-md-8 form">
 
             {!! Form::model($category, ['method' => 'PATCH', 'action' => ['CategoriesController@update', $category->id]]) !!}
@@ -22,19 +21,22 @@
 
             {!! Form::open(['method' => 'DELETE', 'action' => ['CategoriesController@destroy', $category->id]]) !!}
                 @if(Auth::user()->user_type === 0)
-                    {!! Form::submit('Delete Category', ['class' => 'btn btn-danger form-control']) !!}
+                    {!! Form::submit('Delete category', ['class' => 'btn btn-danger form-control']) !!}
                 @endif
+                <br><br>
             {!! Form::close() !!}
 
 
             @include('errors.list')
 
-            <br>
-
-            <a href=" {{ action('CategoriesController@create') }} ">Back</a>
-
         </div>
+    </div>
 
+    <div class="row">
+        <div class="col-md-8 form">
+            <br>
+            <a href=" {{ action('CategoriesController@create') }} ">Back</a>
+        </div>
     </div>
 
 @endsection

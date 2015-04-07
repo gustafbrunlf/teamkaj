@@ -43,7 +43,7 @@ class CategoriesController extends Controller {
 	{
 		$categories = Category::create($request->all());
 
-		return redirect('products');
+		return redirect('categories/create');
 	}
 
 	/**

@@ -3,15 +3,25 @@
 @section('body')
 
 	<div class="row">
-        <div class="col-xs-12">
-            <h2>Create catgory</h2>
-        </div>
-    </div>
+        <div class="col-md-8 edit_list_cats">
+        	<h2>Edit categories</h2>
 
-    <div class="row">
+        	<ul>
+	        	@foreach($categories as $category)
+
+	        		<a href="{{action('CategoriesController@edit', [$category->slug])}}"><li>{{$category->name}} <span class="edit">EDIT</span></li></a>
+
+	        	@endforeach
+        	</ul>
+		</div>
+	</div>
+
+	<div class="row">
         <div class="col-md-8 form">
+
+        	<h2>Create new category</h2>
 			{!! Form::open(['url' => 'categories']) !!}
-			@include('pages._createCategoryForm',['submitButtonText' => 'Create Category'])
+			@include('pages._createCategoryForm',['submitButtonText' => 'Add Category'])
 			{!! Form::close()!!}
 
 			@include('errors.list')
@@ -20,27 +30,9 @@
 
 	<div class="row">
         <div class="col-md-8">
-        	<ul>
-	        	@foreach($categories as $category)
-
-	        		<li><a href="{{action('CategoriesController@edit', [$category->slug])}}">{{$category->name}}</a></li>
-
-	        	@endforeach
-        	</ul>
-		</div>
-	</div>
-
-
-
-            <br>
-
+        	<br>
             <a href=" {{ action('ProductsController@index') }} ">Back</a>
-
-
         </div>
-
     </div>
-
-
 
 @stop
