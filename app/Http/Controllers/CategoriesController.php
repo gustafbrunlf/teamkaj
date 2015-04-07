@@ -29,7 +29,9 @@ class CategoriesController extends Controller {
 	 */
 	public function create()
 	{
-		return view('pages.createCategory');
+		$categories = Category::all();
+
+		return view('pages.createCategory', compact('categories', $categories));
 	}
 
 	/**
@@ -66,9 +68,11 @@ class CategoriesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($slug)
 	{
-		//
+		$category = Category::where('slug', '=', $slug)->firstOrFail();
+	
+		return view('pages.editCategory', compact('category', $category));
 	}
 
 	/**
@@ -77,9 +81,12 @@ class CategoriesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, CategoryRequest $request)
 	{
-		//
+		$category = Category::where('id', '=', $id)->firstOrFail();
+	    $category->update($request->all());
+
+	    return redirect('categories/create');
 	}
 
 	/**
@@ -90,7 +97,10 @@ class CategoriesController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$category = Category::where('id', '=', $id)->firstOrFail();
+	    $category->delete();
+
+	    return redirect('categories/create');
 	}
 
 
