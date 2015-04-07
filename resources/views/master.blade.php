@@ -46,9 +46,16 @@
 
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('products/') }}">Home</a></li>
-                    
-                        @section('dropdown')
-                        @show
+ <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categories<span class="caret"></span></a>
+    <ul class="dropdown-menu" role="menu">
+       
+    @foreach($categoriesmenu as $categories)
+       <li><a href="{{action('CategoriesController@show', $categories->slug)}}">{{$categories->name}}</a></li>
+    @endforeach
+
+    </ul>
+</li>
                 </ul>       
 
 

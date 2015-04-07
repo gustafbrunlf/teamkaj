@@ -1,5 +1,5 @@
 <?php namespace App\Http\Controllers;
-
+use App\Category;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -46,8 +46,11 @@ class CategoriesController extends Controller {
 	public function show($slug)
 	{
 		
-		$product = Product::where('', '=', $)->get();
-		return view('pages.products', compact('product'));
+		$category = Category::where('slug', '=', $slug)->firstOrFail();
+		$categories = Category::all();
+		$products = $category->products;
+
+		return view('pages.categories', compact('category', 'categories', 'products'));
 	}
 
 	/**
