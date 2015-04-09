@@ -120,8 +120,9 @@ class ProductsController extends Controller {
 
 	public function saveImage($file,$destination){
 
-      		$newfile = Image::make($file)->fit(300,null, function ($constraint) {
+      		$newfile = Image::make($file)->resize(300,null, function ($constraint) {
    			 $constraint->aspectRatio();
+   			 $constraint->upsize();
 			})->save($destination);
 
 			return;
