@@ -14,6 +14,10 @@
 
     @include('pages._productlist')
 
+    @else
+
+    There's no {{$category->name}} products yet...
+
     @endif
 
 

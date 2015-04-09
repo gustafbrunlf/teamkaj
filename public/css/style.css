@@ -80,6 +80,9 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 	.navbar-default .navbar-brand {
 		color: #5CE0E5;
 	}
+		.navbar-default .navbar-brand:hover {
+			color: #5CE0E5;
+		}
 
 	.navbar-default .navbar-nav>.open>a,
 	 .navbar-default .navbar-nav>.open>a:focus,
@@ -134,6 +137,24 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 	text-align: center;
 	margin-bottom: 10px;
 }
+
+.label-info {
+  background-color: #5CE0E5;
+}
+
+.btn-default {
+  color: #fff;
+  background-color: #444;
+  border-color: #000;
+}
+	.btn-default:hover {
+	  color: #fff;
+	  background-color: #222;
+	  border-color: #000;
+	}
+
+
+
 
 /* SHOW */
 
