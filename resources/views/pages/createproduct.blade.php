@@ -4,7 +4,7 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <h2>Edit product</h2>
+            <h2>Create product</h2>
         </div>
     </div>
 
@@ -12,17 +12,18 @@
 
         <div class="col-md-8 form">
 
-            {!! Form::model($product, ['method' => 'PATCH', 'files' => 'true', 'action' => ['ProductsController@update', $product->artNo]]) !!}
+            {!! Form::open(['url' => 'products', 'files' => 'true']) !!}
 
-            @include('pages._form', ['submitButtonText' => 'Update product'])
+            @include('pages._productform', ['submitButtonText' => 'Add product'])
 
             {!! Form::close() !!}
+
+            @include('errors.list')
 
             <br>
 
             <a href=" {{ action('ProductsController@index') }} ">Back</a>
 
-            @include('errors.list')
 
         </div>
 

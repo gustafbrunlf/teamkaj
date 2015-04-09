@@ -16,18 +16,19 @@ Route::get('/', 'ProductsController@index');
 Route::get('home', 'HomeController@index');
 
 
-Route::get('superadmin/createadmin', 'AdminController@create');
+//Route::get('superadmin/createadmin', 'AdminController@create');
+//
+//Route::delete('superadmin/{id}', 'AdminController@destroy');
+//
+//Route::patch('superadmin/{id}', 'AdminController@update');
+//
+//Route::get('superadmin/{id}/edit', 'AdminController@edit');
+//
+//Route::get('superadmin','AdminController@index');
+//
+//Route::post('superadmin', 'AdminController@store');
 
-Route::delete('superadmin/{id}', 'AdminController@destroy');
-
-Route::patch('superadmin/{id}', 'AdminController@update');
-
-Route::get('superadmin/{id}/edit', 'AdminController@edit');
-
-Route::get('superadmin','AdminController@index');
-
-Route::post('admin', 'AdminController@store');
-
+Route::resource('superadmin', 'AdminController');
 
 // Route::get('products', 'ProductsController@index');
 
@@ -35,17 +36,21 @@ Route::post('admin', 'AdminController@store');
 
 // Route::post('products', 'ProductsController@store');
 
-// Route::get('products/pages/{id}','ProductsController@showpages');
+// Route::get('products/pages/{slug}','ProductsController@showpages');
 
-// Route::get('products/{id}', 'ProductsController@show');
+// Route::get('products/{slug}/edit', 'ProductsController@edit');
 
+// Route::patch('products/{slug}', 'ProductsController@update');
+
+// Route::get('products/{slug}', 'ProductsController@show');
+
+// Route::delete('products/{slug}', 'ProductsController@destroy');
+
+Route::resource('products', 'ProductsController');
 
 // Route::get('category/{slug}', 'CategoriesController@show');
 
-
 Route::resource('categories', 'CategoriesController');
-
-Route::resource('products', 'ProductsController');
 
 
 Route::controllers([

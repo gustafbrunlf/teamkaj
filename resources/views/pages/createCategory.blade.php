@@ -21,7 +21,7 @@
 
         	<h2>Create new category</h2>
 			{!! Form::open(['url' => 'categories']) !!}
-			@include('pages._createCategoryForm',['submitButtonText' => 'Add Category'])
+			@include('pages._categoryform',['submitButtonText' => 'Add Category'])
 			{!! Form::close()!!}
 
 			@include('errors.list')

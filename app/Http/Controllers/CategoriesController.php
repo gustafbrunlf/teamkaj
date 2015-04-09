@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class CategoriesController extends Controller {
 
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -31,7 +36,7 @@ class CategoriesController extends Controller {
 	{
 		$categories = Category::all();
 
-		return view('pages.createCategory', compact('categories', $categories));
+		return view('pages.createcategory', compact('categories', $categories));
 	}
 
 	/**
@@ -72,7 +77,7 @@ class CategoriesController extends Controller {
 	{
 		$category = Category::where('slug', '=', $slug)->firstOrFail();
 	
-		return view('pages.editCategory', compact('category', $category));
+		return view('pages.editcategory', compact('category', $category));
 	}
 
 	/**
