@@ -90,7 +90,7 @@ class AdminController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id ,EditAdminRequest $request)
+	public function update($id, EditAdminRequest $request)
 	{
 		$admin = User::where("id", "=" , $id)->firstOrFail();
 

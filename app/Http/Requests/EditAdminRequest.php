@@ -21,10 +21,17 @@ class EditAdminRequest extends Request {
 	 */
 	public function rules()
 	{
-		return [
-		            'name' => 'required|max:255',
-            		'email' => 'required|email|max:255|unique:users',
+		$rules = [
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
 		];
+
+        if(Request::isMethod('patch')) {
+            $rules['name'] = 'required';
+            $rules['email'] = 'required|email';
+        }
+
+        return $rules;
 	}
 
 }

@@ -89,6 +89,9 @@ class ProductsController extends Controller {
 	{
 
 		$product = Product::where('artNo', '=', $artNo)->firstOrFail();
+
+
+
 		return view('pages.showproducts', compact('product'));
 	}
 

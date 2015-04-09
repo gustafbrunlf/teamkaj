@@ -26,6 +26,7 @@ class AdminRequest extends Request {
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6',
 		];
+
 	}
 
 }
