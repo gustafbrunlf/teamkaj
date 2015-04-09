@@ -12,7 +12,7 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		view()->composer('master', function($view)
+		view()->composer('pages._header', function($view)
 		{
 		    $view->with('categoriesmenu', Category::all());
 		});
