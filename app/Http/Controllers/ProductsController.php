@@ -88,12 +88,19 @@ class ProductsController extends Controller {
 	public function show($artNo)
 	{
 
-		$product = Product::where('artNo', '=', $artNo)->firstOrFail();
-		
+		$product = Product::where('artNo', '=', $artNo)->firstOrFail();		
 		$category = $product->getCategoryNames();
-		$getSimilar = Category::whereIn('name', $category)->firstOrFail();
-		$similar = $getSimilar->getSimilarProducts();
 
+		if($category)
+		{
+			$getSimilar = Category::whereIn('name', $category)->firstOrFail();
+			$similar = $getSimilar->getSimilarProducts();	
+		}
+		else
+		{
+			$similar = [];		
+		}
+		
 		return view('pages.showproducts', compact('product', 'similar'));
 	}
 
