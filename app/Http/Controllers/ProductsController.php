@@ -43,7 +43,7 @@ class ProductsController extends Controller {
 	public function create()
 	{
 		$categories = Category::lists('name', 'id');
-		return view('pages.create', ['categories' => $categories]);
+		return view('pages.createproduct', ['categories' => $categories]);
 	}
 
 
@@ -89,7 +89,7 @@ class ProductsController extends Controller {
 	{
 
 		$product = Product::where('artNo', '=', $artNo)->firstOrFail();
-		return view('pages.show', compact('product'));
+		return view('pages.showproducts', compact('product'));
 	}
 
 
@@ -105,7 +105,7 @@ class ProductsController extends Controller {
 		$categories = Category::lists('name', 'id');
 
 		// dd($product, $categories);
-		return view('pages.edit', ['product' => $product, 'categories' => $categories]);
+		return view('pages.editproduct', ['product' => $product, 'categories' => $categories]);
 	}
 
 	/**

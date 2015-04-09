@@ -13,7 +13,7 @@
 
             {!! Form::model($category, ['method' => 'PATCH', 'action' => ['CategoriesController@update', $category->id]]) !!}
 
-            @include('pages._createCategoryForm', ['submitButtonText' => 'Update category'])
+            @include('pages._categoryform', ['submitButtonText' => 'Update category'])
 
             {!! Form::close() !!}
 
