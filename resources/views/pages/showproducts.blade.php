@@ -25,13 +25,11 @@ Team Kaj - {{$product->name}}
                 <p><span class="bold">Price: </span> {{$product->price}} SEK</p>
 
                 @if($product->categories->isEmpty())
-                    <p>Uncategoriezed</p>
-                @else
-                    <p><span class="bold">Under:</span> 
-                    @foreach($product->categories as $categories)
-                        {{$categories->name}}
-                    @endforeach
-                    </p>
+                         <span class="label label-default">Uncategorized</span>
+                    @else 
+                        @foreach($product->categories as $categories)
+                            <a href="{{action('CategoriesController@show', $categories->slug)}}"><span class="label label-info">{{$categories->name}}</span></a>
+                        @endforeach
                 @endif
             </div>
         </div>

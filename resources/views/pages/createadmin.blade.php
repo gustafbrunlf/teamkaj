@@ -12,7 +12,7 @@
 
         <div class="col-md-8 form">
 
-            {!! Form::open(['url' => 'admin']) !!}
+            {!! Form::open(['url' => 'superadmin']) !!}
 
             @include('pages._adminform', ['submitButtonText' => 'Create admin'])
 

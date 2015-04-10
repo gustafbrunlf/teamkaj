@@ -17,7 +17,7 @@
             {!!Form::open(["method" => "DELETE","action" => ["AdminController@destroy",$admin->id]])!!}
 
             <div class="btn-group">
-                <a href="{{action('AdminController@edit',$admin->id)}}" class="btn btn-success">Edit Admin</a>
+                <a href="{{action('AdminController@edit',$admin->id)}}" class="btn btn-default">Edit Admin</a>
                 {!! Form::submit("Delete Admin",["class"=>"btn btn-danger"])!!}
             </div>
             <hr>
@@ -34,5 +34,5 @@
         </div>
     </div>
 @endif
-<a href="{{action('AdminController@create')}}" class="btn btn-default">Add Admin</a>
+<a href="{{action('AdminController@create')}}" class="btn btn-primary">Add Admin</a>
 @stop

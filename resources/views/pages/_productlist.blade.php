@@ -22,13 +22,11 @@
                     Price: {{$product->price}} SEK</p>
 
                     @if($product->categories->isEmpty())
-                        <p>Uncategorized</p>
-                    @else
-                        <p>Under: 
+                         <span class="label label-default">Uncategorized</span>
+                    @else 
                         @foreach($product->categories as $categories)
-                            {{$categories->name}}
+                            <a href="{{action('CategoriesController@show', $categories->slug)}}"><span class="label label-info">{{$categories->name}}</span></a>
                         @endforeach
-                        </p>
                     @endif
                     
                 </div>
@@ -38,7 +36,7 @@
                 @if(Auth::check())
                 <div class="del_edit">
                     <div class="btn-group">
-                        <a href={{ action('ProductsController@edit', $product->artNo) }} class="btn btn-success">Edit Product</a>
+                        <a href={{ action('ProductsController@edit', $product->artNo) }} class="btn btn-default">Edit Product</a>
                         @if(Auth::user()->user_type === 0)
                         {!! Form::submit('Delete Product', ['class' => 'btn btn-danger']) !!}
                         @endif

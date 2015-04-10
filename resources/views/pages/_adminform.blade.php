@@ -12,7 +12,7 @@
 
 </div>
 
-@if(Request::path() === 'superadmin/createadmin')
+@if(Request::path() === 'superadmin/create')
     <div class="form-group">
 
         {!! Form::label('password', 'Password:') !!}
