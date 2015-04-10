@@ -88,11 +88,20 @@ class ProductsController extends Controller {
 	public function show($artNo)
 	{
 
-		$product = Product::where('artNo', '=', $artNo)->firstOrFail();
+		$product = Product::where('artNo', '=', $artNo)->firstOrFail();		
+		$category = $product->getCategoryNames();
 
-
-
-		return view('pages.showproducts', compact('product'));
+		if($category)
+		{
+			$getSimilar = Category::whereIn('name', $category)->firstOrFail();
+			$similar = $getSimilar->getSimilarProducts();	
+		}
+		else
+		{
+			$similar = [];		
+		}
+		
+		return view('pages.showproducts', compact('product', 'similar'));
 	}
 
 
@@ -196,6 +205,7 @@ class ProductsController extends Controller {
 
 	    return redirect('products');
 	}
+
 
 
 

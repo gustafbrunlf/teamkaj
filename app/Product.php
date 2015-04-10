@@ -25,4 +25,9 @@ class Product extends Model {
 	    return $this->categories->lists('id'); // ?
 	}
 
+	public function getCategoryNames()
+	{
+		return $this->categories->lists('name');
+	}
+
 }
