@@ -23,9 +23,7 @@ class CategoryRequest extends Request {
 	{
 
 		$rules = [
-	            'name' => 'required|unique:categories|min:2',
-	            'slug' => 'required|unique:categories|min:2'
-		];
+	            'name' => 'required|unique:categories|min:2'];
 
 		if(Request::isMethod('patch')) {
 	        $rules['name'] = 'required';

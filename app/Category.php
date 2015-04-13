@@ -17,7 +17,7 @@ class Category extends Model {
 
 	public function getSimilarProducts()
 	{
-		return $this->products->all();
+		return $this->products->all(); // INTE KLAR!!
 	}
 
 }
