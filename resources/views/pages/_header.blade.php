@@ -41,6 +41,7 @@
                         <ul class="dropdown-menu" role="menu">
                             @if(Auth::user()->user_type == 0)
                                 <li><a href="{{ action('AdminController@index') }}">Manage admins</a></li>
+                                <li><a href="{{ action('ProductStatusController@index') }}">Manage Products Visability</a></li>
                             @endif
                             <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
                         </ul>
