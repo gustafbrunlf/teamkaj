@@ -25,6 +25,10 @@ class Product extends Model {
 	{
 	    return $this->categories->lists('id'); // ?
 	}
+	public function owner(){
+
+		return $this->belongsTo('App\User');
+	}
 
 	public function getCategoryNames()
 	{

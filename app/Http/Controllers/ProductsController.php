@@ -7,6 +7,7 @@ use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
+use app\user;
 use Intervention\Image\Facades\Image;
 
 class ProductsController extends Controller {
@@ -54,26 +55,31 @@ class ProductsController extends Controller {
 	 * @return Response
 	 */
 	public function store(ProductRequest $request)
+
 	{
+
 		$slug = $this->slugify($request->name);
+		
+		$products = new Product($request->all());
+
+		$products->slug = $slug;
+
+		$catIds = $request->input('category_list');
+
 
 		if($request->file('picture'))
 		{
 			$newFileName = $this->getNewFileName($request->file('picture'));			
 			$this->saveImage($request->file('picture'),$newFileName);
-		
-			$products = Product::create($request->all());			
-			$products->update(['picture' => $newFileName, 'slug' => $slug]);
+	
+			$products->picture = $newFileName;
 		}
-		else
-		{
-			$products = Product::create($request->all());
-			$products->update(['slug' => $slug]);					
-		}
+			
+		\Auth::user()->product()->save($products);				
 		
-		$catIds = $request->input('category_list');
-
+		
 		$products->categories()->attach($catIds);
+
 
 		return redirect('products');
 	}
