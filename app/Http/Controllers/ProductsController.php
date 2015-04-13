@@ -55,7 +55,7 @@ class ProductsController extends Controller {
 	 */
 	public function store(ProductRequest $request)
 	{
-		$artNo = $this->articleNumber();
+		$slug = $this->slugify($request->name);
 
 		if($request->file('picture'))
 		{
@@ -63,12 +63,12 @@ class ProductsController extends Controller {
 			$this->saveImage($request->file('picture'),$newFileName);
 		
 			$products = Product::create($request->all());			
-			$products->update(['picture' => $newFileName, 'artNo' => $artNo]);
+			$products->update(['picture' => $newFileName, 'slug' => $slug]);
 		}
 		else
 		{
-			$products = Product::create($request->all());					
-			$products->update(['artNo' => $artNo]);
+			$products = Product::create($request->all());
+			$products->update(['slug' => $slug]);					
 		}
 		
 		$catIds = $request->input('category_list');
@@ -85,10 +85,10 @@ class ProductsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($artNo)
+	public function show($slug)
 	{
 
-		$product = Product::where('artNo', '=', $artNo)->firstOrFail();		
+		$product = Product::where('slug', '=', $slug)->firstOrFail();		
 		$category = $product->getCategoryNames();
 
 		if($category)
@@ -111,9 +111,9 @@ class ProductsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($artNo)
+	public function edit($slug)
 	{
-		$product = Product::where('artNo', '=', $artNo)->firstOrFail();
+		$product = Product::where('slug', '=', $slug)->firstOrFail();
 		$categories = Category::lists('name', 'id');
 
 		return view('pages.editproduct', ['product' => $product, 'categories' => $categories]);
@@ -149,10 +149,11 @@ class ProductsController extends Controller {
 	}
 
 
-	public function update($artNo, ProductRequest $request)
+	public function update($slug, ProductRequest $request)
 	{
-		$product = Product::where('artNo', '=', $artNo)->firstOrFail();
-		
+		$slug = $this->slugify($request->name);
+		$product = Product::where('slug', '=', $slug)->firstOrFail();
+
 		if($request->file('picture'))
 		{
 
@@ -166,12 +167,12 @@ class ProductsController extends Controller {
 			$this->saveImage($request->file('picture'),$newFileName);
 
 			$product->update($request->all());
-			
-			$product->update(['picture' => $newFileName]);
+			$product->update(['picture' => $newFileName, 'slug' => $slug]);
 		}
 		else
 		{
 			$product->update($request->all());
+			$product->update(['slug' => $slug]);
 		}
 
 		
@@ -183,13 +184,6 @@ class ProductsController extends Controller {
 	}
 
 
-	/* Genererar ett nytt artikelnummer som skickas med i store-funktionen */
-	public function articleNumber()
-	{
-		$last = Product::orderBy('artNo', 'desc')->first();
-		$newArtNo = ($last->artNo)+1;
-		return $newArtNo;
-	}
 
 
 	/**
@@ -205,7 +199,15 @@ class ProductsController extends Controller {
 
 	    return redirect('products');
 	}
+	
 
+
+	/* Generates a slug from the name */
+	public function slugify($name)
+	{
+		$slug = str_replace(" ", "-", $name);
+		return $slug;
+	}
 
 
 

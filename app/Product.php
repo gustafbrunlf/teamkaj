@@ -11,7 +11,8 @@ class Product extends Model {
 		'stock',
 		'description',
 		'picture',
-		'artNo'
+		'artNo',
+		'slug'
 
 	];
 

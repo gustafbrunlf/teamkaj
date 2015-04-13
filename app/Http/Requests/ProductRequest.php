@@ -26,10 +26,12 @@ class ProductRequest extends Request {
             'price' => 'required|integer',
             'stock' => 'required|integer',
             'image' => 'image|between:2,2000|mimes:jpg,jpeg,png,bmp,gif',
+            'artNo' => 'required|unique:products|min:5'
 		];
 
 		if(Request::isMethod('patch')) {
 	        $rules['name'] = 'required';
+	        $rules['artNo'] = 'required';
 	    }
 
 	    return $rules;
