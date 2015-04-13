@@ -114,4 +114,11 @@ class AdminController extends Controller {
 		return redirect('superadmin');
 	}
 
+    public function deleteadmin($id)
+    {
+        $admin = User::where("id", "=" , $id)->firstOrFail();
+
+        return view ('pages.deleteadmin', compact('admin'));
+    }
+
 }
