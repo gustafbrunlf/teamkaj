@@ -55,15 +55,14 @@ class ProductsController extends Controller {
 	 * @return Response
 	 */
 	public function store(ProductRequest $request)
+
 	{
 
 		$slug = $this->slugify($request->name);
-
-		$artNo = $this->articleNumber();
 		
 		$products = new Product($request->all());
 
-		$products->artno = $artNo;
+		$products->slug = $slug;
 
 		$catIds = $request->input('category_list');
 
