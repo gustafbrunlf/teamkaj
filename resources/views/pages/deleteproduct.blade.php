@@ -5,7 +5,7 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <h2>Are you sure you want to delete this product?</h2>
+            <h2>Are you sure you want to delete product: {{ $product->name }}?</h2>
         </div>
     </div>
 
