@@ -48,11 +48,13 @@ Route::resource('superadmin', 'AdminController');
 
 // Route::delete('products/{slug}', 'ProductsController@destroy');
 
-Route::get('products/confirmdelete/{slug}', 'ProductsController@confirmdelete');
+Route::get('products/deleteproduct/{slug}', 'ProductsController@deleteproduct');
 
 Route::resource('products', 'ProductsController');
 
 // Route::get('category/{slug}', 'CategoriesController@show');
+
+Route::get('categories/deletecategory/{slug}', 'CategoriesController@deletecategory');
 
 Route::resource('categories', 'CategoriesController');
 

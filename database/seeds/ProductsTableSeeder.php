@@ -19,6 +19,7 @@ class ProductsTableSeeder extends Seeder {
                 'artNo' => '100001',
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
+                'slug' => 'microwave-oven',
             ],
             [
                 'id' => 2,
@@ -29,6 +30,7 @@ class ProductsTableSeeder extends Seeder {
                 'artNo' => '100002',
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
+                'slug' => 'toaster',
             ],
             [
                 'id' => 3,
@@ -39,6 +41,7 @@ class ProductsTableSeeder extends Seeder {
                 'artNo' => '100003',
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
+                'slug' => 'dishwasher',
             ],
             [
                 'id' => 4,
@@ -49,6 +52,7 @@ class ProductsTableSeeder extends Seeder {
                 'artNo' => '100004',
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
+                'slug' => 'laptop',
             ],
             [
                 'id' => 5,
@@ -59,6 +63,7 @@ class ProductsTableSeeder extends Seeder {
                 'artNo' => '100005',
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
+                'slug' => 'headphones',
             ],
             [
                 'id' => 6,
@@ -69,6 +74,7 @@ class ProductsTableSeeder extends Seeder {
                 'artNo' => '100006',
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
+                'slug' => 'world-of-warcraft',
             ],
             [
                 'id' => 7,
@@ -79,6 +85,7 @@ class ProductsTableSeeder extends Seeder {
                 'artNo' => '100007',
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
+                'slug' => '3D-TV',
             ],
             [
                 'id' => 8,
@@ -89,6 +96,7 @@ class ProductsTableSeeder extends Seeder {
                 'artNo' => '100008',
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
+                'slug' => 'espresso-machine',
             ],
             [
                 'id' => 9,
@@ -99,6 +107,7 @@ class ProductsTableSeeder extends Seeder {
                 'artNo' => '100009',
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
+                'slug' => 'deep-fryer',
             ],
             [
                 'id' => 10,
@@ -109,6 +118,7 @@ class ProductsTableSeeder extends Seeder {
                 'artNo' => '100010',
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
+                'slug' => 'game-of-thrones,-season-5-box',
             ],
         );
 

@@ -20,7 +20,7 @@ class ProductsController extends Controller {
     {
         $this->middleware('auth', ['except' => [ 'category', 'show', 'index']]);
 
-        $this->middleware('admin', ['only' => ['destroy']]);
+        $this->middleware('admin', ['only' => ['destroy', 'deleteproduct']]);
     }
 
 	/**
@@ -200,8 +200,6 @@ class ProductsController extends Controller {
 
 	    return redirect('products');
 	}
-	
-
 
 	/* Generates a slug from the name */
 	public function slugify($name)
@@ -210,7 +208,7 @@ class ProductsController extends Controller {
 		return $slug;
 	}
 
-    public function confirmdelete($slug)
+    public function deleteproduct($slug)
     {
         $product = Product::where('slug', '=', $slug)->firstOrFail();
 

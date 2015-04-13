@@ -12,6 +12,8 @@ class CategoriesController extends Controller {
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
+
+        $this->middleware('admin', ['only' => ['create', 'store', 'edit', 'update', 'destroy', 'deletecategory']]);
     }
 
 	/**
@@ -113,6 +115,13 @@ class CategoriesController extends Controller {
 
 	    return redirect('categories/create');
 	}
+
+    public function deletecategory($id)
+    {
+        $category = Category::where('id', '=', $id)->firstOrFail();
+
+        return view('pages.deletecategory', compact('category'));
+    }
 
 
 	
