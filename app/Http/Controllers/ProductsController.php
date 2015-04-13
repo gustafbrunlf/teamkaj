@@ -20,7 +20,7 @@ class ProductsController extends Controller {
     {
         $this->middleware('auth', ['except' => [ 'category', 'show', 'index']]);
 
-        $this->middleware('admin', ['only' => ['destroy', 'confirmdelete']]);
+        $this->middleware('admin', ['only' => ['destroy', 'deleteproduct']]);
     }
 
 	/**

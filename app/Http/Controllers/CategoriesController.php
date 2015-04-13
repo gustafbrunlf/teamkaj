@@ -12,6 +12,8 @@ class CategoriesController extends Controller {
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
+
+        $this->middleware('admin', ['only' => ['create', 'store', 'edit', 'update', 'destroy', 'deletecategory']]);
     }
 
 	/**

@@ -4,7 +4,7 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <h2>Edit category</h2>
+            <h2>Edit category: {{ $category->name }}</h2>
         </div>
     </div>
 
