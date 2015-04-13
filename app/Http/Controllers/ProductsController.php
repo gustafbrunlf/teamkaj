@@ -208,7 +208,7 @@ class ProductsController extends Controller {
 		return $slug;
 	}
 
-    public function deleteproduct($artNo)
+    public function deleteproduct($slug)
     {
         $product = Product::where('slug', '=', $slug)->firstOrFail();
 

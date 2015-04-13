@@ -53,7 +53,7 @@ Team Kaj - {{$product->name}}
 
             <a href={{ action('ProductsController@edit', $product->slug) }} class="btn btn-default form-control">Edit Product</a>
 
-            <a href={{ action('ProductsController@confirmdelete', $product->slug) }} class="btn btn-danger form-control">Delete Product</a>
+            <a href={{ action('ProductsController@deleteproduct', $product->slug) }} class="btn btn-danger form-control">Delete Product</a>
 
         @endif
 
