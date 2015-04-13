@@ -114,6 +114,13 @@ class CategoriesController extends Controller {
 	    return redirect('categories/create');
 	}
 
+    public function deletecategory($id)
+    {
+        $category = Category::where('id', '=', $id)->firstOrFail();
+
+        return view('pages.deletecategory', compact('category'));
+    }
+
 
 	
 	/* Generates a slug from the name */
