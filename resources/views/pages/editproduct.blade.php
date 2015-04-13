@@ -12,7 +12,7 @@
 
         <div class="col-md-8 form">
 
-            {!! Form::model($product, ['method' => 'PATCH', 'files' => 'true', 'action' => ['ProductsController@update', $product->artNo]]) !!}
+            {!! Form::model($product, ['method' => 'PATCH', 'files' => 'true', 'action' => ['ProductsController@update', $product->slug]]) !!}
 
             @include('pages._productform', ['submitButtonText' => 'Update product'])
 

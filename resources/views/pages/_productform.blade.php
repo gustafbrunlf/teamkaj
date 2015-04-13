@@ -7,6 +7,13 @@
 
 <div class="form-group">
 
+    {!! Form::label('artNo', 'Article Number:') !!}
+    {!! Form::text('artNo', null, ['class' => 'form-control']) !!}
+
+</div>
+
+<div class="form-group">
+
     {!! Form::label('price', 'Price:') !!}
     {!! Form::input('number', 'price', null, ['class' => 'form-control']) !!}
 

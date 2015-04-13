@@ -11,7 +11,8 @@ class Product extends Model {
 		'stock',
 		'description',
 		'picture',
-		'artNo'
+		'artNo',
+		'slug'
 
 	];
 
@@ -23,6 +24,11 @@ class Product extends Model {
 	public function getCategoryListAttribute()
 	{
 	    return $this->categories->lists('id'); // ?
+	}
+
+	public function getCategoryNames()
+	{
+		return $this->categories->lists('name');
 	}
 
 }

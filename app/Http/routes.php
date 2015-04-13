@@ -28,6 +28,8 @@ Route::get('home', 'HomeController@index');
 //
 //Route::post('superadmin', 'AdminController@store');
 
+Route::get('superadmin/deleteadmin/{slug}', 'AdminController@deleteadmin');
+
 Route::resource('superadmin', 'AdminController');
 
 // Route::get('products', 'ProductsController@index');
@@ -45,6 +47,8 @@ Route::resource('superadmin', 'AdminController');
 // Route::get('products/{slug}', 'ProductsController@show');
 
 // Route::delete('products/{slug}', 'ProductsController@destroy');
+
+Route::get('products/confirmdelete/{slug}', 'ProductsController@confirmdelete');
 
 Route::resource('products', 'ProductsController');
 
