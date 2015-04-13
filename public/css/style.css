@@ -227,3 +227,17 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 	margin-right: 10px;
 	color: #EAEAEA;
 }
+
+/* TABLE ADMIN */
+
+table{
+    width: 100%;
+}
+
+th, td {
+    padding: 5px;
+}
+
+td{
+    width: 20%;
+}

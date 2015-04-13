@@ -12,12 +12,17 @@
 
 		@if(Auth::user()->user_type === 0)
 
-			<p>{{$admin->name}}</p>
-
-            <div class="btn-group">
-                <a href="{{action('AdminController@edit',$admin->id)}}" class="btn btn-default">Edit Admin</a>
-            </div>
-
+                <table style="width:100%">
+                    <thead>
+                        <th>Name:</th>
+                        <th>Last login:</th>
+                    </thead>
+                    <tr>
+                        <td>{{ $admin->name }}</td>
+                        <td>{{ $admin->last_login }}</td>
+                        <td><a href="{{action('AdminController@edit',$admin->id)}}" class="btn btn-default">Edit Admin</a></td>
+                    </tr>
+                </table>
             <hr>
 
 		@endif
