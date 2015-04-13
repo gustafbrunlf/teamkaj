@@ -89,17 +89,14 @@ class ProductsController extends Controller {
 	{
 
 		$product = Product::where('slug', '=', $slug)->firstOrFail();		
-		$category = $product->getCategoryNames();
+		$similar = [];
 
-		if($category)
-		{
-			$getSimilar = Category::whereIn('name', $category)firstOrFail();
-			$similar = $getSimilar->getSimilarProducts();	
-		}
-		else
-		{
-			$similar = [];		
-		}
+		dd(Product::
+            join('category_product', 'products.id', '=', 'category_product.product_id')
+            ->join('categories', 'category_product.category_id', '=', 'categories.id')
+            ->select('*')
+            ->where('products.name', '!=', $product->name)
+            ->get());
 		
 		return view('pages.showproducts', compact('product', 'similar'));
 

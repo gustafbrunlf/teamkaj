@@ -15,9 +15,4 @@ class Category extends Model {
 	    return $this->belongsToMany('App\Product');
 	}
 
-	public function getSimilarProducts($product)
-	{
-		return $this->products->whereNotIn('name', $product->name)->get(); // INTE KLAR!!
-	}
 
-}
