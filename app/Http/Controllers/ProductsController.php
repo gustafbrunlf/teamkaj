@@ -210,9 +210,9 @@ class ProductsController extends Controller {
 		return $slug;
 	}
 
-    public function confirmdelete($artNo)
+    public function confirmdelete($slug)
     {
-        $product = Product::where('artNo', '=', $artNo)->firstOrFail();
+        $product = Product::where('slug', '=', $slug)->firstOrFail();
 
         return view ('pages.deleteproduct', compact('product'));
     }
