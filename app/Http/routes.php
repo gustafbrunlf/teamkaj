@@ -11,6 +11,8 @@
 */
 
 
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/', 'ProductsController@index');
 
 Route::get('home', 'HomeController@index');
@@ -58,8 +60,13 @@ Route::get('categories/deletecategory/{slug}', 'CategoriesController@deletecateg
 
 Route::resource('categories', 'CategoriesController');
 
-
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Event::listen('auth.login', function($event)
+{
+    Auth::user()->last_login = new DateTime;
+    Auth::user()->save();
+});
