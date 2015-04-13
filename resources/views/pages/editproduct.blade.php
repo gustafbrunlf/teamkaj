@@ -20,7 +20,7 @@
 
             <br>
 
-            <a href=" {{ action('ProductsController@index') }} ">Back</a>
+            <a href="{{action('ProductsController@show', [$product->slug])}}">Back</a>
 
             @include('errors.list')
 
