@@ -129,6 +129,7 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 }
 	.product-img img {
 		height: 130px;
+		max-width: 100%;
 	}
 
 .del_edit {

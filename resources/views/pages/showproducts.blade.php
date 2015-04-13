@@ -26,7 +26,7 @@ Team Kaj - {{$product->name}}
 
                 @if($product->categories->isEmpty())
 
-                     <span class="label label-default">Uncategorized</span>
+                     <br>
                 @else 
                     @foreach($product->categories as $categories)
                         <a href="{{action('CategoriesController@show', $categories->slug)}}"><span class="label label-info">{{$categories->name}}</span></a>
