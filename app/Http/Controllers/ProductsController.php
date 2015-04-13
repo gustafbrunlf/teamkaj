@@ -87,6 +87,7 @@ class ProductsController extends Controller {
 	 */
 	public function show($slug)
 	{
+
 		$product = Product::where('slug', '=', $slug)->firstOrFail();		
 		$category = $product->getCategoryNames();
 
@@ -101,6 +102,7 @@ class ProductsController extends Controller {
 		}
 		
 		return view('pages.showproducts', compact('product', 'similar'));
+
 	}
 
 
@@ -191,9 +193,9 @@ class ProductsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($artNo)
+	public function destroy($id)
 	{
-		$product = Product::where('artNo', '=', $artNo)->firstOrFail();
+		$product = Product::where('id', '=', $id)->firstOrFail();
 	    $product->delete();
 
 	    return redirect('products');
@@ -207,6 +209,13 @@ class ProductsController extends Controller {
 		$slug = str_replace(" ", "-", $name);
 		return $slug;
 	}
+
+    public function confirmdelete($artNo)
+    {
+        $product = Product::where('artNo', '=', $artNo)->firstOrFail();
+
+        return view ('pages.deleteproduct', compact('product'));
+    }
 
 
 
