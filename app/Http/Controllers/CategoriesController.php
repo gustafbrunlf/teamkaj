@@ -46,7 +46,11 @@ class CategoriesController extends Controller {
 	 */
 	public function store(CategoryRequest $request)
 	{
+		$slug = $this->slugify($request->name);
+
 		$categories = Category::create($request->all());
+		$categories->update(['slug' => $slug]);					
+		
 
 		return redirect('categories/create');
 	}
@@ -88,7 +92,10 @@ class CategoriesController extends Controller {
 	public function update($id, CategoryRequest $request)
 	{
 		$category = Category::where('id', '=', $id)->firstOrFail();
+		$slug = $this->slugify($request->name);
+
 	    $category->update($request->all());
+	    $category->update(['slug' => $slug]);
 
 	    return redirect('categories/create');
 	}
@@ -105,6 +112,15 @@ class CategoriesController extends Controller {
 	    $category->delete();
 
 	    return redirect('categories/create');
+	}
+
+
+	
+	/* Generates a slug from the name */
+	public function slugify($name)
+	{
+		$slug = str_replace(" ", "-", $name);
+		return $slug;
 	}
 
 
