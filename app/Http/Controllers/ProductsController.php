@@ -89,24 +89,12 @@ class ProductsController extends Controller {
 	{
 
 		$product = Product::where('slug', '=', $slug)->firstOrFail();		
-		$categories = $product->getCategoryNames();
-		$productArray = [];
-		$similar = [];
+		$category = $product->getCategoryNames();
 
-		if($categories)
+		if($category)
 		{
-			foreach ($categories as $category) {
-				$categoryArray[] = $category;
-				$getSimilar = Category::whereIn('name', $categoryArray)->firstOrFail();
-				//dd($getSimilar);
-				$productArray = $getSimilar->getSimilarProducts();
-				dd($productArray);
-				$productArray = array_merge($productArray, $getSimilar->getSimilarProducts());
-				dd(array_search($product, $productArray));
-				unset($productArray[array_search($product, $productArray)]);
-
-			}
-			dd($productArray);
+			$getSimilar = Category::whereIn('name', $category)firstOrFail();
+			$similar = $getSimilar->getSimilarProducts();	
 		}
 		else
 		{
