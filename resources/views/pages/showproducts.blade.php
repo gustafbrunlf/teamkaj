@@ -29,10 +29,14 @@ Team Kaj - {{$product->name}}
                     @else 
                         @foreach($product->categories as $categories)
                             <a href="{{action('CategoriesController@show', $categories->slug)}}"><span class="label label-info">{{$categories->name}}</span></a>
+                        
                         @endforeach
                 @endif
+          
             </div>
+
         </div>
+            <a href={{ action('ProductsController@edit', $product->artNo) }} class="btn btn-default form-control">Edit Product</a>
     </div>
 
         <br><br>

@@ -31,12 +31,14 @@
                     
                 </div>
                 </a>
-                {!! Form::open(['method' => 'DELETE', 'action' => ['ProductsController@destroy', $product->artNo]]) !!}
+                
 
                 @if(Auth::check())
+                
                 <div class="del_edit">
                     <div class="btn-group">
-                        <a href={{ action('ProductsController@edit', $product->artNo) }} class="btn btn-default">Edit Product</a>
+                        {!! Form::open(['method' => 'DELETE', 'action' => ['ProductsController@destroy', $product->artNo]]) !!}
+                        
                         @if(Auth::user()->user_type == 0)
                         {!! Form::submit('Delete Product', ['class' => 'btn btn-danger']) !!}
                         @endif
