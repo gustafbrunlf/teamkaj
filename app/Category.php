@@ -14,10 +14,4 @@ class Category extends Model {
 	{
 	    return $this->belongsToMany('App\Product');
 	}
-
-	public function getSimilarProducts()
-	{
-		return $this->products->all(); // INTE KLAR!!
-	}
-
 }
