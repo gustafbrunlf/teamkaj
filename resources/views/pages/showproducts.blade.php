@@ -36,7 +36,7 @@ Team Kaj - {{$product->name}}
                 <h3>Related items:</h3>
                 @foreach($similar as $similar)
                     @unless($similar->name == $product->name)
-                        <a href="{{action('ProductsController@show', $similar->artNo)}}">
+                        <a href="{{action('ProductsController@show', $similar->slug)}}">
                         <div class="similar">
                             <img src="../{{$similar->picture}}">
                             <p><span class="bold">{{$similar->name}}</span></p>
@@ -48,7 +48,7 @@ Team Kaj - {{$product->name}}
             </div>
 
         </div>
-            <a href={{ action('ProductsController@edit', $product->artNo) }} class="btn btn-default form-control">Edit Product</a>
+            <a href={{ action('ProductsController@edit', $product->slug) }} class="btn btn-default form-control">Edit Product</a>
     </div>
 
         <br><br>

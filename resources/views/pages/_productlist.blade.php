@@ -5,7 +5,7 @@
         @foreach($row as $product) 
 
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                <a href="{{action('ProductsController@show', [$product->artNo])}}">
+                <a href="{{action('ProductsController@show', [$product->slug])}}">
                 <div class="product-container">            
                     <div class="product-img">
                         <img src="../{{$product->picture}}">
@@ -16,10 +16,10 @@
                     </div>
 
                     <p>
-
                     ArtNo: {{$product->artNo}} <br>
                     Stock: {{$product->stock}} pcs <br>
-                    Price: {{$product->price}} SEK</p>
+                    Price: {{$product->price}} SEK
+                    </p>
 
                     @if($product->categories->isEmpty())
                          <span class="label label-default">Uncategorized</span>

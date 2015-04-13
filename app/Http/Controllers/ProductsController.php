@@ -87,7 +87,6 @@ class ProductsController extends Controller {
 	 */
 	public function show($slug)
 	{
-
 		$product = Product::where('slug', '=', $slug)->firstOrFail();		
 		$category = $product->getCategoryNames();
 
@@ -151,8 +150,9 @@ class ProductsController extends Controller {
 
 	public function update($slug, ProductRequest $request)
 	{
-		$slug = $this->slugify($request->name);
 		$product = Product::where('slug', '=', $slug)->firstOrFail();
+
+		$slug = $this->slugify($request->name);
 
 		if($request->file('picture'))
 		{
@@ -173,13 +173,12 @@ class ProductsController extends Controller {
 		{
 			$product->update($request->all());
 			$product->update(['slug' => $slug]);
-		}
-
-		
+		}		
 
 		$product->categories()->sync($request->input('category_list'));
 
-		return redirect('products');
+
+		return redirect("products/{$slug}");
 
 	}
 
