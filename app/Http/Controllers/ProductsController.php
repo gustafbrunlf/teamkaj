@@ -93,7 +93,7 @@ class ProductsController extends Controller {
 
 		if($category)
 		{
-			$getSimilar = Category::whereIn('name', $category)->firstOrFail();
+			$getSimilar = Category::whereIn('name', $category)firstOrFail();
 			$similar = $getSimilar->getSimilarProducts();	
 		}
 		else
