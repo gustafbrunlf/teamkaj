@@ -25,6 +25,7 @@ Team Kaj - {{$product->name}}
                 <p><span class="bold">Price: </span> {{$product->price}} SEK</p>
 
                 @if($product->categories->isEmpty())
+
                      <span class="label label-default">Uncategorized</span>
                 @else 
                     @foreach($product->categories as $categories)
@@ -43,8 +44,11 @@ Team Kaj - {{$product->name}}
                         </a>
                     @endunless
                 @endforeach
+
             </div>
+
         </div>
+            <a href={{ action('ProductsController@edit', $product->artNo) }} class="btn btn-default form-control">Edit Product</a>
     </div>
 
         <br><br>
