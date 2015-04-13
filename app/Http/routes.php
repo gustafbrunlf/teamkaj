@@ -46,6 +46,8 @@ Route::resource('superadmin', 'AdminController');
 
 // Route::delete('products/{slug}', 'ProductsController@destroy');
 
+Route::get('products/confirmdelete/{slug}', 'ProductsController@confirmdelete');
+
 Route::resource('products', 'ProductsController');
 
 // Route::get('category/{slug}', 'CategoriesController@show');

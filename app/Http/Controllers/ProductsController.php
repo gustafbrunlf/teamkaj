@@ -87,10 +87,7 @@ class ProductsController extends Controller {
 	 */
 	public function show($artNo)
 	{
-
 		$product = Product::where('artNo', '=', $artNo)->firstOrFail();
-
-
 
 		return view('pages.showproducts', compact('product'));
 	}
@@ -189,13 +186,20 @@ class ProductsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($artNo)
+	public function destroy($id)
 	{
-		$product = Product::where('artNo', '=', $artNo)->firstOrFail();
+		$product = Product::where('id', '=', $id)->firstOrFail();
 	    $product->delete();
 
 	    return redirect('products');
 	}
+
+    public function confirmdelete($artNo)
+    {
+        $product = Product::where('artNo', '=', $artNo)->firstOrFail();
+
+        return view ('pages.deleteproduct', compact('product'));
+    }
 
 
 

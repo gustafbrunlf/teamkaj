@@ -36,7 +36,15 @@ Team Kaj - {{$product->name}}
             </div>
 
         </div>
+
+        @if(Auth::check())
+
             <a href={{ action('ProductsController@edit', $product->artNo) }} class="btn btn-default form-control">Edit Product</a>
+
+            <a href={{ action('ProductsController@confirmdelete', $product->artNo) }} class="btn btn-danger form-control">Delete Product</a>
+
+        @endif
+
     </div>
 
         <br><br>
