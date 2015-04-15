@@ -132,9 +132,9 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 		max-width: 100%;
 	}
 
-.del_edit {
-	text-align: center;
-	margin-bottom: 10px;
+.edit_btn {
+	position: justify;
+	float: right;
 }
 
 .label-info {
