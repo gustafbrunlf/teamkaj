@@ -128,7 +128,7 @@ class CategoriesController extends Controller {
 	/* Generates a slug from the name */
 	public function slugify($name)
 	{
-		$slug = str_replace(" ", "-", $name);
+		$slug = strtolower(str_replace(" ", "-", $name));
 		return $slug;
 	}
 
