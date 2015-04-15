@@ -22,6 +22,7 @@ class ProductsTableSeeder extends Seeder {
                 'updated_at' => new DateTime,
                 'slug' => 'microwave-oven',
                 'user_id' => 2,
+                'published' => 1,
             ],
             [
                 'id' => 2,
@@ -35,6 +36,7 @@ class ProductsTableSeeder extends Seeder {
                 'updated_at' => new DateTime,
                 'slug' => 'toaster',
                 'user_id' => 2,
+                'published' => 1,
             ],
             [
                 'id' => 3,
@@ -48,6 +50,7 @@ class ProductsTableSeeder extends Seeder {
                 'updated_at' => new DateTime,
                 'slug' => 'dishwasher',
                 'user_id' => 2,
+                'published' => 1,
             ],
             [
                 'id' => 4,
@@ -61,6 +64,7 @@ class ProductsTableSeeder extends Seeder {
                 'updated_at' => new DateTime,
                 'slug' => 'laptop',
                 'user_id' => 3,
+                'published' => 1,
             ],
             [
                 'id' => 5,
@@ -74,6 +78,7 @@ class ProductsTableSeeder extends Seeder {
                 'updated_at' => new DateTime,
                 'slug' => 'headphones',
                 'user_id' => 3,
+                'published' => 1,
             ],
             [
                 'id' => 6,
@@ -87,6 +92,7 @@ class ProductsTableSeeder extends Seeder {
                 'updated_at' => new DateTime,
                 'slug' => 'world-of-warcraft',
                 'user_id' => 3,
+                'published' => 1,
             ],
             [
                 'id' => 7,
@@ -100,6 +106,7 @@ class ProductsTableSeeder extends Seeder {
                 'updated_at' => new DateTime,
                 'slug' => '3D-TV',
                 'user_id' => 1,
+                'published' => 1,
             ],
             [
                 'id' => 8,
@@ -113,6 +120,7 @@ class ProductsTableSeeder extends Seeder {
                 'updated_at' => new DateTime,
                 'slug' => 'espresso-machine',
                 'user_id' => 1,
+                'published' => 1,
             ],
             [
                 'id' => 9,
@@ -126,6 +134,7 @@ class ProductsTableSeeder extends Seeder {
                 'updated_at' => new DateTime,
                 'slug' => 'deep-fryer',
                 'user_id' => 1,
+                'published' => 1,
             ],
             [
                 'id' => 10,
@@ -139,6 +148,7 @@ class ProductsTableSeeder extends Seeder {
                 'updated_at' => new DateTime,
                 'slug' => 'game-of-thrones,-season-5-box',
                 'user_id' => 1,
+                'published' => 1,
             ],
         );
 

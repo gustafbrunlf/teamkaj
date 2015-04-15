@@ -5,6 +5,7 @@ use App\Http\Requests\EditAdminRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Product;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -81,6 +82,13 @@ class AdminController extends Controller {
 	{
 		$user = User::where("id", "=" , $id)->firstOrFail();
 
+		$products = Product::
+			select('*')
+            ->where('products.user_id', '=', $id)
+            ->get();
+
+        dd($products);
+
 		return view('pages.editadmin',compact('user'));
 	}
 
@@ -110,6 +118,8 @@ class AdminController extends Controller {
 		$admin = User::where("id", "=" , $id)->firstOrFail();
 
 		$admin->delete();
+
+
 
 		return redirect('superadmin');
 	}
