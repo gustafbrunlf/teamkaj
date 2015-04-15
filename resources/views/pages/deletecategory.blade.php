@@ -14,7 +14,7 @@
             {!! Form::open(['method' => 'DELETE', 'action' => ['CategoriesController@destroy', $category->id]]) !!}
                 @if(Auth::user()->user_type == 0)
                     {!! Form::submit('Yes', ['class' => 'btn btn-danger']) !!}
-                    <a href=" {{ action('CategoriesController@create') }} " class="btn btn-default">No</a>
+                    <a href=" {{ action('CategoriesController@edit', [$category->slug]) }} " class="btn btn-default">No</a>
                 @endif
             {!! Form::close() !!}
             </div>
