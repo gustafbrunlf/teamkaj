@@ -17,6 +17,7 @@ class ProductsTableSeeder extends Seeder {
                 'stock' => '10',
                 'description' => 'Heat your food with the power of microwaves. Extreme!',
                 'artNo' => '100001',
+                'picture' => 'uploads/16888.jpg'
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
                 'slug' => 'microwave-oven',
@@ -29,6 +30,7 @@ class ProductsTableSeeder extends Seeder {
                 'stock' => '200',
                 'description' => 'Your bread was not baked enough. Toast it!',
                 'artNo' => '100002',
+                'picture' => 'uploads/19977.jpg'
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
                 'slug' => 'toaster',
@@ -41,6 +43,7 @@ class ProductsTableSeeder extends Seeder {
                 'stock' => '20',
                 'description' => 'Blast your silverware with scalding water to wash away its sins. Ouch!',
                 'artNo' => '100003',
+                'picture' => 'uploads/.jpg'
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
                 'slug' => 'dishwasher',
@@ -53,6 +56,7 @@ class ProductsTableSeeder extends Seeder {
                 'stock' => '50',
                 'description' => "Now you can sit in that fancy coffee-place and work on your novel. It's gonna be a best-seller for sure!",
                 'artNo' => '100004',
+                'picture' => 'uploads/.jpg'
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
                 'slug' => 'laptop',
@@ -65,6 +69,7 @@ class ProductsTableSeeder extends Seeder {
                 'stock' => '80',
                 'description' => 'The sound is great enough to make sure everyone around you knows what kind of music you listen to.',
                 'artNo' => '100005',
+                'picture' => 'uploads/.jpg'
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
                 'slug' => 'headphones',
@@ -77,6 +82,7 @@ class ProductsTableSeeder extends Seeder {
                 'stock' => '5000',
                 'description' => "In real life you may be just a common architect. But in here, you're Falcor, a proud defender of the Alliance.",
                 'artNo' => '100006',
+                'picture' => 'uploads/.jpg'
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
                 'slug' => 'world-of-warcraft',
@@ -89,6 +95,7 @@ class ProductsTableSeeder extends Seeder {
                 'stock' => '40',
                 'description' => 'You may look ridiculous wearing those glasses. But the immersion is absolute!',
                 'artNo' => '100007',
+                'picture' => 'uploads/.jpg'
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
                 'slug' => '3D-TV',
@@ -101,6 +108,7 @@ class ProductsTableSeeder extends Seeder {
                 'stock' => '20',
                 'description' => 'When a regular, hard-working, honest coffe-maker is not good enough.',
                 'artNo' => '100008',
+                'picture' => 'uploads/.jpg'
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
                 'slug' => 'espresso-machine',
@@ -113,6 +121,7 @@ class ProductsTableSeeder extends Seeder {
                 'stock' => '35',
                 'description' => "When you have one of these, you really don't need any other cooking supplies.",
                 'artNo' => '100009',
+                'picture' => 'uploads/.jpg'
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
                 'slug' => 'deep-fryer',
@@ -125,6 +134,7 @@ class ProductsTableSeeder extends Seeder {
                 'stock' => '5',
                 'description' => 'Spoiler: The dwarf dies.',
                 'artNo' => '100010',
+                'picture' => 'uploads/.jpg'
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
                 'slug' => 'game-of-thrones,-season-5-box',
