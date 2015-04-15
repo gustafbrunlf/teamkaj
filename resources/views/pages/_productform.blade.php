@@ -41,13 +41,13 @@
 </div>
 <div class="form-group">
 
-    {!! Form::label('yes', 'Publish: YES',["for" => "yes"]) !!}
-
-    {!! Form::input('radio','published','1',["id" =>"yes"]) !!}
+    {!! Form::label('yes', 'Publish: YES') !!}
     
-    {!! Form::label('no', 'NO',["for" => "no"]) !!}
+    {!! Form::radio('published', '1',null,["id" => "yes"]) !!}
     
-    {!! Form::input('radio','published','0',["id" => "no"]) !!}
+    {!! Form::label('no', 'NO') !!}
+    
+    {!! Form::radio('published', '0',null,["id" => "no"]) !!}
 
 </div>
 
