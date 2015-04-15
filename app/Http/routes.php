@@ -21,6 +21,8 @@ Route::get('superadmin/deleteadmin/{slug}', 'AdminController@deleteadmin');
 
 Route::resource('superadmin', 'AdminController');
 
+Route::post('filter', 'ProductsController@index');
+
 Route::get('products/deleteproduct/{slug}', 'ProductsController@deleteproduct');
 
 Route::resource('products', 'ProductsController');
@@ -29,6 +31,8 @@ Route::get('categories/deletecategory/{slug}', 'CategoriesController@deletecateg
 
 Route::resource('categories', 'CategoriesController');
 
+// Route::get('productspublishDashboard', 'ProductsController@showPublishDashboard');
+// Route::patch('productspublishDashboard', 'ProductsController@updatePublishDashboard');
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

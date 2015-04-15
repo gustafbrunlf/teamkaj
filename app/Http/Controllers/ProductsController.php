@@ -7,7 +7,6 @@ use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
-use app\user;
 use Intervention\Image\Facades\Image;
 
 class ProductsController extends Controller {
@@ -29,9 +28,15 @@ class ProductsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
-	{
-    	$products = Product::paginate(12);
+	public function index(Request $request)
+    {
+        if ($request->input('filter')){
+            $input = $request->input('filter');
+            $products = Product::orderBy($input)->paginate(12);
+
+        } else {
+            $products = Product::paginate(12);
+        }
 
 		return view('pages.products', compact('products'));
 	}
@@ -110,6 +115,25 @@ class ProductsController extends Controller {
 		return view('pages.showproducts', compact('product', 'similar'));
 
 	}
+
+	// public function showPublishDashboard()
+	// {
+	// 	$unpublished = Product::where('published','=','0')->get();
+	// 	$published = Product::where('published','=','1')->get();
+	// 	return view("pages.publishedDashboard",compact('unpublished','published'));
+	// }
+	// public function updatePublishDashboard(request $request){
+		
+	// 	foreach($request->name as $name){
+
+	// 	$product = Product::where('name', '=', $name)->firstOrFail();
+	// 	$int = 1;
+	// 	$product->published = $int;
+		
+	// 	}
+		
+	// 	return redirect("productspublishDashboard");
+	// }
 
 
 	/**

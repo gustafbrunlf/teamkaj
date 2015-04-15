@@ -12,7 +12,9 @@ class Product extends Model {
 		'description',
 		'picture',
 		'artNo',
-		'slug'
+		'slug',
+		'published',
+
 
 	];
 

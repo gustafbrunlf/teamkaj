@@ -47,7 +47,17 @@
     </ul>
 
 </div>
+<div class="form-group">
 
+    {!! Form::label('yes', 'Publish: YES') !!}
+    
+    {!! Form::radio('published', '1',null,["id" => "yes"]) !!}
+    
+    {!! Form::label('no', 'NO') !!}
+    
+    {!! Form::radio('published', '0',null,["id" => "no"]) !!}
+
+</div>
 
 <div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
 

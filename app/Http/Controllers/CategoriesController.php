@@ -65,8 +65,7 @@ class CategoriesController extends Controller {
 	 */
 	public function show($slug)
 	{
-		
-		$category = Category::where('slug', '=', $slug)->firstOrFail();
+        $category = Category::where('slug', '=', $slug)->firstOrFail();
 		$products = $category->products;
 
 		return view('pages.categories', compact('category', 'products'));
