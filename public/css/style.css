@@ -175,17 +175,21 @@ ul {
 }
 
 .single-img {
+	height: 330px;
+	line-height: 330px;
 	text-align: center;
 	margin: 20px auto;
 }
 	.single-img img {
-	max-width: 500px;
-	max-height: 400px;
+	max-width: 90%;
+	max-height: 90%;
+	vertical-align: middle;
 	}	
 
 .similar {
 	float: left;
 	margin: 5px;
+	width: 80px;
 	text-align: center;
 	overflow: hidden;
 }
