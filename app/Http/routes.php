@@ -21,6 +21,8 @@ Route::get('superadmin/deleteadmin/{slug}', 'AdminController@deleteadmin');
 
 Route::resource('superadmin', 'AdminController');
 
+Route::post('filter', 'ProductsController@index');
+
 Route::get('products/deleteproduct/{slug}', 'ProductsController@deleteproduct');
 
 Route::resource('products', 'ProductsController');
