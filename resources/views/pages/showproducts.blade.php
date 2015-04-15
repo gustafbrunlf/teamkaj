@@ -13,11 +13,19 @@ Team Kaj - {{$product->name}}
     </div>
 
     <div class="row product-container single">
+
+        @if(Auth::check())
+            <div class="edit_btn">
+                <a href="{{ action('ProductsController@edit', $product->slug) }}" class="btn btn-default">Edit Product</a>
+            </div>
+        @endif
+
         <div class="col-sm-12 col-md-6 single-img">
             <img src="../{{$product->picture}}">
         </div>
 
         <div class="col-sm-12 col-md-6">
+
             <div class="info">
                 <p><span class="bold">Article Number:</span> {{$product->artNo}}</p>
                 <p><span class="bold">Description:</span> {{$product->description}}</p>
@@ -33,31 +41,25 @@ Team Kaj - {{$product->name}}
                     @endforeach
                 @endif
 
-                <h3>Related items:</h3>
-                @foreach($similar as $similar)
-                    @unless($similar->name == $product->name)
-                        <a href="{{action('ProductsController@show', $similar->slug)}}">
-                        <div class="similar">
-                            <img src="../{{$similar->picture}}">
-                            <p><span class="bold">{{$similar->name}}</span></p>
-                        </div>
-                        </a>
-                    @endunless
-                @endforeach
+                @unless($similar->isEmpty())
+                    <h3>Related items:</h3>
+                    @foreach($similar as $similar)
+                        @unless($similar->name == $product->name)
+                            <a href="{{action('ProductsController@show', $similar->slug)}}">
+                            <div class="similar">
+                                <img src="../{{$similar->picture}}">
+                                <p><span class="bold">{{$similar->name}}</span></p>
+                            </div>
+                            </a>
+                        @endunless
+                    @endforeach
+                @endunless
 
             </div>
 
         </div>
 
-        @if(Auth::check())
-
-            <a href={{ action('ProductsController@edit', $product->slug) }} class="btn btn-default form-control">Edit Product</a>
-
-            <a href={{ action('ProductsController@deleteproduct', $product->slug) }} class="btn btn-danger form-control">Delete Product</a>
-
-        @endif
-
-    </div>
+    </div>   
 
         <br><br>
         <a href=" {{action('ProductsController@index')}} ">Back</a>

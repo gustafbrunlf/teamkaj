@@ -43,8 +43,8 @@ class ProductsController extends Controller {
 	 */
 	public function create()
 	{
-		$categories = Category::lists('name', 'id');
-		return view('pages.createproduct', ['categories' => $categories]);
+		$categories = Category::all();
+		return view('pages.createproduct', compact('categories'));
 	}
 
 
@@ -140,9 +140,9 @@ class ProductsController extends Controller {
 	public function edit($slug)
 	{
 		$product = Product::where('slug', '=', $slug)->firstOrFail();
-		$categories = Category::lists('name', 'id');
+		$categories = Category::all();
 
-		return view('pages.editproduct', ['product' => $product, 'categories' => $categories]);
+		return view('pages.editproduct', compact('product', 'categories'));
 	}
 
 	/**
@@ -200,10 +200,12 @@ class ProductsController extends Controller {
 		{
 			$product->update($request->all());
 			$product->update(['slug' => $slug]);
+		}
+
+		if($request->input('category_list'))
+		{
+			$product->categories()->sync($request->input('category_list'));
 		}		
-
-		$product->categories()->sync($request->input('category_list'));
-
 
 		return redirect("products/{$slug}");
 
@@ -229,7 +231,7 @@ class ProductsController extends Controller {
 	/* Generates a slug from the name */
 	public function slugify($name)
 	{
-		$slug = str_replace(" ", "-", $name);
+		$slug = strtolower(str_replace(" ", "-", $name));
 		return $slug;
 	}
 

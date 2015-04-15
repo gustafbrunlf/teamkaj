@@ -6,13 +6,15 @@
         <div class="col-md-8 edit_list_cats">
         	<h2>Edit categories</h2>
 
-        	<ul>
-	        	@foreach($categories as $category)
+            <table>
+                @foreach($categories as $category)
+                    <tr>
+                        <td>{{ $category->name }}</td>
+                        <td><a href="{{action('CategoriesController@edit', [$category->slug])}}" class="btn btn-default category">Edit</a></td>
+                    </tr>
+                @endforeach
+            </table>
 
-	        		<a href="{{action('CategoriesController@edit', [$category->slug])}}"><li>{{$category->name}} <span class="edit">EDIT</span></li></a>
-
-	        	@endforeach
-        	</ul>
 		</div>
 	</div>
 
