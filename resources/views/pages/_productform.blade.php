@@ -39,7 +39,17 @@
     {!! Form::select('category_list[]', $categories, null, ['class' => 'form-control', 'multiple']) !!}
 
 </div>
+<div class="form-group">
 
+    {!! Form::label('yes', 'Publish: YES',["for" => "yes"]) !!}
+
+    {!! Form::input('radio','published','1',["id" =>"yes"]) !!}
+    
+    {!! Form::label('no', 'NO',["for" => "no"]) !!}
+    
+    {!! Form::input('radio','published','0',["id" => "no"]) !!}
+
+</div>
 
 <div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
 

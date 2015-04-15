@@ -111,6 +111,25 @@ class ProductsController extends Controller {
 
 	}
 
+	// public function showPublishDashboard()
+	// {
+	// 	$unpublished = Product::where('published','=','0')->get();
+	// 	$published = Product::where('published','=','1')->get();
+	// 	return view("pages.publishedDashboard",compact('unpublished','published'));
+	// }
+	// public function updatePublishDashboard(request $request){
+		
+	// 	foreach($request->name as $name){
+
+	// 	$product = Product::where('name', '=', $name)->firstOrFail();
+	// 	$int = 1;
+	// 	$product->published = $int;
+		
+	// 	}
+		
+	// 	return redirect("productspublishDashboard");
+	// }
+
 
 	/**
 	 * Show the form for editing the specified resource.
