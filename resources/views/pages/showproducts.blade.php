@@ -41,17 +41,19 @@ Team Kaj - {{$product->name}}
                     @endforeach
                 @endif
 
-                <h3>Related items:</h3>
-                @foreach($similar as $similar)
-                    @unless($similar->name == $product->name)
-                        <a href="{{action('ProductsController@show', $similar->slug)}}">
-                        <div class="similar">
-                            <img src="../{{$similar->picture}}">
-                            <p><span class="bold">{{$similar->name}}</span></p>
-                        </div>
-                        </a>
-                    @endunless
-                @endforeach
+                @unless($similar->isEmpty())
+                    <h3>Related items:</h3>
+                    @foreach($similar as $similar)
+                        @unless($similar->name == $product->name)
+                            <a href="{{action('ProductsController@show', $similar->slug)}}">
+                            <div class="similar">
+                                <img src="../{{$similar->picture}}">
+                                <p><span class="bold">{{$similar->name}}</span></p>
+                            </div>
+                            </a>
+                        @endunless
+                    @endforeach
+                @endunless
 
             </div>
 
