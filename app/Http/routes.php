@@ -58,7 +58,6 @@ Route::get('categories/deletecategory/{slug}', 'CategoriesController@deletecateg
 
 Route::resource('categories', 'CategoriesController');
 
-Route::resource('products','ProductStatusController');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
