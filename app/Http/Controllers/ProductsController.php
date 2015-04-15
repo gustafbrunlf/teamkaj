@@ -41,6 +41,13 @@ class ProductsController extends Controller {
 		return view('pages.products', compact('products'));
 	}
 
+
+	public function overview()
+	{
+		$products = Product::all();
+		return view('pages.productsOverview', compact('products'));
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *

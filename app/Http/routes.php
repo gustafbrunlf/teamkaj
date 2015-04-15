@@ -25,6 +25,8 @@ Route::post('filter', 'ProductsController@index');
 
 Route::get('products/deleteproduct/{slug}', 'ProductsController@deleteproduct');
 
+Route::get('products/overview', 'ProductsController@overview');
+
 Route::resource('products', 'ProductsController');
 
 Route::get('categories/deletecategory/{slug}', 'CategoriesController@deletecategory');
