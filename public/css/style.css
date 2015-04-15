@@ -53,6 +53,11 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 	padding-left: 25px;
 }
 
+ul {
+	list-style-type: none;
+	padding: 10px;
+}
+
 
 /* MASTER */
 
@@ -206,27 +211,7 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 	width: 100px;
 }
 
-/* CATS */
 
-.edit_list_cats {
-	width: 300px;
-}
-	.edit_list_cats ul {
-		list-style-type: none;
-		padding: 10px;
-	}
-
-	.edit_list_cats li:hover {
-		background: #000;
-		color: #fff;
-	}
-
-
-.edit {
-	float: right;
-	margin-right: 10px;
-	color: #EAEAEA;
-}
 
 /* TABLE ADMIN */
 

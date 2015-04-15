@@ -33,10 +33,18 @@
 
 </div>
 
-<div class="form-group">
+<div class="form-group categories">
 
     {!! Form::label('category_list', 'Category:')  !!}
-    {!! Form::select('category_list[]', $categories, null, ['class' => 'form-control', 'multiple']) !!}
+
+    <ul>
+        @foreach($categories as $category)
+            <li>
+            {!! Form::checkbox('category_list[]', "$category->id") !!}
+            {{$category->name}}
+            </li>
+        @endforeach
+    </ul>
 
 </div>
 
