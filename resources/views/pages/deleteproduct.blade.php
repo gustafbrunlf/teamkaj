@@ -17,7 +17,7 @@
         {!! Form::submit('Yes', ['class' => 'btn btn-danger']) !!}
         @endif
 
-        <a href="{{action('ProductsController@show', [$product->slug])}}" class="btn btn-default">No</a>
+        <a href="{{ action('ProductsController@edit', $product->slug) }}" class="btn btn-default">No</a>
 
     </div>
 
