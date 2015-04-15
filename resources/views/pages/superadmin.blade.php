@@ -12,7 +12,7 @@
 
 		@if(Auth::user()->user_type === 0)
 
-                <table style="width:100%">
+                <table>
                     <thead>
                         <th>Name:</th>
                         <th>Last login:</th>
