@@ -138,6 +138,7 @@ class ProductsController extends Controller {
             ->join('categories', 'category_product.category_id', '=', 'categories.id')
             ->distinct()->select('products.name', 'products.slug', 'products.picture')
             ->where('products.name', '!=', $product->name)
+            ->where('products.published', '=', '1')
             ->whereIn('categories.name', $categories)
             ->orderByRaw("RAND()")
             ->take(5)
