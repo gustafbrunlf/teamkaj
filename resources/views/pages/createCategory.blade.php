@@ -3,7 +3,7 @@
 @section('body')
 
 	<div class="row">
-        <div class="col-md-8 edit_list_cats">
+        <div class="col-md-8 edit_list_cats admin-table">
         	<h2>Edit categories</h2>
 
             <table>
