@@ -23,7 +23,9 @@ class CategoriesController extends Controller {
 	 */
 	public function index()
 	{
-		$products = Product::paginate(12);
+		$products = Product::
+					where('published', '!=', 0)
+					->paginate(12);
     	$categories = Category::all();
 
 		return view('pages.products', compact('products', 'categories'));

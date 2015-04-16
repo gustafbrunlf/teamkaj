@@ -51,13 +51,26 @@
 
     {!! Form::label('yes', 'Publish: YES') !!}
     
-    {!! Form::radio('published', '1',null,["id" => "yes"]) !!}
+    {!! Form::radio('published', '1',true,["id" => "yes"]) !!}
     
     {!! Form::label('no', 'NO') !!}
     
     {!! Form::radio('published', '0',null,["id" => "no"]) !!}
 
 </div>
+
+@if(Auth::user()->user_type == 0)
+
+<div class="form-group">
+
+    {!! Form::label('user_id', 'Select owner:')  !!}
+
+    {!! Form::select('user_id', $usernames) !!}
+
+
+</div>
+
+@endif
 
 <div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
 

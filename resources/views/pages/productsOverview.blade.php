@@ -1,0 +1,63 @@
+@extends('master');
+
+@section('body')
+
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Products</h2>
+    </div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 prod-table">
+		<table>
+			<thead>
+				<th>Name</th>
+				<th>Art. No.</th>
+				<th>Price</th>
+				<th>Stock</th>
+				<th>Created</th>
+				<th>Updated</th>
+				<th>Created By</th>
+				<th>Published</th>
+			</thead>
+
+			@foreach($products as $product)
+
+				@if ($product->published)
+					<tr>
+				@else
+					<tr class="unpubl">
+				@endif
+
+					<td>{{ $product->name }}</td>
+					<td>{{ $product->artNo }}</td>
+					<td>{{ $product->price }}</td>
+					<td>{{ $product->stock }}</td>
+					<td>{{ $product->created_at }}</td>
+					<td>{{ $product->updated_at }}</td>
+
+					@if ($product->user_id != null)
+						<td>{{ $users[$product->user_id-1]->name }}</td>
+					@else
+						<td>Unowned</td>
+					@endif
+
+
+					@if ($product->published)
+						<td>published</td>
+					@else
+						<td> <span class="italic">unpublished</span> </td>
+					@endif
+
+					<td class="button"><a href="{{action('ProductsController@edit', [$product->slug])}}" class="btn btn-default">Edit</a></td>
+				</tr>
+
+			@endforeach
+		</table>
+        
+    </div>
+</div>
+
+
+@endsection

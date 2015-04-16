@@ -1,5 +1,6 @@
 <?php namespace App\Providers;
 use App\Category;
+use App\User;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -15,6 +16,17 @@ class AppServiceProvider extends ServiceProvider {
 		view()->composer('pages._header', function($view)
 		{
 		    $view->with('categoriesmenu', Category::all());
+		});
+
+		view()->composer('pages._productform', function($view)
+		{
+			$users = User::all();
+
+			foreach ($users as $user) {
+				$usernames[$user->id] = $user->name;
+			}
+
+		    $view->with('usernames', $usernames);
 		});
 	}
 

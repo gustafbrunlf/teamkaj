@@ -7,6 +7,8 @@ use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
+use App\User;
+use Auth;
 use Intervention\Image\Facades\Image;
 
 class ProductsController extends Controller {
@@ -32,13 +34,25 @@ class ProductsController extends Controller {
     {
         if ($request->input('filter')){
             $input = $request->input('filter');
-            $products = Product::orderBy($input)->paginate(12);
+            $products = Product::orderBy($input)
+            ->where('published', '!=', 0)
+            ->paginate(12);
 
         } else {
-            $products = Product::paginate(12);
+            $products = Product::
+            			where('published', '!=', 0)
+            			->paginate(12);
         }
 
 		return view('pages.products', compact('products'));
+	}
+
+
+	public function overview()
+	{
+		$products = Product::all();
+		$users = User::all();
+		return view('pages.productsOverview', compact('products', 'users'));
 	}
 
 	/**
@@ -80,11 +94,19 @@ class ProductsController extends Controller {
 			$products->picture = $newFileName;
 		}
 			
-		\Auth::user()->product()->save($products);				
+		Auth::user()->product()->save($products);
+
+		if(Auth::user()->user_type == 0)
+		{
+			$products->user_id = $request->user_id;
+			$products->save();
+		}
+		//dd($request->all());
+
 		
+		//dd($request->user_id);
 		
 		$products->categories()->attach($catIds);
-
 
 		return redirect('products');
 	}
@@ -210,7 +232,13 @@ class ProductsController extends Controller {
 		if($request->input('category_list'))
 		{
 			$product->categories()->sync($request->input('category_list'));
-		}		
+		}
+
+		if(Auth::user()->user_type == 0)
+		{
+			$product->user_id = $request->user_id;
+			$product->update();
+		}
 
 		return redirect("products/{$slug}");
 

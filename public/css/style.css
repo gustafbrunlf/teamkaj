@@ -41,6 +41,10 @@ a:hover {
 	font-weight: bold;
 }
 
+.italic {
+	font-style: italic;
+}
+
 a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 	-webkit-transition: 0.2s ease-in-out;
     -moz-transition: 0.2s ease-in-out;
@@ -216,22 +220,45 @@ ul {
 }
 
 
+
+/* TABLES */
+
+th, td {
+    padding: 10px;
+}
+
+
 /* TABLE ADMIN & CATEGORY */
 
-
-table{
+.admin-table table{
     width: 100%;
 }
 
-th, td {
-    padding: 5px;
-}
-
-td{
+.admin-table td{
+    vertical-align: top;
     width: 30%;
 }
 
-td a{
-    width: 30%;
+
+
+
+/* TABLE PRODUCTS */
+
+.prod-table table {
+	font-size: 14px;
+}
+
+.prod-table td {
+	max-width: 100px;
+	vertical-align: top;
+	padding-bottom: 20px;
+}
+
+tr.unpubl {
+	color: #888;
+}
+
+td.button {
+	padding-left: 15px;
 }
 
