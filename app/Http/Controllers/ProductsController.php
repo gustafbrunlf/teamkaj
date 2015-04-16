@@ -136,7 +136,7 @@ class ProductsController extends Controller {
 		$similar = Product::
             join('category_product', 'products.id', '=', 'category_product.product_id')
             ->join('categories', 'category_product.category_id', '=', 'categories.id')
-            ->select('products.name', 'products.slug', 'products.picture')
+            ->distinct()->select('products.name', 'products.slug', 'products.picture')
             ->where('products.name', '!=', $product->name)
             ->whereIn('categories.name', $categories)
             ->orderByRaw("RAND()")
