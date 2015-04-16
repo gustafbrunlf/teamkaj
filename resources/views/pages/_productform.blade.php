@@ -63,9 +63,9 @@
 
 <div class="form-group">
 
-    {!! Form::label('owner', 'Select owner:')  !!}
+    {!! Form::label('user_id', 'Select owner:')  !!}
 
-    {!! Form::select('owner', $usernames) !!}
+    {!! Form::select('user_id', $usernames) !!}
 
 
 </div>
