@@ -14,7 +14,7 @@ Team Kaj - {{$product->name}}
 
     <div class="row product-container single">
 
-        @if(Auth::check())
+        @if(Auth::user()->user_type == 0 || Auth::user()->id  == $product->user_id)
             <div class="edit_btn">
                 <a href="{{ action('ProductsController@edit', $product->slug) }}" class="btn btn-default">Edit Product</a>
             </div>

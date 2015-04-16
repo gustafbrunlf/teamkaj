@@ -60,7 +60,12 @@
 						<td> <span class="italic">unpublished</span> </td>
 					@endif
 
-					<td class="button"><a href="{{action('ProductsController@edit', [$product->slug])}}" class="btn btn-default">Edit</a></td>
+					@if (Auth::user()->user_type == 0 || Auth::user()->id  == $product->user_id)
+
+						<td class="button"><a href="{{action('ProductsController@edit', [$product->slug])}}" class="btn btn-default">Edit</a></td>
+					
+					@endif
+
 				</tr>
 
 			@endforeach
