@@ -7,6 +7,7 @@ use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
+use App\User;
 use Intervention\Image\Facades\Image;
 
 class ProductsController extends Controller {
@@ -45,7 +46,8 @@ class ProductsController extends Controller {
 	public function overview()
 	{
 		$products = Product::all();
-		return view('pages.productsOverview', compact('products'));
+		$users = User::all();
+		return view('pages.productsOverview', compact('products', 'users'));
 	}
 
 	/**

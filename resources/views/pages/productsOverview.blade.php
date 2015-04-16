@@ -2,6 +2,7 @@
 
 @section('body')
 
+
 <table>
 
 	<tr>
@@ -24,8 +25,19 @@
 		<td>{{ $product->stock }}</td>
 		<td>{{ $product->created_at }}</td>
 		<td>{{ $product->updated_at }}</td>
-		<td>{{ $product->user_id }}</td>
-		<td>{{ $product->published }}</td>
+		<td>{{ $users[$product->user_id-1]->name }}</td>
+
+		@if ($product->published)
+
+			<td>{{ 'published' }}</td>
+
+		@else
+
+			<td>{{ 'unpublished' }}</td>
+
+		@endif
+
+
 		<td><a href="{{action('ProductsController@edit', [$product->slug])}}" class="btn btn-default">Edit</a></td>
 	</tr>
 

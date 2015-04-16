@@ -59,6 +59,19 @@
 
 </div>
 
+@if(Auth::user()->user_type == 0)
+
+<div class="form-group">
+
+    {!! Form::label('owner', 'Select owner:')  !!}
+
+    {!! Form::select('owner', $usernames) !!}
+
+
+</div>
+
+@endif
+
 <div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
 
 		{!! Form::label('imageupload','Image:') !!}
