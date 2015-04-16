@@ -51,7 +51,7 @@
 
     {!! Form::label('yes', 'Publish: YES') !!}
     
-    {!! Form::radio('published', '1',null,["id" => "yes"]) !!}
+    {!! Form::radio('published', '1',true,["id" => "yes"]) !!}
     
     {!! Form::label('no', 'NO') !!}
     

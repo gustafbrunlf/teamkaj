@@ -34,10 +34,14 @@ class ProductsController extends Controller {
     {
         if ($request->input('filter')){
             $input = $request->input('filter');
-            $products = Product::orderBy($input)->paginate(12);
+            $products = Product::orderBy($input)
+            ->where('published', '!=', 0)
+            ->paginate(12);
 
         } else {
-            $products = Product::paginate(12);
+            $products = Product::
+            			where('published', '!=', 0)
+            			->paginate(12);
         }
 
 		return view('pages.products', compact('products'));
