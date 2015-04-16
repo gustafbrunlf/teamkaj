@@ -14,6 +14,7 @@ class Product extends Model {
 		'artNo',
 		'slug',
 		'published',
+		'user_id',
 
 
 	];

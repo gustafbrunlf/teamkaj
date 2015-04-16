@@ -51,7 +51,7 @@
 
     {!! Form::label('yes', 'Publish: YES') !!}
     
-    {!! Form::radio('published', '1',null,["id" => "yes"]) !!}
+    {!! Form::radio('published', '1',true,["id" => "yes"]) !!}
     
     {!! Form::label('no', 'NO') !!}
     
@@ -63,9 +63,9 @@
 
 <div class="form-group">
 
-    {!! Form::label('owner', 'Select owner:')  !!}
+    {!! Form::label('user_id', 'Select owner:')  !!}
 
-    {!! Form::select('owner', $usernames) !!}
+    {!! Form::select('user_id', $usernames) !!}
 
 
 </div>

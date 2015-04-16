@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider {
 			$users = User::all();
 
 			foreach ($users as $user) {
-				$usernames[$user->name] = $user->name;
+				$usernames[$user->id] = $user->name;
 			}
 
 		    $view->with('usernames', $usernames);
