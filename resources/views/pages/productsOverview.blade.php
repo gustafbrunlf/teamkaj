@@ -2,58 +2,62 @@
 
 @section('body')
 
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Products</h2>
+    </div>
+</div>
 
-<table>
+<div class="row">
+	<div class="col-xs-12 prod-table">
+		<table>
+			<thead>
+				<th>Name</th>
+				<th>Art. No.</th>
+				<th>Price</th>
+				<th>Stock</th>
+				<th>Created</th>
+				<th>Updated</th>
+				<th>Created By</th>
+				<th>Published</th>
+			</thead>
 
-	<tr>
-		<td>Name</td>
-		<td>Art. No.</td>
-		<td>Price</td>
-		<td>Stock</td>
-		<td>Created</td>
-		<td>Updated</td>
-		<td>Created By</td>
-		<td>Published</td>
-	</tr>
+			@foreach($products as $product)
 
-	@foreach($products as $product)
+				@if ($product->published)
+					<tr>
+				@else
+					<tr class="unpubl">
+				@endif
 
-	<tr>
-		<td>{{ $product->name }}</td>
-		<td>{{ $product->artNo }}</td>
-		<td>{{ $product->price }}</td>
-		<td>{{ $product->stock }}</td>
-		<td>{{ $product->created_at }}</td>
-		<td>{{ $product->updated_at }}</td>
+					<td>{{ $product->name }}</td>
+					<td>{{ $product->artNo }}</td>
+					<td>{{ $product->price }}</td>
+					<td>{{ $product->stock }}</td>
+					<td>{{ $product->created_at }}</td>
+					<td>{{ $product->updated_at }}</td>
 
-		@if ($product->user_id != null)
-
-			<td>{{ $users[$product->user_id-1]->name }}</td>
-
-		@else
-
-			<td>Unowned</td>
-
-		@endif
-
-
-		@if ($product->published)
-
-			<td>{{ 'published' }}</td>
-
-		@else
-
-			<td>{{ 'unpublished' }}</td>
-
-		@endif
+					@if ($product->user_id != null)
+						<td>{{ $users[$product->user_id-1]->name }}</td>
+					@else
+						<td>Unowned</td>
+					@endif
 
 
-		<td><a href="{{action('ProductsController@edit', [$product->slug])}}" class="btn btn-default">Edit</a></td>
-	</tr>
+					@if ($product->published)
+						<td>published</td>
+					@else
+						<td> <span class="italic">unpublished</span> </td>
+					@endif
 
+					<td class="button"><a href="{{action('ProductsController@edit', [$product->slug])}}" class="btn btn-default">Edit</a></td>
+				</tr>
 
-	@endforeach
+			@endforeach
+		</table>
+        
+    </div>
+</div>
 
-</table>
 
 @endsection
