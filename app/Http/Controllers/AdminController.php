@@ -87,8 +87,6 @@ class AdminController extends Controller {
             ->where('products.user_id', '=', $id)
             ->get();
 
-        dd($products);
-
 		return view('pages.editadmin',compact('user'));
 	}
 

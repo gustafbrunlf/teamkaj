@@ -25,7 +25,17 @@
 		<td>{{ $product->stock }}</td>
 		<td>{{ $product->created_at }}</td>
 		<td>{{ $product->updated_at }}</td>
-		<td>{{ $users[$product->user_id-1]->name }}</td>
+
+		@if ($product->user_id != null)
+
+			<td>{{ $users[$product->user_id-1]->name }}</td>
+
+		@else
+
+			<td>Unowned</td>
+
+		@endif
+
 
 		@if ($product->published)
 
