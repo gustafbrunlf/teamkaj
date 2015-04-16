@@ -48,9 +48,18 @@ class ProductsController extends Controller {
 	}
 
 
-	public function overview()
+	public function overview(Request $request)
 	{
-		$products = Product::all();
+		if ($request->input('filterOverview'))
+		{
+            $input = $request->input('filterOverview');
+            $products = Product::orderBy($input)->get();
+        }
+        else
+        {
+			$products = Product::all();
+		}
+
 		$users = User::all();
 		return view('pages.productsOverview', compact('products', 'users'));
 	}

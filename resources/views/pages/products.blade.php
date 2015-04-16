@@ -13,7 +13,7 @@
 
             <div class="form-group">
 
-                {!! Form::select('filter', array('price' => 'Price', 'name' => 'Name', 'created_at' => 'Created')) !!}
+                {!! Form::select('filter', array('created_at' => 'Created', 'price' => 'Price', 'name' => 'Name')) !!}
                 {!! Form::submit('filter', ['class' => 'btn btn-default']) !!}
             </div>
 

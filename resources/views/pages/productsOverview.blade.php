@@ -8,6 +8,16 @@
     </div>
 </div>
 
+{!! Form::open(['url' => 'filterOverview']) !!}
+
+            <div class="form-group">
+
+                {!! Form::select('filterOverview', array('created_at' => 'Created', 'price' => 'Price', 'name' => 'Name')) !!}
+                {!! Form::submit('filterOverview', ['class' => 'btn btn-default']) !!}
+            </div>
+
+            {!! Form::close() !!}
+
 <div class="row">
 	<div class="col-xs-12 prod-table">
 		<table>
