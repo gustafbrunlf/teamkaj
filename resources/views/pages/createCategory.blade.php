@@ -2,6 +2,18 @@
 
 @section('body')
 
+    <div class="row">
+        <div class="col-md-6 form">
+
+            <h2>Create new category</h2>
+            {!! Form::open(['url' => 'categories']) !!}
+            @include('pages._categoryform',['submitButtonText' => 'Add Category'])
+            {!! Form::close()!!}
+
+            @include('errors.list')
+        </div>
+    </div>
+
 	<div class="row">
         <div class="col-md-8 edit_list_cats admin-table">
         	<h2>Edit categories</h2>
@@ -19,20 +31,8 @@
 	</div>
 
 	<div class="row">
-        <div class="col-md-8 form">
-
-        	<h2>Create new category</h2>
-			{!! Form::open(['url' => 'categories']) !!}
-			@include('pages._categoryform',['submitButtonText' => 'Add Category'])
-			{!! Form::close()!!}
-
-			@include('errors.list')
-		</div>
-	</div>
-
-	<div class="row">
         <div class="col-md-8">
-        	<br>
+        	<br><br>
             <a href=" {{ action('ProductsController@index') }} ">Back</a>
         </div>
     </div>
