@@ -36,7 +36,7 @@ Team Kaj - {{$product->name}}
                 <p><span class="bold">Article Number:</span> {{$product->artNo}}</p>
                 <p><span class="bold">Description:</span> {{$product->description}}</p>
                 <p><span class="bold">Stock: </span> {{$product->stock}} pcs</p>
-                <p><span class="bold">Price: </span> {{$product->price}} SEK</p>
+                <p><span class="bold">Price: </span> {{round($product->price, 2)}} SEK</p>
 
                 @if($product->categories->isEmpty())
 

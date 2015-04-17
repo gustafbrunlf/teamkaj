@@ -19,7 +19,7 @@
                             <p>
                             ArtNo: {{$product->artNo}} <br>
                             Stock: {{$product->stock}} pcs <br>
-                            Price: {{$product->price}} SEK
+                            Price: {{round($product->price, 2)}} SEK
                             </p>
 
                         </a>
