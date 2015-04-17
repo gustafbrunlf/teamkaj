@@ -42,7 +42,7 @@
 
 					<td>{{ $product->name }}</td>
 					<td>{{ $product->artNo }}</td>
-					<td>{{ $product->price }}</td>
+					<td>{{round($product->price, 2)}}</td>
 					<td>{{ $product->stock }}</td>
 					<td>{{ $product->created_at }}</td>
 					<td>{{ $product->updated_at }}</td>
