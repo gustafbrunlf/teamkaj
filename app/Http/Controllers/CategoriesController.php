@@ -40,7 +40,7 @@ class CategoriesController extends Controller {
 	{
 		$categories = Category::all();
 
-		return view('pages.createcategory', compact('categories', $categories));
+		return view('pages.createCategory', compact('categories', $categories));
 	}
 
 	/**
@@ -83,7 +83,7 @@ class CategoriesController extends Controller {
 	{
 		$category = Category::where('slug', '=', $slug)->firstOrFail();
 	
-		return view('pages.editcategory', compact('category', $category));
+		return view('pages.editCategory', compact('category', $category));
 	}
 
 	/**
