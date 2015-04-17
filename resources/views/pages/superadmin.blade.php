@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-xs-12 admin-table">   
 
-            @if(Auth::user()->user_type === 0)
+            @if(Auth::user()->user_type == 0)
 
                 <table>
                      <thead>
