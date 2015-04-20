@@ -56,9 +56,9 @@ class AdminController extends Controller {
             'password'=>$password
         ]);
 
-        Mail::send('emails.email', ['key' => 'value'], function($message)
+        Mail::send('emails.email', ['key' => 'value'], function($message) use ($request)
 		{
-		    $message->to('gustafbrunlof@gmail.com', "Karl Augustsson")->subject('Welcome!');
+		    $message->to($request->email)->subject('Welcome!');
 		});
 
         $user->user_type = 1;

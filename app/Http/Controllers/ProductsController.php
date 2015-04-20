@@ -3,7 +3,6 @@
 use App\Category;
 use App\Product;
 use App\User;
-use Auth;
 use Mail;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -118,7 +117,6 @@ class ProductsController extends Controller {
 
 		$catIds = $request->input('category_list');
 
-
 		if($request->file('picture'))
 		{
 			$newFileName = $this->getNewFileName($request->file('picture'));			
@@ -135,11 +133,6 @@ class ProductsController extends Controller {
 		}
 		
 		$products->categories()->attach($catIds);
-
-		Mail::send('emails.email', ['key' => 'value'], function($message)
-		{
-		    $message->to('gustafbrunlof@gmail.com', "Karl Augustsson")->subject('Welcome!');
-		});
 
 		return redirect('products');
 	}
