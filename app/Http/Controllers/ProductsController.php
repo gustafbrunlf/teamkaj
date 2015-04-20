@@ -32,19 +32,26 @@ class ProductsController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        if ($request->input('filter')){
-            $input = $request->input('filter');
+        if ($request->input('sort'))
+        {
+            $input = $request->input('sort');
+
             $products = Product::orderBy($input)
             ->where('published', '!=', 0)
             ->paginate(12);
 
-        } else {
+            $sort = $request->input('sort');
+        } 
+        else 
+        {
             $products = Product::
             			where('published', '!=', 0)
             			->paginate(12);
+
+            $sort = 'created_at';
         }
 
-		return view('pages.products', compact('products'));
+		return view('pages.products', compact('products', 'sort'));
 	}
 
 
@@ -83,9 +90,7 @@ class ProductsController extends Controller {
 	 * @return Response
 	 */
 	public function store(ProductRequest $request)
-
 	{
-
 		$slug = $this->slugify($request->name);
 		
 		$products = new Product($request->all());

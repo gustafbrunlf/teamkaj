@@ -9,16 +9,17 @@
         </div>
         <div class="col-xs-12">
 
-            {!! Form::open(['url' => 'filter']) !!}
+            {!! Form::open(['url' => 'sort']) !!}
 
             <div class="form-group">
 
-                {!! Form::select('filter', array(
+                {!! Form::select('sort', array(
                     'created_at' => 'Created',
                     'price' => 'Price',
                     'name' => 'Name'
-                    )) !!}
+                    ), "$sort") !!}
                 {!! Form::submit('Sort', ['class' => 'btn btn-default']) !!}
+
             </div>
 
             {!! Form::close() !!}
