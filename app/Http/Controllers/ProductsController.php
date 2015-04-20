@@ -1,5 +1,5 @@
 <?php namespace App\Http\Controllers;
-use Mail;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -127,7 +127,6 @@ class ProductsController extends Controller {
 
 		$catIds = $request->input('category_list');
 
-
 		if($request->file('picture'))
 		{
 			$newFileName = $this->getNewFileName($request->file('picture'));			
@@ -143,14 +142,7 @@ class ProductsController extends Controller {
 			$products->user_id = $request->user_id;
 			$products->save();
 		}
-
-		
 		$products->categories()->attach($catIds);
-
-		Mail::send('emails.email', ['key' => 'value'], function($message)
-{
-    $message->to('karl.augustsson@gmail.com', "Karl Augustsson")->subject('Welcome!');
-});
 
 		return redirect('products');
 	}
@@ -182,26 +174,6 @@ class ProductsController extends Controller {
 		return view('pages.showproducts', compact('product', 'similar'));
 
 	}
-
-	// public function showPublishDashboard()
-	// {
-	// 	$unpublished = Product::where('published','=','0')->get();
-	// 	$published = Product::where('published','=','1')->get();
-	// 	return view("pages.publishedDashboard",compact('unpublished','published'));
-	// }
-	// public function updatePublishDashboard(request $request){
-		
-	// 	foreach($request->name as $name){
-
-	// 	$product = Product::where('name', '=', $name)->firstOrFail();
-	// 	$int = 1;
-	// 	$product->published = $int;
-		
-	// 	}
-		
-	// 	return redirect("productspublishDashboard");
-	// }
-
 
 	/**
 	 * Show the form for editing the specified resource.
