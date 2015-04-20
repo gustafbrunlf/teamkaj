@@ -15,7 +15,7 @@
 <div class="form-group">
 
     {!! Form::label('price', 'Price:') !!}
-    {!! Form::input('number', 'price', null, ['class' => 'form-control']) !!}
+    {!! Form::input('number', 'price', null, ['class' => 'form-control',"step" => "any"]) !!}
 
 </div>
 

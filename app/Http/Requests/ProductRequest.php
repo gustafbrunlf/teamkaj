@@ -23,7 +23,7 @@ class ProductRequest extends Request {
 	{
 		$rules = [
             'name' => 'required|unique:products|min:3',
-            'price' => 'required|integer',
+            'price' => 'required|numeric',
             'stock' => 'required|integer',
             'image' => 'image|between:2,2000|mimes:jpg,jpeg,png,bmp,gif',
             'artNo' => 'required|unique:products|min:5'
