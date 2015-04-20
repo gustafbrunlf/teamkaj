@@ -25,6 +25,7 @@ class CategoriesController extends Controller {
 	{
 		$products = Product::
 					where('published', '!=', 0)
+					->orderBy('created_at', 'DESC')
 					->paginate(12);
     	$categories = Category::all();
 
@@ -72,7 +73,7 @@ class CategoriesController extends Controller {
         $category = Category::where('slug', '=', $slug)->firstOrFail();
 		$products = $category->products;
 
-		$sort = 'created_at';
+		$sort = 'created_atDesc';
 
 		return view('pages.categories', compact('category', 'products', 'sort'));
 	}

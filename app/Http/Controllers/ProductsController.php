@@ -1,5 +1,5 @@
 <?php namespace App\Http\Controllers;
-
+use Mail;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -32,19 +32,11 @@ class ProductsController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        if ($request->input('sort')){
-            $input = $request->input('sort');
-            $products = Product::orderBy($input)
-            ->where('published', '!=', 0)
-            ->paginate(12);
+        $products = $this->sort($request->input('sort'))
+        			->where('published', '!=', 0)
+        			->paginate(12);
 
-        } else {
-            $products = Product::
-            			where('published', '!=', 0)
-            			->paginate(12);
-        }
-
-        $sort = "created_atDesc";
+        $sort = 'created_atDesc';
 
         if ($request->input('sort'))
         	$sort = $request->input('sort');
@@ -154,6 +146,11 @@ class ProductsController extends Controller {
 
 		
 		$products->categories()->attach($catIds);
+
+		Mail::send('emails.email', ['key' => 'value'], function($message)
+{
+    $message->to('karl.augustsson@gmail.com', "Karl Augustsson")->subject('Welcome!');
+});
 
 		return redirect('products');
 	}
@@ -331,12 +328,13 @@ class ProductsController extends Controller {
     public function sort($input)
 	{
 		switch ($input) {
-				case 'created_atAsc':
-					$products = Product::orderBy('created_at');
-					break;
 
 				case 'created_atDesc':
 					$products = Product::orderBy('created_at', 'DESC');
+					break;
+
+				case 'created_atAsc':
+					$products = Product::orderBy('created_at');
 					break;
 
 				case 'priceAsc':
@@ -356,7 +354,7 @@ class ProductsController extends Controller {
 					break;
 				
 				default:
-					$products = Product::all();
+					$products = Product::orderBy('created_at', 'DESC');
 					break;
 				}
 		return $products;
