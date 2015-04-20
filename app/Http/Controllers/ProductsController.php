@@ -1,14 +1,16 @@
 <?php namespace App\Http\Controllers;
+
+use App\Category;
+use App\Product;
+use App\User;
 use Mail;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
-use App\Product;
-use App\Category;
-use App\User;
-use Auth;
+use App\Http\Controllers\Auth;
+
 use Intervention\Image\Facades\Image;
 
 class ProductsController extends Controller {
@@ -21,8 +23,8 @@ class ProductsController extends Controller {
     public function __construct()
     {
         $this->middleware('auth', ['except' => [ 'category', 'show', 'index']]);
-
         $this->middleware('admin', ['only' => ['destroy', 'deleteproduct']]);
+        $this->middleware('owner', ['only' => ['edit', 'update']]);
     }
 
 	/**
@@ -127,7 +129,6 @@ class ProductsController extends Controller {
 
 		$catIds = $request->input('category_list');
 
-
 		if($request->file('picture'))
 		{
 			$newFileName = $this->getNewFileName($request->file('picture'));			
@@ -135,7 +136,6 @@ class ProductsController extends Controller {
 	
 			$products->picture = $newFileName;
 		}
-			
 		Auth::user()->product()->save($products);
 
 		if(Auth::user()->user_type == 0)
@@ -143,14 +143,8 @@ class ProductsController extends Controller {
 			$products->user_id = $request->user_id;
 			$products->save();
 		}
-
 		
 		$products->categories()->attach($catIds);
-
-		Mail::send('emails.email', ['key' => 'value'], function($message)
-{
-    $message->to('karl.augustsson@gmail.com', "Karl Augustsson")->subject('Welcome!');
-});
 
 		return redirect('products');
 	}
@@ -182,26 +176,6 @@ class ProductsController extends Controller {
 		return view('pages.showproducts', compact('product', 'similar'));
 
 	}
-
-	// public function showPublishDashboard()
-	// {
-	// 	$unpublished = Product::where('published','=','0')->get();
-	// 	$published = Product::where('published','=','1')->get();
-	// 	return view("pages.publishedDashboard",compact('unpublished','published'));
-	// }
-	// public function updatePublishDashboard(request $request){
-		
-	// 	foreach($request->name as $name){
-
-	// 	$product = Product::where('name', '=', $name)->firstOrFail();
-	// 	$int = 1;
-	// 	$product->published = $int;
-		
-	// 	}
-		
-	// 	return redirect("productspublishDashboard");
-	// }
-
 
 	/**
 	 * Show the form for editing the specified resource.
