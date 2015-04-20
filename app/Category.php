@@ -14,4 +14,5 @@ class Category extends Model {
 	{
 	    return $this->belongsToMany('App\Product')->where('published', '!=', 0);
 	}
+
 }

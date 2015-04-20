@@ -12,15 +12,11 @@
     
     @if(count($products))
 
-    {!! Form::open(['url' => "categories/$category->slug/sort"]) !!}
+    {!! Form::open(['url' => "categories/$category->slug"]) !!}
 
             <div class="form-group">
 
-                {!! Form::select('sort', array(
-                    'created_at' => 'Created',
-                    'price' => 'Price',
-                    'name' => 'Name'
-                    ), "$sort") !!}
+                {!! Form::select('sort', array('created_atDesc' => 'Newest', 'created_atAsc' => 'Oldest', 'priceAsc' => 'Lowest Price', 'priceDesc' => 'Highest Price', 'nameAsc' => 'Name A-Z', 'nameDesc' => 'Name Z-A'), "$sort") !!}
                 {!! Form::submit('Sort', ['class' => 'btn btn-default']) !!}
 
             </div>
