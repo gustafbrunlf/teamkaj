@@ -13,11 +13,7 @@
 
             <div class="form-group">
 
-                {!! Form::select('sort', array(
-                    'created_at' => 'Created',
-                    'price' => 'Price',
-                    'name' => 'Name'
-                    ), "$sort") !!}
+                {!! Form::select('sort', array('created_atAsc' => 'Oldest', 'created_atDesc' => 'Newest', 'priceAsc' => 'Lowest Price', 'priceDesc' => 'Highest Price', 'nameAsc' => 'Name A-Z', 'nameDesc' => 'Name Z-A'), "$sort") !!}
                 {!! Form::submit('Sort', ['class' => 'btn btn-default']) !!}
 
             </div>

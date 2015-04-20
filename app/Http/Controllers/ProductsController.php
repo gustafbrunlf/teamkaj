@@ -32,24 +32,14 @@ class ProductsController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        if ($request->input('sort'))
-        {
-            $input = $request->input('sort');
-
-            $products = Product::orderBy($input)
-            ->where('published', '!=', 0)
-            ->paginate(12);
-
-            $sort = $request->input('sort');
-        } 
-        else 
-        {
-            $products = Product::
-            			where('published', '!=', 0)
+    	$products = $this->sort($request->input('sort'))
+    					->where('published', '!=', 0)
             			->paginate(12);
 
-            $sort = 'created_at';
-        }
+        $sort = 'created_atAsc';
+
+        if ($request->input('sort'))
+        	$sort = $request->input('sort');     
 
 		return view('pages.products', compact('products', 'sort'));
 	}
@@ -322,31 +312,31 @@ class ProductsController extends Controller {
 	{
 		switch ($input) {
 				case 'created_atAsc':
-					$products = Product::orderBy('created_at')->get();
+					$products = Product::orderBy('created_at');
 					break;
 
 				case 'created_atDesc':
-					$products = Product::orderBy('created_at', 'DESC')->get();
+					$products = Product::orderBy('created_at', 'DESC');
 					break;
 
 				case 'priceAsc':
-					$products = Product::orderBy('price')->get();
+					$products = Product::orderBy('price');
 					break;
 
 				case 'priceDesc':
-					$products = Product::orderBy('price', 'DESC')->get();
+					$products = Product::orderBy('price', 'DESC');
 					break;
 
 				case 'nameAsc':
-					$products = Product::orderBy('name')->get();
+					$products = Product::orderBy('name');
 					break;
 
 				case 'nameDesc':
-					$products = Product::orderBy('name', 'DESC')->get();
+					$products = Product::orderBy('name', 'DESC');
 					break;
 				
 				default:
-					$products = Product::all();
+					$products = new Product;
 					break;
 				}
 		return $products;
