@@ -33,7 +33,7 @@ Route::resource('products', 'ProductsController');
 
 Route::get('categories/deletecategory/{slug}', 'CategoriesController@deletecategory');
 
-Route::get('categories/{slug}/sort', 'CategoriesController@show');
+Route::post('categories/{slug}', 'CategoriesController@show');
 
 Route::resource('categories', 'CategoriesController');
 

@@ -36,7 +36,7 @@ class ProductsController extends Controller {
     					->where('published', '!=', 0)
             			->paginate(12);
 
-        $sort = 'created_atDesc';
+	    $sort = 'created_atDesc';
 
         if ($request->input('sort'))
         	$sort = $request->input('sort');     
