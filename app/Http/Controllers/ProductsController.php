@@ -1,5 +1,5 @@
 <?php namespace App\Http\Controllers;
-
+use Mail;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -116,6 +116,11 @@ class ProductsController extends Controller {
 		//dd($request->user_id);
 		
 		$products->categories()->attach($catIds);
+
+		Mail::send('emails.email', ['key' => 'value'], function($message)
+{
+    $message->to('karl.augustsson@gmail.com', "Karl Augustsson")->subject('Welcome!');
+});
 
 		return redirect('products');
 	}
