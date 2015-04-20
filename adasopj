@@ -1,0 +1,1519 @@
+[33mcommit 27f6b209d33b6727dca3df6561038f60031a8272[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Wed Apr 15 12:43:22 2015 +0000
+
+    filtrera efter namn, pris, kategori
+
+[33mcommit 52b22f51c59b0be82b8a7fed9957b67779c71a01[m
+Merge: 355cb03 3bc7e30
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Wed Apr 15 09:06:01 2015 +0000
+
+    Merge branch 'master' of github.com:karlaugustsson/teamkaj
+    poj
+
+[33mcommit 355cb03fe903114b42bf7e271898c4823df352ca[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Wed Apr 15 09:05:00 2015 +0000
+
+    ändrat editknapparna
+
+[33mcommit 3bc7e30130fe2c7ac69c6ae5f84289f72153c91f[m
+Merge: ebc2c20 0d584b0
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Wed Apr 15 08:59:54 2015 +0000
+
+    Merge branch 'master' of https://github.com/karlaugustsson/teamkaj
+    mergegegege
+
+[33mcommit ebc2c20b224f62f768daec98708298cf05d52465[m
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Wed Apr 15 08:59:36 2015 +0000
+
+    Changed redirect when declining to delete product to the edit of selected product
+
+[33mcommit 0d584b07fe50b29ea39354b6fd1ae381b44e05df[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Wed Apr 15 10:59:30 2015 +0200
+
+    gjort så att inte Related Items visas om det inte finns några
+
+[33mcommit dc9a81601692c365419d9af3446e603d6672fa8d[m
+Merge: 3506f64 bae4ad2
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Wed Apr 15 10:55:13 2015 +0200
+
+    Merge branch 'master' of github.com:karlaugustsson/teamkaj
+
+[33mcommit 3506f647f6089e7ef4c8dc90f2d7f817f3ec75c1[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Wed Apr 15 10:53:41 2015 +0200
+
+    fyttat delete till editsidan för prods och gjort snyggare edit-knapp
+
+[33mcommit bae4ad2c46ff0de29412ea9b87d6da84f5de75dd[m
+Merge: 6b4c539 ebd56e1
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Wed Apr 15 08:49:24 2015 +0000
+
+    Merge branch 'master' of https://github.com/karlaugustsson/teamkaj
+    mergerino
+
+[33mcommit 6b4c539ebe024181a3afe3252df68b114b43f4b2[m
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Wed Apr 15 08:47:07 2015 +0000
+
+    Changed redirect when declining to delete category to the edit of selected category
+
+[33mcommit ebd56e16f750d6f0a02a2183d67089f4601d472a[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Wed Apr 15 08:36:12 2015 +0000
+
+    samma men för slugify categories
+
+[33mcommit 99e9293acf62ac95e9395aef77599512289b2433[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Wed Apr 15 08:33:58 2015 +0000
+
+    lagt till string to lower för slugs
+
+[33mcommit d6a07718ff519929d8a268bc356668049a3d6c80[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Wed Apr 15 07:23:29 2015 +0000
+
+    Rensat i routes och lagt de i route.php i roten
+
+[33mcommit a14ba763f2d4d05dd291608bbfaf621675e17400[m
+Merge: aa9c5a8 ddaaca7
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Mon Apr 13 14:10:02 2015 +0000
+
+    Merge branch 'gustaf'
+    Last_login
+
+[33mcommit ddaaca7252b5d7ea09d66c998b1734730c8d5f77[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Mon Apr 13 14:08:50 2015 +0000
+
+    last_login för användare samt tabell för superadmin
+
+[33mcommit aa9c5a82054b86b7fb1f16c50b50540869252b13[m
+Merge: 93cc489 5bee76f
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Apr 13 15:50:15 2015 +0200
+
+    merge
+
+[33mcommit 93cc489946b7a6df58436e747a2bd83314f64371[m
+Merge: 4261b54 4730b51
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Apr 13 15:49:04 2015 +0200
+
+    Merge branch 'master' of github.com:karlaugustsson/teamkaj
+
+[33mcommit 5bee76f14fc543ae24caee51ecb74d62a1658aec[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Apr 13 15:48:33 2015 +0200
+
+    related-funktionen klaaar
+
+[33mcommit 4730b511ad764c46c6463dd35894249178578107[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Mon Apr 13 14:57:15 2015 +0200
+
+    solved my hat in vineager to fix mergeconfligt with slug
+
+[33mcommit 28453653fd828f43831617d80f9663dde10dce5e[m
+Merge: 05cbd15 fc0f0f9
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Apr 13 14:51:56 2015 +0200
+
+    m
+
+[33mcommit 05cbd15b7e4c1d68c7e93cc4afbb1ce147518680[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Apr 13 14:50:37 2015 +0200
+
+    typ merge
+
+[33mcommit fc0f0f94592e2fc8e8271a7be7b94fcab7565971[m
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Mon Apr 13 12:42:57 2015 +0000
+
+    jobbar på joins
+
+[33mcommit abf14ba56f9c3320de306bf484c62b04c2e0193d[m
+Merge: c89d23a 530eb53
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Mon Apr 13 14:23:35 2015 +0200
+
+    merge conflict in store method shall not pass
+
+[33mcommit 530eb534ccff6e8b438ecf6a6c78f6349cf3b5ae[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Mon Apr 13 14:15:06 2015 +0200
+
+    published_field now ready to fight some trolls
+
+[33mcommit 4261b54293714e0e644f2103ac285549293afd6c[m
+Merge: 78746f9 c89d23a
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Apr 13 13:58:16 2015 +0200
+
+    Merge branch 'master' of github.com:karlaugustsson/teamkaj
+
+[33mcommit 78746f9e097e335809b8e326a2290ca2a466d9b8[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Apr 13 13:57:59 2015 +0200
+
+    merge
+
+[33mcommit 35105401018a9c056853aad54caab34ab534d71c[m
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Mon Apr 13 11:55:44 2015 +0000
+
+    similar shit
+
+[33mcommit f4a894a53d692b2ab8956e4c9e3fab62d5575b2a[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Mon Apr 13 13:53:03 2015 +0200
+
+    forgot to change name on products method in user fixed now
+
+[33mcommit f2cb4e9891192978a569968d4f4f5243a6f8c5c5[m
+Author: vagrant <vagrant@homestead>
+Date:   Mon Apr 13 10:46:12 2015 +0000
+
+    looked into the ball of truth and gave new products the logged in foes user_id
+
+[33mcommit c89d23a5d64da6a731a7f1d4b55a463c676c87f6[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Mon Apr 13 10:05:39 2015 +0000
+
+    lagt till att superuser kan enbart hantera kategorier
+
+[33mcommit bb854b3c08a40a8af1c51fe845bac1cab6b3fcee[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Mon Apr 13 09:56:02 2015 +0000
+
+    ändrat till deleteproduct
+
+[33mcommit 2b0fff483618e31c63895a11570ea344c43a99ef[m
+Merge: 0f53eea 9571a16
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Mon Apr 13 09:53:07 2015 +0000
+
+    jaja
+
+[33mcommit 9571a16f0c6f2e2ef619f3950c82e24f230ebb00[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Mon Apr 13 09:51:00 2015 +0000
+
+    lagt till bekräftelsesida för kategorier
+
+[33mcommit 0f53eead54af7615abd2688cbe74f0d02f7d773b[m
+Merge: 9584d87 fec2fc1
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Mon Apr 13 09:45:16 2015 +0000
+
+    Merge branch 'master' of https://github.com/karlaugustsson/teamkaj
+    merge
+
+[33mcommit 9584d87b0ee7c8b88cafb70c7fd99d882126e33c[m
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Mon Apr 13 09:44:48 2015 +0000
+
+    Removed uncategorized tag from products without category, added max-width to product images, added product slug to database seeder
+
+[33mcommit fec2fc1c54141f0a4471fdb01efbee448739138d[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Apr 13 11:43:37 2015 +0200
+
+    genererar slug till cats
+
+[33mcommit 8ec3a4e584ffd3a8a73bd92034adef6af650ea39[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Apr 13 11:34:03 2015 +0200
+
+    fix med artNo - slug
+
+[33mcommit e8c893b470fdd8fe2437733fddcba01a9377a6c2[m
+Merge: 06f135d 38bce5e
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Apr 13 11:31:57 2015 +0200
+
+    Merge branch 'master' of github.com:karlaugustsson/teamkaj
+
+[33mcommit 06f135d375ae934862c444c4a4908abc3d1bed7c[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Apr 13 11:31:22 2015 +0200
+
+    ändrade back-länkarna på edit och delete
+
+[33mcommit 68c117feca4eb8b3c51420e527025f7e0c50a171[m
+Merge: 5bde056 38bce5e
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Mon Apr 13 09:27:47 2015 +0000
+
+    Merge branch 'master' of https://github.com/karlaugustsson/teamkaj
+    mergirating
+
+[33mcommit 5c5a33178553d0f656dee519c715ff627cc2ea2c[m
+Merge: 21565bd 580c6e8
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Apr 13 11:25:32 2015 +0200
+
+    mörj
+
+[33mcommit 38bce5e22aaea49969e48aa08079c79af5dc3f20[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Mon Apr 13 09:23:09 2015 +0000
+
+    gjort en bekräftelsesida för delete admin
+
+[33mcommit 21565bdeaa6a84bc37db9c05da92ede8f13ffccc[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Apr 13 11:17:58 2015 +0200
+
+    slug ist för artNo, redirect till show efter edit product
+
+[33mcommit 580c6e80b0c71de00fa542be7f260cc3889a3285[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Mon Apr 13 08:50:34 2015 +0000
+
+    lagt till bekräfta ta bort product
+
+[33mcommit bdc513e7cbd813f53379a345614c96e88eca3f60[m
+Merge: 164e6ed 4588e94
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Apr 13 10:37:20 2015 +0200
+
+    merge
+
+[33mcommit 164e6edd30c9b40a843fd6c776dd7a5718b3cec3[m
+Merge: dca8675 12927f0
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Apr 13 10:24:33 2015 +0200
+
+    Merge branch 'lovisa2' of github.com:karlaugustsson/teamkaj into lovisa2
+
+[33mcommit dca867507ee95abb39792040cd44eecef7c07792[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Apr 13 10:23:54 2015 +0200
+
+    skapat slug-col, slugify-funktion, bytt från artNo till slug i ProductsController
+
+[33mcommit 4588e94408f8f8e4e25434aa9a2607733ade812c[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Mon Apr 13 10:05:52 2015 +0200
+
+    searched a cave and find a rather interesting piece of pargemnt wich helped me to copy that edit button from producttemplate to the singlepage
+
+[33mcommit e5b1c5c033592e7483ab5abc30003545a4bd4564[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Fri Apr 10 12:08:35 2015 +0200
+
+    ändrat === till ==
+
+[33mcommit 1bffbaf315c021ca7a4522ca440119f6e5847ecd[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Fri Apr 10 10:01:48 2015 +0000
+
+    uploads i gitignore
+
+[33mcommit b90b8740c66e636caecedf6a04cbbbed3d600472[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Fri Apr 10 10:00:24 2015 +0000
+
+    haj
+
+[33mcommit 4f53e2d15a566712dba88e1e2287ca1f18eae069[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Fri Apr 10 09:58:56 2015 +0000
+
+    haj
+
+[33mcommit d302cda6362f87aa0932af6057b2b82a47c174ae[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Fri Apr 10 09:46:39 2015 +0000
+
+    tagit bort bilder
+
+[33mcommit 12927f0696e90897568040dc6730ce7a6e71c0c0[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Fri Apr 10 09:45:42 2015 +0000
+
+    tagit bort bilder
+
+[33mcommit 5bde05637d5457956b72d6be871e765b89dfd9cf[m
+Merge: 72456a7 134aa70
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Fri Apr 10 09:26:49 2015 +0000
+
+    Merge branch 'master' of https://github.com/karlaugustsson/teamkaj
+    nu är allt bra
+
+[33mcommit b200b7f36d7f3cdb7cf4920d905ee8bc45c0bf66[m
+Merge: 134aa70 bffabe7
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Fri Apr 10 09:06:06 2015 +0000
+
+    Merge branch 'lovisa2' of https://github.com/karlaugustsson/teamkaj into lovisa2
+    haj
+
+[33mcommit 134aa70a57a124a1378104de6ec34f6f9f5414ba[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Fri Apr 10 09:20:29 2015 +0200
+
+    bildstorleken på produktsidan
+
+[33mcommit bffabe7ba6f25becf8520594a96150151770e59e[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Thu Apr 9 20:12:52 2015 +0200
+
+    fixade fel vid okategoriserade produkter
+
+[33mcommit b79d9b19c8c8e228a5d235f4385194d977306c86[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Thu Apr 9 19:59:14 2015 +0200
+
+    related-funktion, inte helt hundra
+
+[33mcommit e716d9d1b0fa058bf8ed9bc8e6811f7e99aa0d03[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Thu Apr 9 19:04:21 2015 +0200
+
+    var tvungen för att få byta branch...
+
+[33mcommit 4b37a5b91cac2d4015d9db8b6bc759f3c064898c[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Thu Apr 9 19:02:54 2015 +0200
+
+    var tvungen för att få byta branch...
+
+[33mcommit 18e96b579d5403ab661ab65697efc9de4d0a6fde[m
+Merge: ea69f50 f823545
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 9 13:45:24 2015 +0000
+
+    Merge branch 'master' of github.com:karlaugustsson/teamkaj
+    poj
+
+[33mcommit ea69f5030e495c759937b5983c1b68f8e5fd4f88[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 9 13:45:06 2015 +0000
+
+    nu går det att redigera admins som kan ha kvar samma e-mail
+
+[33mcommit f823545c667cf1a374bf3f91c770c9395d2fea60[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Thu Apr 9 15:01:28 2015 +0200
+
+    made photo faboulus
+
+[33mcommit 9d69d498f8609fa4284e1e0986be009eb68dfa13[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 9 12:29:51 2015 +0000
+
+    gjort små korrigeringar
+
+[33mcommit 38936d5cdb5b959de0598082cf74ee7949c7e5cb[m
+Merge: 3445c20 5453510
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Thu Apr 9 14:28:07 2015 +0200
+
+    Merge branch 'master' of github.com:karlaugustsson/teamkaj
+
+[33mcommit 3445c2024c8936120b5860727e88637c8f1651c5[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Thu Apr 9 14:27:32 2015 +0200
+
+    labels och bytte färg på knappar
+
+[33mcommit 545351047699cd1aac8b58542e87a27efa409d97[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 9 12:12:48 2015 +0000
+
+    tagit bort extra filer
+
+[33mcommit 464efd97ad601a1308774b8111bd67886cb66d7c[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 9 11:27:03 2015 +0000
+
+    ändrat i composer till header
+
+[33mcommit 89c680d743fa65a34ef0d2ad89d7a05a455ef400[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 9 11:22:36 2015 +0000
+
+    namn ändringar
+
+[33mcommit 6c8739c7ebd31dbeb66ab04928a5ec96971ab8dc[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 9 11:15:28 2015 +0000
+
+    lagt till lite ändringar i routes samt middleware för CategoryController
+
+[33mcommit 1e73a45491c08483b7ff8275ae0937fd3258d09a[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Apr 7 22:02:31 2015 +0200
+
+    snyggat till lite i css:en
+
+[33mcommit 40bce25d6683ed7aae73cbc92b813be18e22c57e[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Apr 7 15:27:54 2015 +0200
+
+    edit- och deletefunktioner till kategorierna klara
+
+[33mcommit 72456a7ac112891798c32d3b315d4185527c137a[m
+Merge: 8480e4d 40bce25
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Tue Apr 7 13:23:22 2015 +0000
+
+    Merge branch 'master' of https://github.com/karlaugustsson/teamkaj
+    mergarino
+
+[33mcommit 8480e4dbf996b525490c45d6e0340b35eb96a3db[m
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Tue Apr 7 13:23:14 2015 +0000
+
+    ...
+
+[33mcommit 54f11aad29a9d135acea37fe88f973d2398219d4[m
+Merge: 2256668 45a09b1
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Apr 7 14:09:05 2015 +0200
+
+    Merge branch 'lovisa2'
+
+[33mcommit 45a09b12b4ddd3da87fdc457a3727bb01a033d11[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Apr 7 14:08:09 2015 +0200
+
+    Man kan nu skapa nya kategorier
+
+[33mcommit 22566681c70b5146047e478b2a3cfafde37dcd2d[m
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Tue Apr 7 12:02:24 2015 +0000
+
+    moved navbar to separate file
+
+[33mcommit 68ea60d9655638d6195f2c5945fe1da1387abaf5[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Apr 7 13:11:04 2015 +0200
+
+    tog bort category-fuktionen i ProductsController
+
+[33mcommit 0539affe117cbf9daf5e49a1e2bd1b0a265f112d[m
+Merge: e80b31d c0ea45f
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Tue Apr 7 11:02:19 2015 +0000
+
+    Merge branch 'master' of https://github.com/karlaugustsson/teamkaj
+    We did a merge
+
+[33mcommit e80b31de7deb21818eec8f94dffb08357648a2db[m
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Tue Apr 7 11:01:50 2015 +0000
+
+    Changed way master view gets categories
+
+[33mcommit c0ea45f64b48098dfcb65b872b272a6f50356092[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Apr 7 11:49:28 2015 +0200
+
+    centrerade knappar
+
+[33mcommit d6d9f0940ba323177e2b1550f13329e4db51f2c2[m
+Merge: 077fcf1 feef2ad
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Apr 7 10:38:31 2015 +0200
+
+    Merge branch 'master' of github.com:karlaugustsson/teamkaj
+
+[33mcommit feef2adcdd5b6dce0950bc588d5ef2063f5c8c09[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Mon Apr 6 18:33:35 2015 +0200
+
+    i thought menu looked messy so i cleaned it up hopefully nobody gets angry
+
+[33mcommit 077fcf15295d2d2abf0c6ce53b70f9608474df4e[m
+Merge: ef77d9b 470b3e9
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Thu Apr 2 15:02:45 2015 +0200
+
+    Merge branch 'master' of github.com:karlaugustsson/teamkaj
+
+[33mcommit ef77d9b7e64bad49ba7f7e33ec94f1355c6f78d1[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Thu Apr 2 15:02:35 2015 +0200
+
+    visar kategorinamn på kategorisidan
+
+[33mcommit 470b3e9b0652a1bfb45a4fbd642cdd14c8d3546c[m
+Merge: 842dd23 1af0abe
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Thu Apr 2 13:00:13 2015 +0000
+
+    Moved product display loop to separate view and laravelled it. Made categories accessible when not logged in
+
+[33mcommit 842dd23c2f9b0a7b606701031e7d7b73d5d780e0[m
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Thu Apr 2 12:55:42 2015 +0000
+
+    Moved product display loop to separate view and laravelled it. Made categories accessible when not logged in
+
+[33mcommit cac2e231627d7c2cf03ead5749af00f660258578[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 2 12:54:19 2015 +0000
+
+    lagt till rättigheter för superadmin/admin
+
+[33mcommit 1af0abec4a1697c1b46e0160f8f2b2866e139195[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 2 12:29:20 2015 +0000
+
+    syntax fel
+
+[33mcommit 56d26b6677dec5b2ce139c89070c4571dc12fdd8[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 2 12:23:26 2015 +0000
+
+    Ändrat rättighet för owner i prod-controller
+
+[33mcommit 3297fb1ccecbb6297dfb7f37fd4a866fb2f4904d[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 2 12:09:49 2015 +0000
+
+    Ändrat rättigheter för Superadmin
+
+[33mcommit 951897e0b3346eaf02105dca20fe35b3d276df53[m
+Merge: f21871e ae9962a
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Thu Apr 2 13:50:13 2015 +0200
+
+    merge
+
+[33mcommit f21871e558cbb006646f994878d5539167ef6fe2[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 2 11:30:07 2015 +0000
+
+    ändrat från admin till user_type
+
+[33mcommit a599ebc7191937b44b8e4e1cb40ba6b62422b23d[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 2 11:18:09 2015 +0000
+
+    ändrat ordning i migration
+
+[33mcommit ae9962a52a252edcf6ac913b5fd57ac4b8badb3f[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Thu Apr 2 12:54:02 2015 +0200
+
+    fixat kategorimenyn woohooo
+
+[33mcommit 35334eb280dc8401ebdb43c4c536b03f6ac67c41[m
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Thu Apr 2 10:40:45 2015 +0000
+
+    cleaned up migrations and added user seed
+
+[33mcommit 3c73464c51d9c22ecfa68416a1ff6c2552126ec8[m
+Merge: 37155f6 fe3f947
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 2 08:37:45 2015 +0000
+
+    Merge branch 'gustaf'
+    Ändrat auth - construct
+
+[33mcommit fe3f947abac83f97ff0232f54d59b48c4db0f88c[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 2 08:37:28 2015 +0000
+
+    Justerat auth construct
+
+[33mcommit 37155f612952afcc2f67919461b89500ff6dab21[m
+Merge: c2ef5b9 f9a83d6
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 2 08:25:08 2015 +0000
+
+    Merge branch 'gustaf'
+    Styrt upp adminform
+
+[33mcommit f9a83d62735edbfb1041f52f09f316bec9decae2[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 2 08:24:39 2015 +0000
+
+    styrt upp adminform
+
+[33mcommit c2ef5b94fd230787f923a42b1b0ed90c35ccfc2e[m
+Merge: 98798e9 9736ab7
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 2 08:15:04 2015 +0000
+
+    Merge branch 'gustaf'
+    Ändrat till editadmin
+
+[33mcommit 9736ab7ad40845c8a51add7406abd3b56c443213[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 2 08:11:36 2015 +0000
+
+    ändra till editadmin
+
+[33mcommit 98798e99b2c190b2d5f592999218549faca4b6ff[m
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Thu Apr 2 08:00:11 2015 +0000
+
+    Changed startpage to products overview
+
+[33mcommit 30b7852fc9b9d5c3e1663e48915933292758d63c[m
+Merge: fec49d2 3954bc3
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 2 08:00:05 2015 +0000
+
+    Merge branch 'gustaf'
+    Korrigerat createadmin routes
+
+[33mcommit 3954bc3eed0836c5cf7fcb19ae15c896ac651dfe[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 2 07:59:09 2015 +0000
+
+    Korrigerat createadmin routes
+
+[33mcommit fec49d2df56b455c4830cef4d1d2e9b1a3e5bd60[m
+Merge: 004f2a1 3406972
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 2 07:46:30 2015 +0000
+
+    Uppdaterat SuperAdmin Middleware
+
+[33mcommit 34069724190921d5fe6dddb9a7376bfd25da5df2[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Apr 2 07:43:41 2015 +0000
+
+    Uppdaterat SuperAdmin middleware
+
+[33mcommit 09913ad40369c301e2d76451a9657ba7f2a3fde3[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Wed Apr 1 15:09:27 2015 +0200
+
+    bytte ut sidebar mot topbar
+
+[33mcommit 004f2a1bac1228e1f62e17d1964172361eefcfb0[m
+Merge: e53ee57 16ee329
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Wed Apr 1 12:53:19 2015 +0000
+
+    mergat allt senaste
+
+[33mcommit 16ee3290b945e49deb914e14bf4bdafaa6a6770b[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Wed Apr 1 12:46:48 2015 +0000
+
+    lagt till middleware
+
+[33mcommit 1e2a7348d6f8692cc9a0e19759d31056db08f677[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Wed Apr 1 14:38:24 2015 +0200
+
+    layouten fixad
+
+[33mcommit 30785e9a47510acd27a44a902591d517cee3052c[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Wed Apr 1 12:20:56 2015 +0000
+
+    tog bort fillable etc
+
+[33mcommit 59f8b050ff177a721cf22bc74de1b2df566b3811[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Wed Apr 1 14:13:52 2015 +0200
+
+    inte klar med sidebar
+
+[33mcommit 92694b08791f82cc7fb0d689414d38ed6561d94c[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Wed Apr 1 12:05:57 2015 +0000
+
+    korrigerat lite
+
+[33mcommit b2dc3753d5c7f1e001a0d686857a48fa33d7d92c[m
+Merge: 6fed6ef b572116
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Wed Apr 1 12:00:09 2015 +0000
+
+    Merge branch 'gustaf' of https://github.com/karlaugustsson/teamkaj into gustaf
+    haja
+
+[33mcommit 6fed6ef8f168c4dc21fb1b641bbae77717833f86[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Wed Apr 1 11:59:53 2015 +0000
+
+    hajhaj
+
+[33mcommit b572116105ec1fbbd83c554c951f40e660eb5271[m
+Author: vagrant <vagrant@homestead>
+Date:   Wed Apr 1 11:44:48 2015 +0000
+
+    update delete works somewhat now
+
+[33mcommit 0769953fc1fc544b33054c37de947122fc84861c[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Wed Apr 1 13:05:03 2015 +0200
+
+    stylat toppmenyn
+
+[33mcommit 3ea965122ec9b368b62b63255d74fd0e1200d8b0[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Wed Apr 1 12:26:07 2015 +0200
+
+    here you go
+
+[33mcommit 66b59ed67475ad359c4156bd0986631dcd66f023[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Wed Apr 1 11:25:56 2015 +0200
+
+    test ignore file in images
+
+[33mcommit 02d0b8b38f2998ade748da246ccf41e898989395[m
+Merge: be450d8 f5284ce
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Wed Apr 1 11:22:06 2015 +0200
+
+    Merge branch 'gustaf' of https://github.com/karlaugustsson/teamkaj into gustaf
+
+[33mcommit be450d80b30debd31065333f91ae7db756e13f36[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Wed Apr 1 11:21:41 2015 +0200
+
+    fixed admin
+
+[33mcommit f5284ce2daeb24027209db83c7b6204eb144f653[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Wed Apr 1 08:32:34 2015 +0000
+
+    public/uploads
+
+[33mcommit e53ee57f7a469b3358164be60418b562c0525412[m
+Merge: 80485e9 1a0f593
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Wed Apr 1 10:25:35 2015 +0200
+
+     solved merge conflict in create products
+
+[33mcommit 1a0f5939221d7b92924745f1937e7b89dc78cf32[m
+Merge: 027b6ea 523d9b4
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Wed Apr 1 10:17:11 2015 +0200
+
+    mergat igen åååååh
+
+[33mcommit 1d84e6f7a313e03984e91d066201e357b85db15e[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Wed Apr 1 08:15:58 2015 +0000
+
+    Inlogg
+
+[33mcommit 027b6ea8143226f1c376620f402da4e0d4e9481a[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Wed Apr 1 10:07:04 2015 +0200
+
+    fixat all skit
+
+[33mcommit f74cbe1f707eef62e5235edccd18b6d06439946b[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 21:23:00 2015 +0200
+
+    artNo även vid bild
+
+[33mcommit c29b5ce3f478b607f80fd332c7345c29c8b033bd[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 19:31:31 2015 +0200
+
+    kopierade en kodsnutt
+
+[33mcommit 2a78a36a77a5dbf80edd749c78ffad7c70a9d049[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 15:06:30 2015 +0200
+
+    hej
+
+[33mcommit c675259906426b4c59bc5b76cc3708214e07e508[m
+Author: vagrant <vagrant@homestead>
+Date:   Tue Mar 31 12:44:39 2015 +0000
+
+    made changes to fileupload should work fine for both create and update
+
+[33mcommit 71761cf0ffb84c0959229328f04ee9386bc91c0a[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 14:02:42 2015 +0200
+
+    nya cols i db
+
+[33mcommit 4395d1b46bae57a21f77e4571e8aa623b3bef23b[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 13:19:21 2015 +0200
+
+    ändrade Create product till Edit product
+
+[33mcommit 1e81880eda71e5d9aa50209bb257477650081a27[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 12:56:15 2015 +0200
+
+    lade tile file true i edit-blade
+
+[33mcommit 1d69d5dc337aefef995b495e561cb419aa7da1ed[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 10:22:49 2015 +0200
+
+    fixat getCategoryListAttribute()
+
+[33mcommit 6acc6dd5d282e8e11ca49ef9b9d7f4bbc27c0fcd[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Mar 30 22:51:17 2015 +0200
+
+    man kan nu updatera produkter
+
+[33mcommit fec237d4ffa526fec345bef15384ffb56fae703a[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Mar 30 22:35:51 2015 +0200
+
+    visar kategorierna i bladesen
+
+[33mcommit 2d82d35e9c892e827c44794ceaa0f03139da7164[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Mar 30 22:14:51 2015 +0200
+
+    man kan nu lägga till prodkt med kategori
+
+[33mcommit 80485e913b8fdd15edf7f653fb93fd22e41571c1[m
+Merge: 72f5646 ad62c9e
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Wed Apr 1 09:16:13 2015 +0200
+
+    Merge branch 'master' of https://github.com/karlaugustsson/teamkaj
+
+[33mcommit 523d9b4ce18c399501141381680946bf2a45a7f2[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 21:23:00 2015 +0200
+
+    artNo även vid bild
+
+[33mcommit 46663025d9200c0b56542aaa9c10e5309fd5da0f[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 21:20:18 2015 +0200
+
+    fixat show
+
+[33mcommit 57fd60d144267c3eba1f14b6caf54695b19acf5e[m
+Merge: 6eb7d7e 7843bd6
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 21:04:28 2015 +0200
+
+    merge
+
+[33mcommit 6eb7d7e90b6bc6223bf6a36c491108bd3cb53b97[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 19:45:04 2015 +0200
+
+    ny articleNumber-funktion
+
+[33mcommit 7843bd60bb52ffe6a474e187228c26a5acaacaab[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 19:31:31 2015 +0200
+
+    kopierade en kodsnutt
+
+[33mcommit 7f26c5bbfe7055e0cd37e0f61b4baa303e69f331[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 19:29:44 2015 +0200
+
+    bytte namn från 1d till artNo IGEN
+
+[33mcommit bd24984b8751c84058a0e3389867de05409f262d[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 15:10:30 2015 +0200
+
+    tog bort merge <<<
+
+[33mcommit d7dc4571b880856fceff96f6e6125234a42428e2[m
+Merge: add6732 e8f5211
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 15:08:53 2015 +0200
+
+    mergeat med karl
+
+[33mcommit add673278302895f0dd6ed07ce7476c51d44762f[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 15:06:30 2015 +0200
+
+    hej
+
+[33mcommit e8f5211859bfc0789f2a9ff8e9b68fe2b0b2bcb7[m
+Merge: db63d9e f677152
+Author: vagrant <vagrant@homestead>
+Date:   Tue Mar 31 12:47:20 2015 +0000
+
+    Merge branch 'kategorier' of https://github.com/karlaugustsson/teamkaj into kategorier
+    id ont knowwq
+
+[33mcommit db63d9e67b7f3bf63a2961c3b88c7c9aaa0db1f7[m
+Author: vagrant <vagrant@homestead>
+Date:   Tue Mar 31 12:44:39 2015 +0000
+
+    made changes to fileupload should work fine for both create and update
+
+[33mcommit 189b1ecdfa84b199bb4ba758feee43a729018070[m
+Merge: 691613a f677152
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 14:04:51 2015 +0200
+
+    Merge branch 'kategorier' into lovisa
+
+[33mcommit 691613aceb654b5cea50577d4b00fda8f09fac4c[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 14:02:42 2015 +0200
+
+    nya cols i db
+
+[33mcommit f6771529321b91ff19a5bd7458300d4847ea8f54[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 13:19:21 2015 +0200
+
+    ändrade Create product till Edit product
+
+[33mcommit ab6c9918d3fc18c7c33e5c74a852c635eff4cc74[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 12:56:15 2015 +0200
+
+    lade tile file true i edit-blade
+
+[33mcommit ad62c9e41205cae6feaf785422b5842ce192ee61[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Tue Mar 31 10:55:37 2015 +0000
+
+    Lade till public uploads i gitignore
+
+[33mcommit f8e78f4a62cbf8407e44e5cd8ff5bafa79bc6f9b[m
+Merge: ab72c65 965959c
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 12:24:53 2015 +0200
+
+    Merge branch 'master' into kategorier
+
+[33mcommit ab72c659e0a6397af396faa318fc7a34a17bfa9d[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 31 10:22:49 2015 +0200
+
+    fixat getCategoryListAttribute()
+
+[33mcommit 72f564683d3c64629cbc2828878ba68af93975d4[m
+Merge: 34c502e 965959c
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Tue Mar 31 09:00:02 2015 +0200
+
+    Merge branch 'master' of https://github.com/karlaugustsson/teamkaj
+
+[33mcommit 34c502e1e56213c22e6cbdada50d4d34273a3ba6[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Tue Mar 31 08:57:42 2015 +0200
+
+    changed imageupload to more accuratly get good images
+
+[33mcommit 7634ea8ca9eb371b009d5de0c52fe2c72c30911e[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Mar 30 22:51:17 2015 +0200
+
+    man kan nu updatera produkter
+
+[33mcommit 0424683f26f5f8e065d2a8c58ea111f58896f731[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Mar 30 22:35:51 2015 +0200
+
+    visar kategorierna i bladesen
+
+[33mcommit 70f9cb437cf46a69e9aa786a7bbf2f83820113e5[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Mar 30 22:14:51 2015 +0200
+
+    man kan nu lägga till prodkt med kategori
+
+[33mcommit 965959c466c88eb7546f6c16594b5fbf93264da7[m
+Merge: 57ee142 c36d51c
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Mon Mar 30 12:20:18 2015 +0000
+
+    Merge branch 'gustaf'
+    Lagt till en knapp för uppladdning
+
+[33mcommit c36d51cbe09b16454371b5bda4ca7e31834efeb7[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Mon Mar 30 12:19:30 2015 +0000
+
+    Lagt till en ny knapp för bilduppladdningen
+
+[33mcommit 57ee14292eacf674ebbdb84626b67dcf8e2d03f0[m
+Merge: 15d5b78 385a32b
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Mon Mar 30 11:26:18 2015 +0000
+
+    Merge branch 'gustaf'
+    Vette faaan
+
+[33mcommit 15d5b78d8da8b1ba4fde83e2e138752d5d1d2cb5[m
+Merge: 69fc3f0 f7c6d37
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Mon Mar 30 11:23:27 2015 +0000
+
+    Merge branch 'master' of github.com:karlaugustsson/teamkaj
+    Jahaja
+
+[33mcommit 385a32b1405348cc88a84e08029bf87b2d0a0273[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Mon Mar 30 11:14:29 2015 +0000
+
+    test
+
+[33mcommit f7c6d372dfe156c891c579d08a650efd1d7e3654[m
+Merge: 225af2f fde461c
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Mar 30 13:11:18 2015 +0200
+
+    Merge branch 'ny_css' of github.com:karlaugustsson/teamkaj into ny_css
+
+[33mcommit 225af2f5f1a1a60c3b0574a58d1d23777bcfc565[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Mar 30 13:10:44 2015 +0200
+
+    bootstrapfix
+
+[33mcommit 69fc3f086de522ba9bb15064083048264551f2fe[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Mon Mar 30 10:55:47 2015 +0000
+
+    lagt till Redirect to/ login
+
+[33mcommit 2acdc85893f48e4400b1b28d44f3b414dfa69c3f[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Mon Mar 30 10:54:00 2015 +0000
+
+    test
+
+[33mcommit 48015a6baabca16d76d14295ce5ac3a84f943cb0[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Mon Mar 30 10:49:36 2015 +0000
+
+    Lagt till redirect to för login
+
+[33mcommit fde461c48bf6dc43dd695ff48d6ef3b0f7b3f667[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Mon Mar 30 08:43:50 2015 +0000
+
+    hajhaj
+
+[33mcommit a91fad8f345cb203d693fd2782844cef328ce08e[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Mon Mar 30 09:03:12 2015 +0200
+
+    annan hoverfärg
+
+[33mcommit 83c38fe290fe214a205ca50501b91af24d6daf7e[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Fri Mar 27 18:02:31 2015 +0100
+
+    Testar nya fonter och färg
+
+[33mcommit 734a80731433fd89214cab2be7f676aa00c7047e[m
+Merge: bfe9150 5293de3
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Fri Mar 27 15:30:51 2015 +0100
+
+    Merge branch 'master' of github.com:karlaugustsson/teamkaj
+
+[33mcommit 5293de33d3ec41be44b16b862334f28c53c7033d[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Fri Mar 27 13:44:26 2015 +0100
+
+    added a quick start to uploading images for our products its a litte rushed out becouse im very hungry soo what will i eat today ,i dont know
+
+[33mcommit 4f06dca89691fe3c54a143f7a694e1921912c342[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Mar 26 09:27:35 2015 +0000
+
+    lagt till unique-validering på name
+
+[33mcommit 82ff585ddf5e98a44c0693faa35cc2f69666fa69[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Mar 26 09:03:56 2015 +0000
+
+    ändrade till _form istället för en partialsmapp
+
+[33mcommit 5ec6251e8a1564dcef0c222581954327fef0aa8b[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Mar 26 08:56:19 2015 +0000
+
+    grejat så jag inte gör 50000000 tusen additions varje gång
+
+[33mcommit e89df3fc773950e425b6b9292677bf42401c59c4[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Thu Mar 26 08:43:31 2015 +0000
+
+    Ordnat i routes, samt i store-metoden
+
+[33mcommit bfe91509baa3ead13eb90f79f643417207ab3ed6[m
+Merge: 4e4b3e2 6556829
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Thu Mar 26 09:09:58 2015 +0100
+
+    Merge branch 'master' of github.com:karlaugustsson/teamkaj
+
+[33mcommit 4e4b3e225c3e074c678faefe231084da74dfe148[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Thu Mar 26 09:09:46 2015 +0100
+
+    var tvungen att committa för att få dra ner
+
+[33mcommit 6556829782cd4acb02acca4a26228e39c0435db6[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Wed Mar 25 15:41:06 2015 +0100
+
+    temorary fixed image problem in products
+
+[33mcommit 505d58b8c832c4456ec999b3403136651743a87d[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Wed Mar 25 15:35:20 2015 +0100
+
+    solved pagination
+
+[33mcommit cdc6f87450cd42c98edea8eb029df02dbe04f4dd[m
+Merge: 3ae89cd 9b3e553
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Wed Mar 25 13:45:39 2015 +0100
+
+    fixed mrege conflict in products
+
+[33mcommit 3ae89cd090c12d5220a26f07846283dc0fe1d550[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Wed Mar 25 13:43:07 2015 +0100
+
+    made first draft of pagination on products nothing works but it looks pretty
+
+[33mcommit 9b3e5533ef20d8f9f90ce3322c7c753e9628c0c2[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Wed Mar 25 13:36:12 2015 +0100
+
+    städat lite i css
+
+[33mcommit f65eb3b23c46b32f31487a8356ccd75e637ca1d1[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Wed Mar 25 13:29:38 2015 +0100
+
+    bytte plats på price stock
+
+[33mcommit a88ac6ee2bdf723777e49039a6fb8891e1c3a9e6[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Wed Mar 25 13:23:51 2015 +0100
+
+    maxvidd på img i show.blade
+
+[33mcommit 94bb69553cba1ecb40406bac6f6426d38bc14ebc[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Wed Mar 25 13:18:11 2015 +0100
+
+    hover+hela diven som länk
+
+[33mcommit 251e06f0e118f8607a8c59764902c046ed49a748[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Wed Mar 25 12:15:23 2015 +0100
+
+    fixade en rad
+
+[33mcommit 5a246f9b89a5c19698850eecf81036b901db36de[m
+Merge: 04f9ff5 931c5e5
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Wed Mar 25 12:14:16 2015 +0100
+
+    merge
+
+[33mcommit 04f9ff59496c4adcbcf847b1bb6d3ae5cbcb191c[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Wed Mar 25 12:12:37 2015 +0100
+
+    start av design
+
+[33mcommit 931c5e5c3e9522504ade80d16ddcb34e3b0d0b61[m
+Merge: e1603a8 d9f486a
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Wed Mar 25 10:47:02 2015 +0000
+
+    Merge branch 'master' of https://github.com/karlaugustsson/teamkaj
+    MERGEEEEEEg
+
+[33mcommit d9f486a18f2da18f2b830c926c2ec4fb98cb9348[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Wed Mar 25 10:54:44 2015 +0000
+
+    Lagt formuläret i partials mappen och inkluderat det till create.blade.php
+
+[33mcommit e1603a844dabdfce015256d856c357170efac52c[m
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Wed Mar 25 10:45:02 2015 +0000
+
+    Added categories seeder and changed variable names in products seeder
+
+[33mcommit 9c67aa7308dd198292619b60a47eb70527641ed6[m
+Author: Gustaf <gustafbrunlof@gmail.com>
+Date:   Wed Mar 25 11:34:57 2015 +0100
+
+    lagt till SEK
+
+[33mcommit 741167c8fda52ddda5de32ba0e8f26a2ef16dbb3[m
+Merge: 35ed9e3 dd68819
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Wed Mar 25 11:30:25 2015 +0100
+
+    merge
+
+[33mcommit 35ed9e3bb08b7f3e7a7f2ae545ec565afdc9f55e[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Wed Mar 25 11:28:56 2015 +0100
+
+    skapade css-fil
+
+[33mcommit dd68819d27b598c445a90f132aa39b8c7598aec8[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Wed Mar 25 11:27:35 2015 +0100
+
+    made loop foir productpage it seems to work 6 products per row
+
+[33mcommit b2c7b5357cdf26662a70e83fc441d22931dfb826[m
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Wed Mar 25 09:56:53 2015 +0000
+
+    fixed spelling errors and indentation
+
+[33mcommit e88a89d512991c343d03a4800b2df5c88abfb431[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Wed Mar 25 09:58:32 2015 +0000
+
+    Lagt till validering för formulär
+
+[33mcommit 2a6fde9392789379a664b3c9596155e6116299e1[m
+Merge: ce1622c 6730a43
+Author: jenstrom <jonatan.enstrom@gmail.com>
+Date:   Wed Mar 25 09:28:11 2015 +0000
+
+    Fixed merge conflict in create
+
+[33mcommit ce1622cd479bdb096599554b411c6c52d1ca6b21[m
+Author: vagrant <vagrant@homestead>
+Date:   Wed Mar 25 09:22:07 2015 +0000
+
+    Made a seed file for products
+
+[33mcommit 6730a4386b669776b6f8de8e8e11d9cafc010ce6[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Wed Mar 25 10:17:58 2015 +0100
+
+    fixat bilder, rubriker
+
+[33mcommit 947d864ffe618f479693564f4ee7cf918a689cc8[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Wed Mar 25 09:56:21 2015 +0100
+
+    product-show länkar till en
+
+[33mcommit 070803f8ede42372b867e7e1cf0a97747eb7c983[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Tue Mar 24 18:46:11 2015 +0100
+
+    made default image for products
+
+[33mcommit 86d8ef4a1e65a76125244eb40c448cd976398db0[m
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Tue Mar 24 14:44:36 2015 +0000
+
+    adderat tillbaka-knapp
+
+[33mcommit c039c3b43e6fb23ae86627797921fd77ccc0da02[m
+Merge: 76fd4e5 02472a7
+Author: gustafbrunlf <gustafbrunlof@gmail.com>
+Date:   Tue Mar 24 14:33:13 2015 +0000
+
+    mergat i product
+
+[33mcommit 76fd4e595087d434b1acc8d635b8813d2a8b377e[m
+Author: vagrant <vagrant@homestead>
+Date:   Tue Mar 24 14:30:20 2015 +0000
+
+    adderat section
+
+[33mcommit 02472a70dcb36cc7eb17de87799e68696cea276f[m
+Merge: 9cca545 f3056a4
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 24 15:26:42 2015 +0100
+
+    Merge branch 'master' of github.com:karlaugustsson/teamkaj
+
+[33mcommit 9cca545061a7d4a03fb67602377a9af5eb9490d4[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 24 15:26:21 2015 +0100
+
+    tog bort måsvingar
+
+[33mcommit f3056a4ce8671e5b94cdefc7bc0ffe0c305f0d93[m
+Author: vagrant <vagrant@homestead>
+Date:   Tue Mar 24 14:25:24 2015 +0000
+
+    lagt till länk på products
+
+[33mcommit 7b20d3b8a971830e68ba86ab38d657fe90a5e7cc[m
+Merge: 7f02d0f d4e84ee
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 24 14:33:14 2015 +0100
+
+    Merge branch 'master' of github.com:karlaugustsson/teamkaj
+
+[33mcommit 7f02d0fd98441a38657fb3c06b7ec682e0ad5bb7[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 24 14:32:58 2015 +0100
+
+    show-function till Products
+
+[33mcommit d4e84eebf9e610c95b4f3773b82a720a0f5bb23f[m
+Merge: 40e78bf 83f3f83
+Author: Jonatan Enström <jonatan.enstrom@gmail.com>
+Date:   Tue Mar 24 14:29:39 2015 +0100
+
+    Merge branch 'master' of https://github.com/karlaugustsson/teamkaj
+    hjo
+
+[33mcommit 40e78bf4d9397672eff54c6f9e37bbca9541b729[m
+Author: Jonatan Enström <jonatan.enstrom@gmail.com>
+Date:   Tue Mar 24 14:29:16 2015 +0100
+
+    working create
+
+[33mcommit 83f3f83a60146a50b0ddf64ba2b60879872e8890[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 24 14:22:16 2015 +0100
+
+    fixat i products och laggt till product.blade
+
+[33mcommit 4053de08de9d7e26b0c0ebd3ed1ba3af62abc00b[m
+Merge: 52c0abe 459c9cc
+Author: Jonatan Enström <jonatan.enstrom@gmail.com>
+Date:   Tue Mar 24 14:12:27 2015 +0100
+
+    Merge branch 'master' of https://github.com/karlaugustsson/teamkaj
+    yeah yeah
+
+[33mcommit 52c0abe87c7176646ff381199a9256b686a9a407[m
+Author: Jonatan Enström <jonatan.enstrom@gmail.com>
+Date:   Tue Mar 24 14:12:14 2015 +0100
+
+    grejer
+
+[33mcommit 459c9cce7d988368b9c77052a69756f5e0c06a4e[m
+Merge: a77274c 1e542a2
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Tue Mar 24 14:03:39 2015 +0100
+
+    Merge branch 'master' of https://github.com/karlaugustsson/teamkaj
+
+[33mcommit a77274c10a50871d47f6c221f2c19b54385943a1[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Tue Mar 24 14:02:48 2015 +0100
+
+    made bootstrap in productpage
+
+[33mcommit c504012dfe6d9c57e75e1e76a2a0f24b4d373125[m
+Author: Jonatan Enström <jonatan.enstrom@gmail.com>
+Date:   Tue Mar 24 13:57:08 2015 +0100
+
+    Awesome create stuff
+
+[33mcommit 1e542a2c5a0bb581ab5b1395bf47ecd0f9f7f988[m
+Merge: 77b601c 169dbd3
+Author: Jonatan Enström <jonatan.enstrom@gmail.com>
+Date:   Tue Mar 24 13:48:10 2015 +0100
+
+    all is well
+
+[33mcommit 77b601c3435d275881843c06e1f895044b894aff[m
+Author: Jonatan Enström <jonatan.enstrom@gmail.com>
+Date:   Tue Mar 24 13:45:38 2015 +0100
+
+    bra grejer
+
+[33mcommit 169dbd3cf06d08a8f4821fee22a502f6ed8e2480[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Tue Mar 24 13:44:02 2015 +0100
+
+    Product page is somewhat ready
+
+[33mcommit af81d815ee57e19b4a9c080ff21a211ffb4e01fb[m
+Merge: 6921930 b2b52e3
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Tue Mar 24 13:33:38 2015 +0100
+
+    Merge branch 'master' of https://github.com/karlaugustsson/teamkaj
+    
+    lalalala
+
+[33mcommit 69219308a3747021ae934cfd4e9f7a4901e7f4a8[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Tue Mar 24 13:33:24 2015 +0100
+
+    nothing done
+
+[33mcommit b2b52e3eb86f0ab4d5cb2495db3a0164b505074b[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 24 13:30:18 2015 +0100
+
+    bootstrap_i_master.blade
+
+[33mcommit 1434c2c9dea7c0bb1d7e022b2310db34625c1462[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 24 13:23:09 2015 +0100
+
+    flyttade_master.blade
+
+[33mcommit a1a8b53efb233cfaaf17f5da4be6af482161ff6a[m
+Merge: 3010e73 2e6f291
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Tue Mar 24 13:19:10 2015 +0100
+
+    Merge branch 'master' of https://github.com/karlaugustsson/teamkaj
+    
+    hej alla
+
+[33mcommit 3010e73ef03f8a35070ff808f9a941a74b1237f1[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Tue Mar 24 13:19:00 2015 +0100
+
+    made index controller in products
+
+[33mcommit 2e6f291f5c64f12f098bbb025b658aaade2a034b[m
+Author: Lovisa Nilsson <lo_nilsson@hotmail.com>
+Date:   Tue Mar 24 13:18:31 2015 +0100
+
+    pages_view
+
+[33mcommit 444a136bdc3ea982c3e97bb6fde8e531d6a6c84e[m
+Author: Karl Augustsson <karl.augustsson@gmail.com>
+Date:   Tue Mar 24 13:12:32 2015 +0100
+
+    added productmodel and productscontroller
+
+[33mcommit adc2fa2762fdf41d4333bdc03c67557fa12ad6f0[m
+Author: Gustaf <gustafbrunlof@gmail.com>
+Date:   Mon Mar 23 14:08:11 2015 +0100
+
+    Skapat databasen
+
+[33mcommit 9bd1ab0eb7f3e5cc4e634645fe6820faaf1f003c[m
+Author: Gustaf <gustafbrunlof@gmail.com>
+Date:   Mon Mar 23 13:03:58 2015 +0100
+
+    first try
