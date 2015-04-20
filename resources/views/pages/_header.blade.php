@@ -31,6 +31,7 @@
                     <li><a href="{{ url('/auth/login') }}">Login</a></li>
                 @else
                     <li><a href="{{ url('products/create') }}">Create new Product</a></li>
+                    <li><a href="{{ url('products/overview') }}">Products Overview</a></li>
                     @if(Auth::user()->user_type == 0)
                     <li><a href="{{ url('categories/create') }}">Create/View Categories</a></li>
                     @endif
@@ -41,6 +42,7 @@
                         <ul class="dropdown-menu" role="menu">
                             @if(Auth::user()->user_type == 0)
                                 <li><a href="{{ action('AdminController@index') }}">Manage admins</a></li>
+
                             @endif
                             <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
                         </ul>

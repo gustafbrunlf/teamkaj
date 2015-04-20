@@ -2,6 +2,9 @@
 
 use App\Category;
 use App\Product;
+use App\User;
+use Auth;
+use Mail;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -32,15 +35,59 @@ class ProductsController extends Controller {
 	 */
 	public function index(Request $request)
     {
-        if ($request->input('filter')){
-            $input = $request->input('filter');
-            $products = Product::orderBy($input)->paginate(12);
+    	$products = $this->sort($request->input('sort'))
+    					->where('published', '!=', 0)
+            			->paginate(12);
 
-        } else {
-            $products = Product::paginate(12);
+        $sort = 'created_atDesc';
+
+        if ($request->input('sort'))
+        	$sort = $request->input('sort');     
+
+		return view('pages.products', compact('products', 'sort'));
+	}
+
+
+	public function overview(Request $request)
+	{
+		if ($request->input('sort'))
+		{
+			$products = $this->sort($request->input('sort'));
         }
 
-		return view('pages.products', compact('products'));
+        else if($request->input('filter'))
+        {
+        	switch ($request->input('filter'))
+        	{
+        		case 'user':
+        			$input = Auth::user()->id;
+        			$products = Product::where('user_id', '=', $input)->get();
+        			break;
+
+        		case 'published':
+        			$input = 1;
+        			$products = Product::where('published', '=', $input)->get();
+        			break;
+
+        		case 'unpublished':
+        			$input = 0;
+        			$products = Product::where('published', '=', $input)->get();
+        			break;
+        			
+        		default:
+        			$products = Product::all();
+        			break;
+        	}
+
+        }
+
+        else
+        {
+			$products = Product::all();
+		}
+
+		$users = User::all();
+		return view('pages.productsOverview', compact('products', 'users'));
 	}
 
 	/**
@@ -50,8 +97,8 @@ class ProductsController extends Controller {
 	 */
 	public function create()
 	{
-		$categories = Category::lists('name', 'id');
-		return view('pages.createproduct', ['categories' => $categories]);
+		$categories = Category::all();
+		return view('pages.createproduct', compact('categories'));
 	}
 
 
@@ -62,9 +109,7 @@ class ProductsController extends Controller {
 	 * @return Response
 	 */
 	public function store(ProductRequest $request)
-
 	{
-
 		$slug = $this->slugify($request->name);
 		
 		$products = new Product($request->all());
@@ -81,12 +126,20 @@ class ProductsController extends Controller {
 	
 			$products->picture = $newFileName;
 		}
-			
-		\Auth::user()->product()->save($products);
-		
+		Auth::user()->product()->save($products);
+
+		if(Auth::user()->user_type == 0)
+		{
+			$products->user_id = $request->user_id;
+			$products->save();
+		}
 		
 		$products->categories()->attach($catIds);
 
+		Mail::send('emails.email', ['key' => 'value'], function($message)
+		{
+		    $message->to('gustafbrunlof@gmail.com', "Karl Augustsson")->subject('Welcome!');
+		});
 
 		return redirect('products');
 	}
@@ -107,8 +160,9 @@ class ProductsController extends Controller {
 		$similar = Product::
             join('category_product', 'products.id', '=', 'category_product.product_id')
             ->join('categories', 'category_product.category_id', '=', 'categories.id')
-            ->select('products.name', 'products.slug', 'products.picture')
+            ->distinct()->select('products.name', 'products.slug', 'products.picture')
             ->where('products.name', '!=', $product->name)
+            ->where('products.published', '=', '1')
             ->whereIn('categories.name', $categories)
             ->orderByRaw("RAND()")
             ->take(5)
@@ -117,6 +171,25 @@ class ProductsController extends Controller {
 		return view('pages.showproducts', compact('product', 'similar'));
 
 	}
+
+	// public function showPublishDashboard()
+	// {
+	// 	$unpublished = Product::where('published','=','0')->get();
+	// 	$published = Product::where('published','=','1')->get();
+	// 	return view("pages.publishedDashboard",compact('unpublished','published'));
+	// }
+	// public function updatePublishDashboard(request $request){
+		
+	// 	foreach($request->name as $name){
+
+	// 	$product = Product::where('name', '=', $name)->firstOrFail();
+	// 	$int = 1;
+	// 	$product->published = $int;
+		
+	// 	}
+		
+	// 	return redirect("productspublishDashboard");
+	// }
 
 
 	/**
@@ -128,9 +201,9 @@ class ProductsController extends Controller {
 	public function edit($slug)
 	{
 		$product = Product::where('slug', '=', $slug)->firstOrFail();
-		$categories = Category::lists('name', 'id');
+		$categories = Category::all();
 
-		return view('pages.editproduct', ['product' => $product, 'categories' => $categories]);
+		return view('pages.editproduct', compact('product', 'categories'));
 	}
 
 	/**
@@ -188,10 +261,23 @@ class ProductsController extends Controller {
 		{
 			$product->update($request->all());
 			$product->update(['slug' => $slug]);
-		}		
+		}
 
-		$product->categories()->sync($request->input('category_list'));
+		if($request->input('category_list'))
+		{
+			$product->categories()->sync($request->input('category_list'));
+		}
+		else
+		{
+			$product->categories()->sync([]);
+		}
 
+
+		if(Auth::user()->user_type == 0)
+		{
+			$product->user_id = $request->user_id;
+			$product->update();
+		}
 
 		return redirect("products/{$slug}");
 
@@ -227,6 +313,41 @@ class ProductsController extends Controller {
 
         return view ('pages.deleteproduct', compact('product'));
     }
+
+    public function sort($input)
+	{
+		switch ($input) {
+
+				case 'created_atDesc':
+					$products = Product::orderBy('created_at', 'DESC');
+					break;
+
+				case 'created_atAsc':
+					$products = Product::orderBy('created_at');
+					break;
+
+				case 'priceAsc':
+					$products = Product::orderBy('price');
+					break;
+
+				case 'priceDesc':
+					$products = Product::orderBy('price', 'DESC');
+					break;
+
+				case 'nameAsc':
+					$products = Product::orderBy('name');
+					break;
+
+				case 'nameDesc':
+					$products = Product::orderBy('name', 'DESC');
+					break;
+				
+				default:
+					$products = Product::orderBy('created_at', 'DESC');
+					break;
+				}
+		return $products;
+	}
 
 
 

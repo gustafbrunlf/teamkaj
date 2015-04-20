@@ -41,6 +41,10 @@ a:hover {
 	font-weight: bold;
 }
 
+.italic {
+	font-style: italic;
+}
+
 a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 	-webkit-transition: 0.2s ease-in-out;
     -moz-transition: 0.2s ease-in-out;
@@ -51,6 +55,11 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 
 .alert {
 	padding-left: 25px;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 20px;
 }
 
 
@@ -170,17 +179,21 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 }
 
 .single-img {
+	height: 330px;
+	line-height: 330px;
 	text-align: center;
 	margin: 20px auto;
 }
 	.single-img img {
-	max-width: 500px;
-	max-height: 400px;
+	max-width: 90%;
+	max-height: 90%;
+	vertical-align: middle;
 	}	
 
 .similar {
 	float: left;
 	margin: 5px;
+	width: 80px;
 	text-align: center;
 	overflow: hidden;
 }
@@ -206,21 +219,46 @@ a, a:hover, .btn, .btn:hover, .product-container, .product-container:hover{
 	width: 100px;
 }
 
+
+
+/* TABLES */
+
+th, td {
+    padding: 10px;
+}
+
+
 /* TABLE ADMIN & CATEGORY */
 
-table{
+.admin-table table{
     width: 100%;
 }
 
-th, td {
-    padding: 5px;
-}
-
-td{
+.admin-table td{
+    vertical-align: top;
     width: 30%;
 }
 
-td a{
-    width: 30%;
+
+
+
+/* TABLE PRODUCTS */
+
+.prod-table table {
+	font-size: 14px;
+}
+
+.prod-table td {
+	max-width: 100px;
+	vertical-align: top;
+	padding-bottom: 20px;
+}
+
+tr.unpubl {
+	color: #888;
+}
+
+td.button {
+	padding-left: 15px;
 }
 

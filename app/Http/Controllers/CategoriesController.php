@@ -23,10 +23,15 @@ class CategoriesController extends Controller {
 	 */
 	public function index()
 	{
-		$products = Product::paginate(12);
+		$products = Product::
+					where('published', '!=', 0)
+					->orderBy('created_at', 'DESC')
+					->paginate(12);
     	$categories = Category::all();
 
-		return view('pages.products', compact('products', 'categories'));
+    	$sort = 'created_at';
+
+		return view('pages.products', compact('products', 'categories', 'sort'));
 	}
 
 	/**
@@ -38,7 +43,7 @@ class CategoriesController extends Controller {
 	{
 		$categories = Category::all();
 
-		return view('pages.createcategory', compact('categories', $categories));
+		return view('pages.createCategory', compact('categories', $categories));
 	}
 
 	/**
@@ -63,12 +68,14 @@ class CategoriesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($slug)
+	public function show($slug, Request $request)
 	{
         $category = Category::where('slug', '=', $slug)->firstOrFail();
 		$products = $category->products;
 
-		return view('pages.categories', compact('category', 'products'));
+		$sort = 'created_atDesc';
+
+		return view('pages.categories', compact('category', 'products', 'sort'));
 	}
 
 	/**
@@ -81,7 +88,7 @@ class CategoriesController extends Controller {
 	{
 		$category = Category::where('slug', '=', $slug)->firstOrFail();
 	
-		return view('pages.editcategory', compact('category', $category));
+		return view('pages.editCategory', compact('category', $category));
 	}
 
 	/**

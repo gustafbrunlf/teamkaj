@@ -15,7 +15,7 @@
 <div class="form-group">
 
     {!! Form::label('price', 'Price:') !!}
-    {!! Form::input('number', 'price', null, ['class' => 'form-control']) !!}
+    {!! Form::input('number', 'price', null, ['class' => 'form-control',"step" => "any"]) !!}
 
 </div>
 
@@ -33,13 +33,44 @@
 
 </div>
 
-<div class="form-group">
+<div class="form-group categories">
 
     {!! Form::label('category_list', 'Category:')  !!}
-    {!! Form::select('category_list[]', $categories, null, ['class' => 'form-control', 'multiple']) !!}
+
+    <ul>
+        @foreach($categories as $category)
+            <li>
+            {!! Form::checkbox('category_list[]', "$category->id") !!}
+            {{$category->name}}
+            </li>
+        @endforeach
+    </ul>
+
+</div>
+<div class="form-group">
+
+    {!! Form::label('yes', 'Publish: YES') !!}
+    
+    {!! Form::radio('published', '1',true,["id" => "yes"]) !!}
+    
+    {!! Form::label('no', 'NO') !!}
+    
+    {!! Form::radio('published', '0',null,["id" => "no"]) !!}
 
 </div>
 
+@if(Auth::user()->user_type == 0)
+
+<div class="form-group">
+
+    {!! Form::label('user_id', 'Select owner:')  !!}
+
+    {!! Form::select('user_id', $usernames) !!}
+
+
+</div>
+
+@endif
 
 <div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
 

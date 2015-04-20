@@ -15,9 +15,15 @@ Team Kaj - {{$product->name}}
     <div class="row product-container single">
 
         @if(Auth::check())
-            <div class="edit_btn">
-                <a href="{{ action('ProductsController@edit', $product->slug) }}" class="btn btn-default">Edit Product</a>
-            </div>
+
+            @if (Auth::user()->user_type == 0 || Auth::user()->id  == $product->user_id)
+
+                <div class="edit_btn">
+                    <a href="{{ action('ProductsController@edit', $product->slug) }}" class="btn btn-default">Edit Product</a>
+                </div>
+
+            @endif
+
         @endif
 
         <div class="col-sm-12 col-md-6 single-img">
@@ -30,7 +36,7 @@ Team Kaj - {{$product->name}}
                 <p><span class="bold">Article Number:</span> {{$product->artNo}}</p>
                 <p><span class="bold">Description:</span> {{$product->description}}</p>
                 <p><span class="bold">Stock: </span> {{$product->stock}} pcs</p>
-                <p><span class="bold">Price: </span> {{$product->price}} SEK</p>
+                <p><span class="bold">Price: </span> {{round($product->price, 2)}} SEK</p>
 
                 @if($product->categories->isEmpty())
 

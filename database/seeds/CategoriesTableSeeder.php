@@ -16,6 +16,7 @@ class CategoriesTableSeeder extends Seeder {
                 'slug' => 'kitchen-appliances',
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
+                
             ],
             [
                 'id' => 2,

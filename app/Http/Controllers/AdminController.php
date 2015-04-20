@@ -5,6 +5,8 @@ use App\Http\Requests\EditAdminRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Product;
+use Mail;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -54,6 +56,11 @@ class AdminController extends Controller {
             'password'=>$password
         ]);
 
+        Mail::send('emails.email', ['key' => 'value'], function($message)
+		{
+		    $message->to('gustafbrunlof@gmail.com', "Karl Augustsson")->subject('Welcome!');
+		});
+
         $user->user_type = 1;
         $user->save();
 
@@ -80,6 +87,11 @@ class AdminController extends Controller {
 	public function edit($id)
 	{
 		$user = User::where("id", "=" , $id)->firstOrFail();
+
+		$products = Product::
+			select('*')
+            ->where('products.user_id', '=', $id)
+            ->get();
 
 		return view('pages.editadmin',compact('user'));
 	}
@@ -110,6 +122,8 @@ class AdminController extends Controller {
 		$admin = User::where("id", "=" , $id)->firstOrFail();
 
 		$admin->delete();
+
+
 
 		return redirect('superadmin');
 	}

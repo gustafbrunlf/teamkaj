@@ -8,32 +8,42 @@
         </div>
     </div>
 
-	@foreach($admins as $admin)
+    <div class="row">
+        <div class="col-xs-12 admin-table">   
 
-		@if(Auth::user()->user_type === 0)
+            @if(Auth::user()->user_type == 0)
 
                 <table>
-                    <thead>
+                     <thead>
                         <th>Name:</th>
                         <th>Last login:</th>
+                        <th> <a href="{{action('AdminController@create')}}" class="btn btn-primary">Add Admin</a> </th>
                     </thead>
-                    <tr>
-                        <td>{{ $admin->name }}</td>
-                        <td>{{ $admin->last_login }}</td>
-                        <td><a href="{{action('AdminController@edit',$admin->id)}}" class="btn btn-default">Edit Admin</a></td>
-                    </tr>
+                    @foreach($admins as $admin)
+                        <tr>
+                            <td>{{ $admin->name }}</td>
+
+                            @if($admin->last_login == null)
+                            <td><span class="italic"> Never</span></td>
+                            @else
+                            <td>{{ $admin->last_login }}</td>
+                            @endif
+
+                            <td><a href="{{action('AdminController@edit',$admin->id)}}" class="btn btn-default">Edit Admin</a></td>
+                        </tr>                    
+                    @endforeach
                 </table>
-            <hr>
 
-		@endif
-
-	@endforeach
-@else
-    <div class="row">
-        <div class="col-xs-12">
+        	@endif       	
+         
+            @else    
             <h2>No admins</h2>
+
+            <a href="{{action('AdminController@create')}}" class="btn btn-primary">Add Admin</a>
+
+            @endif
+
         </div>
     </div>
-@endif
-<a href="{{action('AdminController@create')}}" class="btn btn-primary">Add Admin</a>
+
 @stop

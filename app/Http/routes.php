@@ -15,22 +15,30 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'ProductsController@index');
 
-Route::get('home', 'HomeController@index');
+Route::get('home', 'ProductsController@index');
 
 Route::get('superadmin/deleteadmin/{slug}', 'AdminController@deleteadmin');
 
 Route::resource('superadmin', 'AdminController');
 
-Route::post('filter', 'ProductsController@index');
+Route::post('sort', 'ProductsController@index');
+
+Route::post('filterOverview', 'ProductsController@overview');
 
 Route::get('products/deleteproduct/{slug}', 'ProductsController@deleteproduct');
+
+Route::get('products/overview', 'ProductsController@overview');
 
 Route::resource('products', 'ProductsController');
 
 Route::get('categories/deletecategory/{slug}', 'CategoriesController@deletecategory');
 
+Route::get('categories/{slug}/sort', 'CategoriesController@show');
+
 Route::resource('categories', 'CategoriesController');
 
+// Route::get('productspublishDashboard', 'ProductsController@showPublishDashboard');
+// Route::patch('productspublishDashboard', 'ProductsController@updatePublishDashboard');
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

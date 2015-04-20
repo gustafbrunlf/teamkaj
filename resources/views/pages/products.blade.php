@@ -9,12 +9,13 @@
         </div>
         <div class="col-xs-12">
 
-            {!! Form::open(['url' => 'filter']) !!}
+            {!! Form::open(['url' => 'sort']) !!}
 
             <div class="form-group">
 
-                {!! Form::select('filter', array('price' => 'Price', 'name' => 'Name', 'created_at' => 'Created')) !!}
-                {!! Form::submit('filter', ['class' => 'btn btn-default']) !!}
+                {!! Form::select('sort', array('created_atDesc' => 'Newest', 'created_atAsc' => 'Oldest', 'priceAsc' => 'Lowest Price', 'priceDesc' => 'Highest Price', 'nameAsc' => 'Name A-Z', 'nameDesc' => 'Name Z-A'), "$sort") !!}
+                {!! Form::submit('Sort', ['class' => 'btn btn-default']) !!}
+
             </div>
 
             {!! Form::close() !!}
