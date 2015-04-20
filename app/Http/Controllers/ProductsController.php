@@ -36,7 +36,7 @@ class ProductsController extends Controller {
     					->where('published', '!=', 0)
             			->paginate(12);
 
-        $sort = 'created_atAsc';
+        $sort = 'created_atDesc';
 
         if ($request->input('sort'))
         	$sort = $request->input('sort');     
@@ -311,12 +311,13 @@ class ProductsController extends Controller {
     public function sort($input)
 	{
 		switch ($input) {
-				case 'created_atAsc':
-					$products = Product::orderBy('created_at');
-					break;
 
 				case 'created_atDesc':
 					$products = Product::orderBy('created_at', 'DESC');
+					break;
+
+				case 'created_atAsc':
+					$products = Product::orderBy('created_at');
 					break;
 
 				case 'priceAsc':
@@ -336,7 +337,7 @@ class ProductsController extends Controller {
 					break;
 				
 				default:
-					$products = new Product;
+					$products = Product::orderBy('created_at', 'DESC');
 					break;
 				}
 		return $products;
