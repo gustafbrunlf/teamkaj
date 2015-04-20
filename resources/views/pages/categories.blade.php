@@ -12,6 +12,21 @@
     
     @if(count($products))
 
+    {!! Form::open(['url' => "categories/$category->slug/sort"]) !!}
+
+            <div class="form-group">
+
+                {!! Form::select('sort', array(
+                    'created_at' => 'Created',
+                    'price' => 'Price',
+                    'name' => 'Name'
+                    ), "$sort") !!}
+                {!! Form::submit('Sort', ['class' => 'btn btn-default']) !!}
+
+            </div>
+
+            {!! Form::close() !!}
+
     @include('pages._productlist')
 
     @else

@@ -25,10 +25,13 @@ class CategoriesController extends Controller {
 	{
 		$products = Product::
 					where('published', '!=', 0)
+					->orderBy('created_at', 'DESC')
 					->paginate(12);
     	$categories = Category::all();
 
-		return view('pages.products', compact('products', 'categories'));
+    	$sort = 'created_at';
+
+		return view('pages.products', compact('products', 'categories', 'sort'));
 	}
 
 	/**
@@ -65,12 +68,14 @@ class CategoriesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($slug)
+	public function show($slug, Request $request)
 	{
         $category = Category::where('slug', '=', $slug)->firstOrFail();
 		$products = $category->products;
 
-		return view('pages.categories', compact('category', 'products'));
+		$sort = 'created_atDesc';
+
+		return view('pages.categories', compact('category', 'products', 'sort'));
 	}
 
 	/**
