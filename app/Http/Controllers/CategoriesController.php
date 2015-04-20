@@ -28,7 +28,9 @@ class CategoriesController extends Controller {
 					->paginate(12);
     	$categories = Category::all();
 
-		return view('pages.products', compact('products', 'categories'));
+    	$sort = 'created_at';
+
+		return view('pages.products', compact('products', 'categories', 'sort'));
 	}
 
 	/**
@@ -65,7 +67,7 @@ class CategoriesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($slug)
+	public function show($slug, Request $request)
 	{
         $category = Category::where('slug', '=', $slug)->firstOrFail();
 		$products = $category->products;
