@@ -8,22 +8,22 @@
     </div>
 </div>
 
-{!! Form::open(['url' => 'filterOverview']) !!}
+{!! Form::open(['url' => 'products/overview']) !!}
 
     <div class="form-group">
 
-        {!! Form::select('sort', array('created_atAsc' => 'Oldest', 'created_atDesc' => 'Newest', 'priceAsc' => 'Lowest Price', 'priceDesc' => 'Highest Price', 'nameAsc' => 'Name A-Z', 'nameDesc' => 'Name Z-A')) !!}
+        {!! Form::select('sort', array('created_atAsc' => 'Oldest', 'created_atDesc' => 'Newest', 'priceAsc' => 'Lowest Price', 'priceDesc' => 'Highest Price', 'nameAsc' => 'Name A-Z', 'nameDesc' => 'Name Z-A'), "$sort" ) !!}
         {!! Form::submit('Sort', ['class' => 'btn btn-default']) !!}
 	
 	</div>
 
 {!! Form::close() !!}
 
-{!! Form::open(['url' => 'filterOverview']) !!}
+{!! Form::open(['url' => 'products/overview']) !!}
 
 	<div class="form-group">
 
-	    {!! Form::select('filter', array('all' => 'All products', 'user' => 'My products', 'published' => 'Published', 'unpublished' => 'Unpublished')) !!}
+	    {!! Form::select('filter', array('all' => 'All products', 'user' => 'My products', 'published' => 'Published', 'unpublished' => 'Unpublished'), "$filter") !!}
 	    {!! Form::submit('Filter', ['class' => 'btn btn-default']) !!}
 	
 	</div>

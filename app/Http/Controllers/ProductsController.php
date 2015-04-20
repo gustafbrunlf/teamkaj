@@ -32,14 +32,22 @@ class ProductsController extends Controller {
 	 */
 	public function index(Request $request)
     {
-    	$products = $this->sort($request->input('sort'))
-    					->where('published', '!=', 0)
-            			->paginate(12);
+        if ($request->input('sort')){
+            $input = $request->input('sort');
+            $products = Product::orderBy($input)
+            ->where('published', '!=', 0)
+            ->paginate(12);
 
-        $sort = 'created_atAsc';
+        } else {
+            $products = Product::
+            			where('published', '!=', 0)
+            			->paginate(12);
+        }
+
+        $sort = "created_atDesc";
 
         if ($request->input('sort'))
-        	$sort = $request->input('sort');     
+        	$sort = $request->input('sort');
 
 		return view('pages.products', compact('products', 'sort'));
 	}
@@ -49,7 +57,7 @@ class ProductsController extends Controller {
 	{
 		if ($request->input('sort'))
 		{
-			$products = $this->sort($request->input('sort'));
+			$products = $this->sort($request->input('sort'))->get();
         }
 
         else if($request->input('filter'))
@@ -83,8 +91,18 @@ class ProductsController extends Controller {
 			$products = Product::all();
 		}
 
+		$sort = 'created_atDesc';
+
+        if ($request->input('sort'))
+        	$sort = $request->input('sort');
+
+        $filter = 'all';
+
+        if ($request->input('filter'))
+        	$sort = $request->input('filter'); 
+
 		$users = User::all();
-		return view('pages.productsOverview', compact('products', 'users'));
+		return view('pages.productsOverview', compact('products', 'users', 'sort', 'filter'));
 	}
 
 	/**
@@ -106,7 +124,9 @@ class ProductsController extends Controller {
 	 * @return Response
 	 */
 	public function store(ProductRequest $request)
+
 	{
+
 		$slug = $this->slugify($request->name);
 		
 		$products = new Product($request->all());
@@ -336,7 +356,7 @@ class ProductsController extends Controller {
 					break;
 				
 				default:
-					$products = new Product;
+					$products = Product::all();
 					break;
 				}
 		return $products;
