@@ -16,7 +16,7 @@ class CreateProductsTable extends Migration {
 		{
 			$table->increments('id');
             $table->string('name', 255);
-            $table->double('price', 15, 8);
+            $table->double('price', 15, 2);
             $table->integer('stock');
             $table->string('description', 500);
             $table->string('artNo', 100);
