@@ -57,38 +57,9 @@ class ProductsController extends Controller {
 
 	public function overview(Request $request)
 	{
-		//dd($request->input('sort'));
 		if ($request->input('sort'))
 		{
-			switch ($request->input('sort')) {
-				case 'created_atAsc':
-					$products = Product::orderBy('created_at')->get();
-					break;
-
-				case 'created_atDesc':
-					$products = Product::orderBy('created_at', 'DESC')->get();
-					break;
-
-				case 'priceAsc':
-					$products = Product::orderBy('price')->get();
-					break;
-
-				case 'priceDesc':
-					$products = Product::orderBy('price', 'DESC')->get();
-					break;
-
-				case 'nameAsc':
-					$products = Product::orderBy('name')->get();
-					break;
-
-				case 'nameDesc':
-					$products = Product::orderBy('name', 'DESC')->get();
-					break;
-				
-				default:
-					$products = Product::all();
-					break;
-			}
+			$products = $this->sort($request->input('sort'));
         }
 
         else if($request->input('filter'))
@@ -346,6 +317,40 @@ class ProductsController extends Controller {
 
         return view ('pages.deleteproduct', compact('product'));
     }
+
+    public function sort($input)
+	{
+		switch ($input) {
+				case 'created_atAsc':
+					$products = Product::orderBy('created_at')->get();
+					break;
+
+				case 'created_atDesc':
+					$products = Product::orderBy('created_at', 'DESC')->get();
+					break;
+
+				case 'priceAsc':
+					$products = Product::orderBy('price')->get();
+					break;
+
+				case 'priceDesc':
+					$products = Product::orderBy('price', 'DESC')->get();
+					break;
+
+				case 'nameAsc':
+					$products = Product::orderBy('name')->get();
+					break;
+
+				case 'nameDesc':
+					$products = Product::orderBy('name', 'DESC')->get();
+					break;
+				
+				default:
+					$products = Product::all();
+					break;
+				}
+		return $products;
+	}
 
 
 
