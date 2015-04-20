@@ -57,11 +57,66 @@ class ProductsController extends Controller {
 
 	public function overview(Request $request)
 	{
-		if ($request->input('filterOverview'))
+		//dd($request->input('sort'));
+		if ($request->input('sort'))
 		{
-            $input = $request->input('filterOverview');
-            $products = Product::orderBy($input)->get();
+			switch ($request->input('sort')) {
+				case 'created_atAsc':
+					$products = Product::orderBy('created_at')->get();
+					break;
+
+				case 'created_atDesc':
+					$products = Product::orderBy('created_at', 'DESC')->get();
+					break;
+
+				case 'priceAsc':
+					$products = Product::orderBy('price')->get();
+					break;
+
+				case 'priceDesc':
+					$products = Product::orderBy('price', 'DESC')->get();
+					break;
+
+				case 'nameAsc':
+					$products = Product::orderBy('name')->get();
+					break;
+
+				case 'nameDesc':
+					$products = Product::orderBy('name', 'DESC')->get();
+					break;
+				
+				default:
+					$products = Product::all();
+					break;
+			}
         }
+
+        else if($request->input('filter'))
+        {
+        	switch ($request->input('filter'))
+        	{
+        		case 'user':
+        			$input = Auth::user()->id;
+        			$products = Product::where('user_id', '=', $input)->get();
+        			break;
+
+        		case 'published':
+        			$input = 1;
+        			$products = Product::where('published', '=', $input)->get();
+        			break;
+
+        		case 'unpublished':
+        			$input = 0;
+        			$products = Product::where('published', '=', $input)->get();
+        			break;
+        			
+        		default:
+        			$products = Product::all();
+        			break;
+        	}
+
+        }
+
         else
         {
 			$products = Product::all();
@@ -115,10 +170,7 @@ class ProductsController extends Controller {
 			$products->user_id = $request->user_id;
 			$products->save();
 		}
-		//dd($request->all());
 
-		
-		//dd($request->user_id);
 		
 		$products->categories()->attach($catIds);
 
@@ -248,6 +300,11 @@ class ProductsController extends Controller {
 		{
 			$product->categories()->sync($request->input('category_list'));
 		}
+		else
+		{
+			$product->categories()->sync([]);
+		}
+
 
 		if(Auth::user()->user_type == 0)
 		{
