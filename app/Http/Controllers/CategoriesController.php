@@ -70,7 +70,9 @@ class CategoriesController extends Controller {
         $category = Category::where('slug', '=', $slug)->firstOrFail();
 		$products = $category->products;
 
-		return view('pages.categories', compact('category', 'products'));
+		$sort = 'created_at';
+
+		return view('pages.categories', compact('category', 'products', 'sort'));
 	}
 
 	/**
