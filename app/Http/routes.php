@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'ProductsController@index');
 
-Route::get('home', 'HomeController@index');
+Route::get('home', 'ProductsController@index');
 
 Route::get('superadmin/deleteadmin/{slug}', 'AdminController@deleteadmin');
 
