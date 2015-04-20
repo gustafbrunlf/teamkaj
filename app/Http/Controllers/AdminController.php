@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Product;
+use Mail;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -54,6 +55,11 @@ class AdminController extends Controller {
             'email'=>$request->email,
             'password'=>$password
         ]);
+
+        Mail::send('emails.email', ['key' => 'value'], function($message) use ($request)
+		{
+		    $message->to($request->email)->subject('Welcome!');
+		});
 
         $user->user_type = 1;
         $user->save();

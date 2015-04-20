@@ -1,14 +1,16 @@
 <?php namespace App\Http\Controllers;
 
+use App\Category;
+use App\Product;
+use App\User;
+use Mail;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
-use App\Product;
-use App\Category;
-use App\User;
-use Auth;
+use App\Http\Controllers\Auth;
+
 use Intervention\Image\Facades\Image;
 
 class ProductsController extends Controller {
@@ -21,8 +23,8 @@ class ProductsController extends Controller {
     public function __construct()
     {
         $this->middleware('auth', ['except' => [ 'category', 'show', 'index']]);
-
         $this->middleware('admin', ['only' => ['destroy', 'deleteproduct']]);
+        $this->middleware('owner', ['only' => ['edit', 'update']]);
     }
 
 	/**
@@ -134,7 +136,6 @@ class ProductsController extends Controller {
 	
 			$products->picture = $newFileName;
 		}
-			
 		Auth::user()->product()->save($products);
 
 		if(Auth::user()->user_type == 0)
@@ -142,6 +143,7 @@ class ProductsController extends Controller {
 			$products->user_id = $request->user_id;
 			$products->save();
 		}
+		
 		$products->categories()->attach($catIds);
 
 		return redirect('products');
