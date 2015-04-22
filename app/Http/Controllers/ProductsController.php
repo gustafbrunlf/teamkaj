@@ -81,7 +81,7 @@ class ProductsController extends Controller {
 
         else
         {
-			$products = Product::all();
+			$products = Product::orderBy('created_at', 'DESC')->get();
 		}
 
 		$sort = 'created_atDesc';
