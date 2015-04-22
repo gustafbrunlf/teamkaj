@@ -18,7 +18,7 @@ class ProductOwner {
 	    $slug = $request->route('products');
 	    $product = Product::where(['slug' => $slug])->firstOrFail();
 
-	    if(\Auth::user() != $product->user) {
+	    if(\Auth::user() != $product->user && \Auth::user()->user_type == 1) {
 	        return redirect('products');
 	    }
 
