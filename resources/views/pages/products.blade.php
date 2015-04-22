@@ -9,7 +9,7 @@
         </div>
         <div class="col-xs-2">
             @if(Session::has('flash_message'))
-                <div class="div alert alert-success"> {{ Session::get('flash_message') }}</div>
+                <div class="alert alert-success created"> {{ Session::get('flash_message') }}</div>
             @endif
         </div>
 
@@ -38,7 +38,7 @@
     <div> {!! $products->render() !!} </div>
 
     @endif
-
+    
 
 
 @endsection
