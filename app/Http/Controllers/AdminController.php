@@ -50,26 +50,16 @@ class AdminController extends Controller {
 	 */
 	public function store(AdminRequest $request)
 	{
-        //$password = Hash::make($request->password);
 
         $user = User::create([
             'name'=>$request->name,
             'email'=>$request->email,
         ]);
 
-  //       Mail::send('emails.email', ['key' => $request->_token], function($message) use ($request)
-		// {
-		//     $message->to($request->email)->subject('Welcome!');
-		// });
-
         $user->user_type = 1;
         $user->save();
         return redirect()->action('Auth\PasswordController@postEmail',$request);
    
-    
-
-
-       //return redirect('superadmin');
 	}
 
 	/**

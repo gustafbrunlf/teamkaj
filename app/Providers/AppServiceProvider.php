@@ -33,13 +33,18 @@ class AppServiceProvider extends ServiceProvider {
 		view()->composer('pages.superadmin', function($view)
 		{
 			$resetsTable = DB::table('password_resets')->select('email')->get();
-			
-			foreach ($resetsTable as $reset)
-			{
-				$resets[] = $reset->email;
-			}
 
-			$view->with('resets', $resets);
+			if (!empty($resetsTable))
+			{
+			
+				foreach ($resetsTable as $reset)
+				{
+					$resets[] = $reset->email;
+				}
+
+				$view->with('resets', $resets);
+
+			}
 		});
 	}
 
