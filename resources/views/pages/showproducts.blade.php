@@ -53,7 +53,9 @@ Team Kaj - {{$product->name}}
                         @unless($similar->name == $product->name)
                             <a href="{{action('ProductsController@show', $similar->slug)}}">
                             <div class="similar">
-                                <img src="../{{$similar->picture}}">
+                                <div class="similar-img">
+                                    <img src="../{{$similar->picture}}">
+                                </div>
                                 <p><span class="bold">{{$similar->name}}</span></p>
                             </div>
                             </a>
