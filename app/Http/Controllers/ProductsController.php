@@ -144,6 +144,8 @@ class ProductsController extends Controller {
 		
 		$products->categories()->attach($catIds);
 
+		\Session::flash('flash_message', "$request->name Created");
+
 		return redirect('products');
 	}
 
