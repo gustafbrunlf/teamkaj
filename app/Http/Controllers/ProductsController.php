@@ -185,9 +185,20 @@ class ProductsController extends Controller {
 	public function edit($slug)
 	{
 		$product = Product::where('slug', '=', $slug)->firstOrFail();
-		$categories = Category::all();
 
-		return view('pages.editproduct', compact('product', 'categories'));
+		if (Auth::user()->id == $product->user_id || Auth::user()->user_type == 0) {
+
+			$categories = Category::all();
+
+			return view('pages.editproduct', compact('product', 'categories'));
+
+		} else {
+
+			return redirect("products/{$slug}");
+
+		}
+
+
 	}
 
 	/**
