@@ -14,16 +14,16 @@ class ProductOwner{
 	 */
 	public function handle($request, Closure $next)
 	{
-        $slug = $request->route('slug');
+        // $slug = $request->route('slug');
 
-        $product = Product::where(['slug' => $slug])->firstOrFail();
+        // $product = Product::where(['slug' => $slug])->firstOrFail();
 
-        if(\Auth::user() != $product->user)
-        {
-            return redirect('products');
-        }
+        // if(\Auth::user() != $product->user)
+        // {
+        //     return redirect('products');
+        // }
 
-        return $next($request);
+        // return $next($request);
 
 	}
 
