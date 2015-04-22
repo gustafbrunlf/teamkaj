@@ -68,7 +68,7 @@
 						<td> <span class="italic">unpublished</span> </td>
 					@endif
 
-					@if (Auth::user()->user_type == 0 || Auth::user()->id  == $product->user_id)
+					@if (Auth::user()->user_type == 0 || Auth::user()  == $product->user)
 
 						<td class="button"><a href="{{action('ProductsController@edit', [$product->slug])}}" class="btn btn-default">Edit</a></td>
 					
