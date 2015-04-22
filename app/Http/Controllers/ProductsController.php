@@ -3,13 +3,13 @@
 use App\Category;
 use App\Product;
 use App\User;
+use Auth;
 use Mail;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Auth;
 
 use Intervention\Image\Facades\Image;
 
@@ -24,7 +24,6 @@ class ProductsController extends Controller {
     {
         $this->middleware('auth', ['except' => [ 'category', 'show', 'index']]);
         $this->middleware('admin', ['only' => ['destroy', 'deleteproduct']]);
-        //$this->middleware('owner', ['only' => ['edit', 'update']]);
     }
 
 	/**
@@ -136,7 +135,7 @@ class ProductsController extends Controller {
 	
 			$products->picture = $newFileName;
 		}
-		Auth::user()->product()->save($products);
+		Auth::user()->products()->save($products);
 
 		if(Auth::user()->user_type == 0)
 		{
