@@ -1,14 +1,16 @@
 <?php namespace App\Http\Controllers;
 
+use App\Category;
+use App\Product;
+use App\User;
+use Auth;
+use Mail;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
-use App\Product;
-use App\Category;
-use App\User;
-use Auth;
+
 use Intervention\Image\Facades\Image;
 
 class ProductsController extends Controller {
@@ -21,7 +23,6 @@ class ProductsController extends Controller {
     public function __construct()
     {
         $this->middleware('auth', ['except' => [ 'category', 'show', 'index']]);
-
         $this->middleware('admin', ['only' => ['destroy', 'deleteproduct']]);
     }
 
@@ -32,14 +33,14 @@ class ProductsController extends Controller {
 	 */
 	public function index(Request $request)
     {
-    	$products = $this->sort($request->input('sort'))
-    					->where('published', '!=', 0)
-            			->paginate(12);
+        $products = $this->sort($request->input('sort'))
+        			->where('published', '!=', 0)
+        			->paginate(12);
 
 	    $sort = 'created_atDesc';
 
         if ($request->input('sort'))
-        	$sort = $request->input('sort');     
+        	$sort = $request->input('sort');
 
 		return view('pages.products', compact('products', 'sort'));
 	}
@@ -49,7 +50,7 @@ class ProductsController extends Controller {
 	{
 		if ($request->input('sort'))
 		{
-			$products = $this->sort($request->input('sort'));
+			$products = $this->sort($request->input('sort'))->get();
         }
 
         else if($request->input('filter'))
@@ -83,8 +84,18 @@ class ProductsController extends Controller {
 			$products = Product::all();
 		}
 
+		$sort = 'created_atDesc';
+
+        if ($request->input('sort'))
+        	$sort = $request->input('sort');
+
+        $filter = 'all';
+
+        if ($request->input('filter'))
+        	$sort = $request->input('filter'); 
+
 		$users = User::all();
-		return view('pages.productsOverview', compact('products', 'users'));
+		return view('pages.productsOverview', compact('products', 'users', 'sort', 'filter'));
 	}
 
 	/**
@@ -106,7 +117,9 @@ class ProductsController extends Controller {
 	 * @return Response
 	 */
 	public function store(ProductRequest $request)
+
 	{
+
 		$slug = $this->slugify($request->name);
 		
 		$products = new Product($request->all());
@@ -115,7 +128,6 @@ class ProductsController extends Controller {
 
 		$catIds = $request->input('category_list');
 
-
 		if($request->file('picture'))
 		{
 			$newFileName = $this->getNewFileName($request->file('picture'));			
@@ -123,15 +135,13 @@ class ProductsController extends Controller {
 	
 			$products->picture = $newFileName;
 		}
-			
-		Auth::user()->product()->save($products);
+		Auth::user()->products()->save($products);
 
 		if(Auth::user()->user_type == 0)
 		{
 			$products->user_id = $request->user_id;
 			$products->save();
 		}
-
 		
 		$products->categories()->attach($catIds);
 
@@ -165,26 +175,6 @@ class ProductsController extends Controller {
 		return view('pages.showproducts', compact('product', 'similar'));
 
 	}
-
-	// public function showPublishDashboard()
-	// {
-	// 	$unpublished = Product::where('published','=','0')->get();
-	// 	$published = Product::where('published','=','1')->get();
-	// 	return view("pages.publishedDashboard",compact('unpublished','published'));
-	// }
-	// public function updatePublishDashboard(request $request){
-		
-	// 	foreach($request->name as $name){
-
-	// 	$product = Product::where('name', '=', $name)->firstOrFail();
-	// 	$int = 1;
-	// 	$product->published = $int;
-		
-	// 	}
-		
-	// 	return redirect("productspublishDashboard");
-	// }
-
 
 	/**
 	 * Show the form for editing the specified resource.

@@ -1,9 +1,12 @@
 <?php namespace App\Http\Controllers;
-use App\Category;
-use App\Product;
 use App\Http\Requests;
 use App\Http\Requests\CategoryRequest;
 use App\Http\Controllers\Controller;
+
+use App\Category;
+use App\Product;
+
+
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller {
@@ -24,13 +27,10 @@ class CategoriesController extends Controller {
 	{
 		$products = Product::
 					where('published', '!=', 0)
-					->orderBy('created_at', 'DESC')
 					->paginate(12);
     	$categories = Category::all();
 
-    	$sort = 'created_at';
-
-		return view('pages.products', compact('products', 'categories', 'sort'));
+		return view('pages.products', compact('products', 'categories'));
 	}
 
 	/**
@@ -69,14 +69,18 @@ class CategoriesController extends Controller {
 	 */
 	public function show($slug, Request $request)
 	{
+		//dd($input);
+		//dd($request->input('sort'));
         $category = Category::where('slug', '=', $slug)->firstOrFail();
-		// $sort = $this->sort($request->input('sort'));
-		
-		$products = $category->products;
 
-		dd($products);
+		$products = $this->sort($category->products(), $request->input('sort'))->get();
 
-		$sort = 'created_atDesc';
+		//dd($products);
+
+		$sort = "name";
+
+		if ($request->input('sort'))
+        	$sort = $request->input('sort');
 
 		return view('pages.categories', compact('category', 'products', 'sort'));
 	}
@@ -141,40 +145,43 @@ class CategoriesController extends Controller {
 		return $slug;
 	}
 
-	public function sort($input)
+
+	public function sort($products, $input)
+
 	{
 		switch ($input) {
 
 				case 'created_atDesc':
-					$products = "orderBy('created_at', 'DESC')";
+
+					$products->orderBy('created_at', 'DESC');
 					break;
 
 				case 'created_atAsc':
-					$products = "orderBy('created_at')";
+					$products->orderBy('created_at');
 					break;
 
 				case 'priceAsc':
-					$products = "orderBy('price')";
+					$products->orderBy('price');
 					break;
 
 				case 'priceDesc':
-					$products = "orderBy('price', 'DESC')";
+					$products->orderBy('price', 'DESC');
 					break;
 
 				case 'nameAsc':
-					$products = "orderBy('name')";
+					$products->orderBy('name');
 					break;
 
 				case 'nameDesc':
-					$products = "orderBy('name', 'DESC')";
+					$products->orderBy('name', 'DESC');
 					break;
 				
 				default:
-					$products = "orderBy('created_at', 'DESC')";
+					$products->orderBy('created_at', 'DESC');
+
 					break;
 				}
 		return $products;
 	}
-
 
 }

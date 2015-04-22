@@ -23,7 +23,7 @@ Route::resource('superadmin', 'AdminController');
 
 Route::post('sort', 'ProductsController@index');
 
-Route::post('filterOverview', 'ProductsController@overview');
+Route::post('products/overview', 'ProductsController@overview');
 
 Route::get('products/deleteproduct/{slug}', 'ProductsController@deleteproduct');
 

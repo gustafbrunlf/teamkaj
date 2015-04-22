@@ -8,27 +8,23 @@
     </div>
 </div>
 
-{!! Form::open(['url' => 'filterOverview']) !!}
 
-    <div class="form-group">
+<div class="form-group block">
+	{!! Form::open(['url' => 'products/overview']) !!}
 
-        {!! Form::select('sort', array('created_atAsc' => 'Oldest', 'created_atDesc' => 'Newest', 'priceAsc' => 'Lowest Price', 'priceDesc' => 'Highest Price', 'nameAsc' => 'Name A-Z', 'nameDesc' => 'Name Z-A')) !!}
+        {!! Form::select('sort', array('created_atAsc' => 'Oldest', 'created_atDesc' => 'Newest', 'priceAsc' => 'Lowest Price', 'priceDesc' => 'Highest Price', 'nameAsc' => 'Name A-Z', 'nameDesc' => 'Name Z-A'), "$sort") !!}
         {!! Form::submit('Sort', ['class' => 'btn btn-default']) !!}
-	
-	</div>
 
-{!! Form::close() !!}
+	{!! Form::close() !!}
+</div>
+<div class="form-group block">
+	{!! Form::open(['url' => 'products/overview']) !!}
 
-{!! Form::open(['url' => 'filterOverview']) !!}
-
-	<div class="form-group">
-
-	    {!! Form::select('filter', array('all' => 'All products', 'user' => 'My products', 'published' => 'Published', 'unpublished' => 'Unpublished')) !!}
+	    {!! Form::select('filter', array('all' => 'All products', 'user' => 'My products', 'published' => 'Published', 'unpublished' => 'Unpublished'), "$filter") !!}
 	    {!! Form::submit('Filter', ['class' => 'btn btn-default']) !!}
-	
-	</div>
 
-{!! Form::close() !!}
+	{!! Form::close() !!}
+</div>
 
 <div class="row">
 	<div class="col-xs-12 prod-table">
