@@ -11,7 +11,7 @@
     </div>
     
     @if(count($products))
-
+    
     {!! Form::open(['url' => "categories/$category->slug"]) !!}
 
             <div class="form-group">
@@ -24,6 +24,8 @@
             {!! Form::close() !!}
 
     @include('pages._productlist')
+
+     
 
     @else
 

@@ -3,13 +3,13 @@
 use App\Category;
 use App\Product;
 use App\User;
+use Auth;
 use Mail;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Auth;
 
 use Intervention\Image\Facades\Image;
 
@@ -23,8 +23,8 @@ class ProductsController extends Controller {
     public function __construct()
     {
         $this->middleware('auth', ['except' => [ 'category', 'show', 'index']]);
+        $this->middleware('owner', ['only' => ['edit', 'update']]);
         $this->middleware('admin', ['only' => ['destroy', 'deleteproduct']]);
-        //$this->middleware('owner', ['only' => ['edit', 'update']]);
     }
 
 	/**
@@ -38,7 +38,7 @@ class ProductsController extends Controller {
         			->where('published', '!=', 0)
         			->paginate(12);
 
-        $sort = 'created_atDesc';
+	    $sort = 'created_atDesc';
 
         if ($request->input('sort'))
         	$sort = $request->input('sort');
@@ -82,7 +82,7 @@ class ProductsController extends Controller {
 
         else
         {
-			$products = Product::all();
+			$products = Product::orderBy('created_at', 'DESC')->get();
 		}
 
 		$sort = 'created_atDesc';
@@ -93,7 +93,7 @@ class ProductsController extends Controller {
         $filter = 'all';
 
         if ($request->input('filter'))
-        	$sort = $request->input('filter'); 
+        	$filter = $request->input('filter'); 
 
 		$users = User::all();
 		return view('pages.productsOverview', compact('products', 'users', 'sort', 'filter'));
@@ -118,9 +118,7 @@ class ProductsController extends Controller {
 	 * @return Response
 	 */
 	public function store(ProductRequest $request)
-
 	{
-
 		$slug = $this->slugify($request->name);
 		
 		$products = new Product($request->all());
@@ -136,7 +134,7 @@ class ProductsController extends Controller {
 	
 			$products->picture = $newFileName;
 		}
-		Auth::user()->product()->save($products);
+		Auth::user()->products()->save($products);
 
 		if(Auth::user()->user_type == 0)
 		{
@@ -145,6 +143,8 @@ class ProductsController extends Controller {
 		}
 		
 		$products->categories()->attach($catIds);
+
+		\Session::flash('flash_message', "$request->name Created");
 
 		return redirect('products');
 	}
@@ -186,6 +186,7 @@ class ProductsController extends Controller {
 	public function edit($slug)
 	{
 		$product = Product::where('slug', '=', $slug)->firstOrFail();
+		
 		$categories = Category::all();
 
 		return view('pages.editproduct', compact('product', 'categories'));
@@ -199,8 +200,8 @@ class ProductsController extends Controller {
 	 */
 
 
-	public function saveImage($file,$destination){
-
+	public function saveImage($file,$destination)
+	{
       		$newfile = Image::make($file)->resize(300,null, function ($constraint) {
    			 $constraint->aspectRatio();
    			 $constraint->upsize();
@@ -210,8 +211,8 @@ class ProductsController extends Controller {
 
 	}
 
-	public function getNewFileName($fileObject){
-
+	public function getNewFileName($fileObject)
+	{
 		$newExtension = $fileObject->getClientOriginalExtension(); // getting image extension
 		      		
 		$newFileName = "uploads/".rand(11111,99999).'.'.$newExtension;

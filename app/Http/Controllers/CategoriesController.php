@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Category;
 use App\Product;
 
+
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller {
@@ -71,6 +72,7 @@ class CategoriesController extends Controller {
 		//dd($input);
 		//dd($request->input('sort'));
         $category = Category::where('slug', '=', $slug)->firstOrFail();
+
 		$products = $this->sort($category->products(), $request->input('sort'))->get();
 
 		//dd($products);
@@ -143,11 +145,14 @@ class CategoriesController extends Controller {
 		return $slug;
 	}
 
+
 	public function sort($products, $input)
+
 	{
 		switch ($input) {
 
 				case 'created_atDesc':
+
 					$products->orderBy('created_at', 'DESC');
 					break;
 
@@ -173,11 +178,10 @@ class CategoriesController extends Controller {
 				
 				default:
 					$products->orderBy('created_at', 'DESC');
+
 					break;
 				}
 		return $products;
 	}
-	
-
 
 }

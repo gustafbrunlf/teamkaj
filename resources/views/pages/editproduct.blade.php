@@ -16,7 +16,7 @@
 
             @include('pages._productform', ['submitButtonText' => 'Update product'])
 
-            @if(Auth::check())
+            @if(Auth::check() && Auth::user()->user_type == 0)
                 <a href="{{ action('ProductsController@deleteproduct', $product->slug) }}" class="btn btn-danger form-control">Delete Product</a>
             @endif
 

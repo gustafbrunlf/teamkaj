@@ -28,7 +28,7 @@ class Product extends Model {
 	{
 	    return $this->categories->lists('id'); // ?
 	}
-	public function owner(){
+	public function user(){
 
 		return $this->belongsTo('App\User');
 	}

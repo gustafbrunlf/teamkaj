@@ -7,6 +7,12 @@
         <div class="col-xs-12">
             <h2>All of our fucking Products</h2>
         </div>
+        <div class="col-xs-2">
+            @if(Session::has('flash_message'))
+                <div class="alert alert-success created"> {{ Session::get('flash_message') }}</div>
+            @endif
+        </div>
+
         <div class="col-xs-12">
 
             {!! Form::open(['url' => 'sort']) !!}
@@ -32,7 +38,7 @@
     <div> {!! $products->render() !!} </div>
 
     @endif
-
+    
 
 
 @endsection
