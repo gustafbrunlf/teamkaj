@@ -37,7 +37,7 @@ class ProductsController extends Controller {
         			->where('published', '!=', 0)
         			->paginate(12);
 
-        $sort = 'created_atDesc';
+	    $sort = 'created_atDesc';
 
         if ($request->input('sort'))
         	$sort = $request->input('sort');
@@ -81,7 +81,7 @@ class ProductsController extends Controller {
 
         else
         {
-			$products = Product::all();
+			$products = Product::orderBy('created_at', 'DESC')->get();
 		}
 
 		$sort = 'created_atDesc';
@@ -92,7 +92,7 @@ class ProductsController extends Controller {
         $filter = 'all';
 
         if ($request->input('filter'))
-        	$sort = $request->input('filter'); 
+        	$filter = $request->input('filter'); 
 
 		$users = User::all();
 		return view('pages.productsOverview', compact('products', 'users', 'sort', 'filter'));
