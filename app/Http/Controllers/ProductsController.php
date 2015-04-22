@@ -92,7 +92,7 @@ class ProductsController extends Controller {
         $filter = 'all';
 
         if ($request->input('filter'))
-        	$sort = $request->input('filter'); 
+        	$filter = $request->input('filter'); 
 
 		$users = User::all();
 		return view('pages.productsOverview', compact('products', 'users', 'sort', 'filter'));
