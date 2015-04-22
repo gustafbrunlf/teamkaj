@@ -8,27 +8,23 @@
     </div>
 </div>
 
-{!! Form::open(['url' => 'products/overview']) !!}
 
-    <div class="form-group">
+<div class="form-group block">
+	{!! Form::open(['url' => 'products/overview']) !!}
 
-        {!! Form::select('sort', array('created_atAsc' => 'Oldest', 'created_atDesc' => 'Newest', 'priceAsc' => 'Lowest Price', 'priceDesc' => 'Highest Price', 'nameAsc' => 'Name A-Z', 'nameDesc' => 'Name Z-A'), "$sort" ) !!}
+        {!! Form::select('sort', array('created_atDesc' => 'Newest', 'created_atAsc' => 'Oldest', 'priceAsc' => 'Lowest Price', 'priceDesc' => 'Highest Price', 'nameAsc' => 'Name A-Z', 'nameDesc' => 'Name Z-A'), "$sort") !!}
         {!! Form::submit('Sort', ['class' => 'btn btn-default']) !!}
-	
-	</div>
 
-{!! Form::close() !!}
-
-{!! Form::open(['url' => 'products/overview']) !!}
-
-	<div class="form-group">
+	{!! Form::close() !!}
+</div>
+<div class="form-group block">
+	{!! Form::open(['url' => 'products/overview']) !!}
 
 	    {!! Form::select('filter', array('all' => 'All products', 'user' => 'My products', 'published' => 'Published', 'unpublished' => 'Unpublished'), "$filter") !!}
 	    {!! Form::submit('Filter', ['class' => 'btn btn-default']) !!}
-	
-	</div>
 
-{!! Form::close() !!}
+	{!! Form::close() !!}
+</div>
 
 <div class="row">
 	<div class="col-xs-12 prod-table">
@@ -72,7 +68,7 @@
 						<td> <span class="italic">unpublished</span> </td>
 					@endif
 
-					@if (Auth::user()->user_type == 0 || Auth::user()->id  == $product->user_id)
+					@if (Auth::user()->user_type == 0 || Auth::user()  == $product->user)
 
 						<td class="button"><a href="{{action('ProductsController@edit', [$product->slug])}}" class="btn btn-default">Edit</a></td>
 					

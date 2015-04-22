@@ -3,7 +3,8 @@
 use Closure;
 use App\Product;
 
-class ProductOwner{
+
+class ProductOwner {
 
 	/**
 	 * Handle an incoming request.
@@ -13,18 +14,15 @@ class ProductOwner{
 	 * @return mixed
 	 */
 	public function handle($request, Closure $next)
-	{
-        // $slug = $request->route('slug');
+	{	
+	    $slug = $request->route('products');
+	    $product = Product::where(['slug' => $slug])->firstOrFail();
 
-        // $product = Product::where(['slug' => $slug])->firstOrFail();
+	    if(\Auth::user() != $product->user && \Auth::user()->user_type == 1) {
+	        return redirect('products');
+	    }
 
-        // if(\Auth::user() != $product->user)
-        // {
-        //     return redirect('products');
-        // }
-
-        // return $next($request);
-
+	    return $next($request);
 	}
 
 }

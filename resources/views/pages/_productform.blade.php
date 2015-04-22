@@ -49,14 +49,17 @@
 </div>
 <div class="form-group">
 
-    {!! Form::label('yes', 'Publish: YES') !!}
-    
-    {!! Form::radio('published', '1',true,["id" => "yes"]) !!}
-    
-    {!! Form::label('no', 'NO') !!}
-    
-    {!! Form::radio('published', '0',null,["id" => "no"]) !!}
+    {!! Form::label('Publish:') !!}
 
+    <ul>
+        {!! Form::label('yes', 'YES') !!}
+
+        {!! Form::radio('published', '1',true,["id" => "yes"]) !!}
+        
+        {!! Form::label('no', 'NO') !!}
+        
+        {!! Form::radio('published', '0',null,["id" => "no"]) !!}
+    </ul>
 </div>
 
 @if(Auth::user()->user_type == 0)
@@ -64,9 +67,9 @@
 <div class="form-group">
 
     {!! Form::label('user_id', 'Select owner:')  !!}
-
-    {!! Form::select('user_id', $usernames) !!}
-
+    <ul>
+        {!! Form::select('user_id', $usernames) !!}
+    </ul>   
 
 </div>
 

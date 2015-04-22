@@ -33,6 +33,11 @@ class PasswordController extends Controller {
 		$this->passwords = $passwords;
         $this->subject = 'Your Password Reset Link';
 		//$this->middleware('guest');
+<<<<<<< HEAD
+=======
+		//$this->middleware('auth');
+
+>>>>>>> e529fdd76e5177bad206b1c8278f8219a74508c1
 	}
 
 }
