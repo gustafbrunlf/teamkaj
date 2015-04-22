@@ -12,7 +12,12 @@
         <div class="col-xs-12 admin-table">   
 
             @if(Auth::user()->user_type == 0)
-
+                        @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                            
+                        </div>
+                    @endif
                 <table>
                      <thead>
                         <th>Name:</th>
