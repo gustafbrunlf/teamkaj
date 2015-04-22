@@ -117,9 +117,7 @@ class ProductsController extends Controller {
 	 * @return Response
 	 */
 	public function store(ProductRequest $request)
-
 	{
-
 		$slug = $this->slugify($request->name);
 		
 		$products = new Product($request->all());
@@ -185,20 +183,10 @@ class ProductsController extends Controller {
 	public function edit($slug)
 	{
 		$product = Product::where('slug', '=', $slug)->firstOrFail();
+		
+		$categories = Category::all();
 
-		if (Auth::user()->id == $product->user_id || Auth::user()->user_type == 0) {
-
-			$categories = Category::all();
-
-			return view('pages.editproduct', compact('product', 'categories'));
-
-		} else {
-
-			return redirect("products/{$slug}");
-
-		}
-
-
+		return view('pages.editproduct', compact('product', 'categories'));
 	}
 
 	/**
@@ -209,8 +197,8 @@ class ProductsController extends Controller {
 	 */
 
 
-	public function saveImage($file,$destination){
-
+	public function saveImage($file,$destination)
+	{
       		$newfile = Image::make($file)->resize(300,null, function ($constraint) {
    			 $constraint->aspectRatio();
    			 $constraint->upsize();
@@ -220,8 +208,8 @@ class ProductsController extends Controller {
 
 	}
 
-	public function getNewFileName($fileObject){
-
+	public function getNewFileName($fileObject)
+	{
 		$newExtension = $fileObject->getClientOriginalExtension(); // getting image extension
 		      		
 		$newFileName = "uploads/".rand(11111,99999).'.'.$newExtension;
