@@ -32,7 +32,7 @@ class PasswordController extends Controller {
 		$this->auth = $auth;
 		$this->passwords = $passwords;
         $this->subject = 'Your Password Reset Link';
-		$this->middleware('guest');
+		//$this->middleware('guest');
 	}
 
 }

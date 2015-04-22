@@ -7,7 +7,7 @@
 | Here is where you can register all of the routes for an application.
 | It's a breeze. Simply tell Laravel the URIs it should respond to
 | and give it the controller to call when that URI is requested.
-|
+|auth
 */
 
 
@@ -18,6 +18,7 @@ Route::get('/', 'ProductsController@index');
 Route::get('home', 'ProductsController@index');
 
 Route::get('superadmin/deleteadmin/{slug}', 'AdminController@deleteadmin');
+
 
 Route::resource('superadmin', 'AdminController');
 
@@ -43,6 +44,8 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::get("passwords/reset","Auth\PasswordController@postEmail");
 
 Event::listen('auth.login', function($event)
 {

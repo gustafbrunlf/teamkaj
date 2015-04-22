@@ -6,7 +6,7 @@
 </div>
 
 <div class="form-group">
-
+<input type="hidden" name="token" value="{{ csrf_token() }}">
     {!! Form::label('email', 'E-mail:') !!}
     {!! Form::text('email', null, ['class' => 'form-control']) !!}
 

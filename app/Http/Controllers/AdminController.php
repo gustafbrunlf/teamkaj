@@ -5,8 +5,10 @@ use App\Http\Requests\EditAdminRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
+use Password;
 use App\Product;
 use Mail;
+use Redirect;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -56,15 +58,19 @@ class AdminController extends Controller {
             'password'=>$password
         ]);
 
-        Mail::send('emails.email', ['key' => 'value'], function($message) use ($request)
-		{
-		    $message->to($request->email)->subject('Welcome!');
-		});
+  //       Mail::send('emails.email', ['key' => $request->_token], function($message) use ($request)
+		// {
+		//     $message->to($request->email)->subject('Welcome!');
+		// });
 
         $user->user_type = 1;
         $user->save();
+        return redirect()->action('Auth\PasswordController@postEmail',$request);
+   
+    
 
-        return redirect('superadmin');
+
+       //return redirect('superadmin');
 	}
 
 	/**
