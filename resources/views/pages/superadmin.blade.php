@@ -30,6 +30,24 @@
                             @endif
 
                             <td><a href="{{action('AdminController@edit',$admin->id)}}" class="btn btn-default">Edit Admin</a></td>
+
+                            @if ($admin->password == null && !in_array($admin->email, $resets))
+
+                            <td>
+
+                                <form class="form-horizontal" role="form" method="POST" action="{{ url('/password/email') }}">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <input type="hidden" name="email" value="{{ $admin->email }}">
+
+                                        <button type="submit" class="btn btn-primary">
+                                            Send Password Create Link
+                                        </button>
+                                </form>
+
+                            </td>
+
+                            @endif
+
                         </tr>                    
                     @endforeach
                 </table>

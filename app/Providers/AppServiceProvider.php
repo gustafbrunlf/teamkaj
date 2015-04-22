@@ -2,6 +2,7 @@
 use App\Category;
 use App\User;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider {
@@ -27,6 +28,18 @@ class AppServiceProvider extends ServiceProvider {
 			}
 
 		    $view->with('usernames', $usernames);
+		});
+
+		view()->composer('pages.superadmin', function($view)
+		{
+			$resetsTable = DB::table('password_resets')->select('email')->get();
+			
+			foreach ($resetsTable as $reset)
+			{
+				$resets[] = $reset->email;
+			}
+
+			$view->with('resets', $resets);
 		});
 	}
 
