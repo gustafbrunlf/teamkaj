@@ -23,6 +23,7 @@ class ProductsController extends Controller {
     public function __construct()
     {
         $this->middleware('auth', ['except' => [ 'category', 'show', 'index']]);
+        $this->middleware('owner', ['only' => ['edit', 'update']]);
         $this->middleware('admin', ['only' => ['destroy', 'deleteproduct']]);
     }
 
