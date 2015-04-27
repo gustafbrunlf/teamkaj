@@ -56,7 +56,7 @@
 					<td>{{ $product->updated_at }}</td>
 
 					@if ($product->user_id != null)
-						<td>{{ $users[$product->user_id-1]->name }}</td>
+						<td>{{ $product->user->name }}</td>
 					@else
 						<td>Unowned</td>
 					@endif
