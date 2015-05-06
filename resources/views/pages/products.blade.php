@@ -5,7 +5,7 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <h2>All of our fucking Products</h2>
+            <h2>All of our Products</h2>
         </div>
         <div class="col-xs-2">
             @if(Session::has('flash_message'))

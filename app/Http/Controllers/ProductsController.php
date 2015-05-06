@@ -95,8 +95,7 @@ class ProductsController extends Controller {
         if ($request->input('filter'))
         	$filter = $request->input('filter'); 
 
-		$users = User::all();
-		return view('pages.productsOverview', compact('products', 'users', 'sort', 'filter'));
+		return view('pages.productsOverview', compact('products', 'sort', 'filter'));
 	}
 
 	/**
